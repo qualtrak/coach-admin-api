@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; coach-admin-api 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+        <link rel="prev" title="Welcome to coach-admin-api’s documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> coach-admin-api
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#conventions-used">Conventions used</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coach">Coach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#formats">Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authentication">Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-restful-example">A RESTful example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#create-update-and-lookups">Create, Update and Lookups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rest-api-methods-and-models">REST API Methods and Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#models">Models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#domain-models">Domain Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-model">List Model</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#get">GET</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-id">GET /:id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post">POST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#put">PUT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete">DELETE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#http-put-and-delete-issue">HTTP PUT and DELETE Issue</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#activate-put-and-delete-on-iis-web-server">Activate PUT and DELETE on IIS Web Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-api-with-disabled-put-and-delete">Using API with disabled PUT and DELETE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-via-post">UPDATE via POST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-via-post">DELETE via POST</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#todo-list">TODO List</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">coach-admin-api</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/getting-started.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="conventions-used">
+<h2>Conventions used<a class="headerlink" href="#conventions-used" title="Permalink to this headline">¶</a></h2>
+<p><strong>Bold</strong> - Mostly hyperlinks or just plain text for highlighting the current API page. Eg. in Tenant page there is no need to make link to itself it is just bold text.</p>
+<p><em>Italic</em> - Indicates highlighted words or meanings.</p>
+<p><code class="docutils literal"><span class="pre">id</span></code> - Indicates the code properties and assigned values like true or null.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Indicates some text that is a note to give more information on some subject.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Indicate some text that warns of something that can happen and will not result in error.</p>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Indicate some text that will cause some errors and developers should be aware of its implication(s).</p>
+</div>
+</div>
+<div class="section" id="coach">
+<h2>Coach<a class="headerlink" href="#coach" title="Permalink to this headline">¶</a></h2>
+<p>The <em>Coach</em> has two main parts:</p>
+<ul class="simple">
+<li><em>Console</em> the administrative part where the Tenant hierarchy can be created, connection to Recorder(s) and assign different Media Players for playback, and set Scheduled Tasks.</li>
+<li><em>QM</em> or Quality Monitoring part for  media file monitoring standards to be established and then used to analytically evaluate files with the inclusion of carefully targeted coaching tools.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This <em>REST API</em> is fully implemented for administrative part of <em>Coach</em> or <em>Console</em> part. There are few settings that can be set for <em>QM</em> but they are all assigned through <em>Console API</em>.</p>
+</div>
+</div>
+<div class="section" id="formats">
+<h2>Formats<a class="headerlink" href="#formats" title="Permalink to this headline">¶</a></h2>
+<p>Currently supported format are <em>JSON</em> (JavaScript Object Notation) and <em>XML</em>. Requests are valid as long as they are sent as HTTP Header Content-Type <em>application/json</em> or <em>application/xml</em>, and result response format is same as sent request format.</p>
+</div>
+<div class="section" id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h2>
+<p>With installation of <em>Coach</em> each customer will be provided with unique <em>API Key</em> and <em>API Secret</em>. The API <cite>Key</cite> and <cite>Secret</cite> are need for authentication to the <em>Coach REST API</em> and they are per Tenant base, so for each call to <em>REST API</em> service is used same combination of <cite>Key</cite> and <cite>Secret</cite>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is up to developers using <em>Console REST API</em> to restrict or allow user to be able to gain access to <em>REST API</em>. From <em>REST API</em> point of view there is no distinction what user is using <em>REST API</em> since the same <cite>Key</cite> and <cite>Secret</cite> is used to gain access to the <em>Console API</em>.</p>
+</div>
+<div class="section" id="a-restful-example">
+<h3>A RESTful example<a class="headerlink" href="#a-restful-example" title="Permalink to this headline">¶</a></h3>
+<p>The <em>HTTP Header</em> is where you include the <code class="docutils literal"><span class="pre">key</span></code> and <code class="docutils literal"><span class="pre">secret</span></code> <em>fields</em>.  Please note the names of these <em>fields</em>; <code class="docutils literal"><span class="pre">consumer_key</span></code> and <code class="docutils literal"><span class="pre">consumer_secret</span></code>:</p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre> consumer_key: neFh2vtr2sKH1tvsp0O6
+ consumer_secret: 86h1qQEAhwlXydNJTLQj9KK3e5DUZUhoYjLsJKv72k44ZkmF2h
+</pre></div>
+</td></tr></table></div>
+<p>When issuing <code class="docutils literal"><span class="pre">GET</span> <span class="pre">http://mydomain.com/aspire/api/v1/1001/users</span> <span class="pre">HTTP/1.1</span></code> with the above <em>HTTP Header</em> the result will be <em>JSON</em> describing all the <em>Users</em> belonging to <em>Tenant</em> 1001</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The <code class="docutils literal"><span class="pre">key</span></code> and <code class="docutils literal"><span class="pre">secret</span></code> for the <em>Host Tenant</em> are created during the installation.  You can subsequently access and regenerate these values from within <em>Coach</em>.  Please refer to the <em>Coach Installation</em> documentation for further information.</p>
+</div>
+</div>
+</div>
+<div class="section" id="create-update-and-lookups">
+<h2>Create, Update and Lookups<a class="headerlink" href="#create-update-and-lookups" title="Permalink to this headline">¶</a></h2>
+<p>The <em>REST API</em> is constructed in a way that to create or update some resource it is needed to get resource by id that will populate the resource form with data, so it can be submitted to the server after changes made by user on form.</p>
+<p>With get by id you&#8217;ll get new or persisted instance of entity, with all default values already set (only on create) and also all the <em>lookup</em> (read more about about lookups in note below) data will be sent to client.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>The lookup in this sense is collection of <code class="docutils literal"><span class="pre">key</span></code> and <code class="docutils literal"><span class="pre">value</span></code> pairs needed to set some referenced id in some resource. It is used to populate drop boxes, radio buttons group,... The <cite>key</cite> of selected or checked item should be used to set some referenced value.</p>
+<p class="last">Example would be to create <em>Team</em>, there is need to set it to a belonging <em>Unit</em> (<code class="docutils literal"><span class="pre">unitId</span></code>). The <em>Team</em> lookup <code class="docutils literal"><span class="pre">units</span></code> will provide you with all <em>Units</em> <code class="docutils literal"><span class="pre">ids</span></code> as <code class="docutils literal"><span class="pre">key</span></code> and <em>Unit</em> <code class="docutils literal"><span class="pre">names</span></code> as <code class="docutils literal"><span class="pre">value</span></code> of lookup so it is to set <em>Team&#8217;s</em> belonging <em>Unit</em> by choosing one <cite>key</cite> and setting it to <em>Team&#8217;s</em> <code class="docutils literal"><span class="pre">unitId</span></code>.</p>
+</div>
+<p>The <em>lookup</em> enumeration keys are <cite>integers</cite> and <cite>ids</cite> used are <cite>guids</cite>.</p>
+<p>To set up the form on adding/creating new entity is needed to use get by id and for <code class="docutils literal"><span class="pre">id</span></code> is needed to set and <code class="docutils literal"><span class="pre">empty</span> <span class="pre">guid</span></code> or <code class="docutils literal"><span class="pre">&quot;00000000-0000-0000-0000-000000000000&quot;</span></code>, this will give you new instance of an entity with default values set and lookups for references loaded so that it can be use for form creation.</p>
+</div>
+<div class="section" id="rest-api-methods-and-models">
+<h2>REST API Methods and Models<a class="headerlink" href="#rest-api-methods-and-models" title="Permalink to this headline">¶</a></h2>
+<p>The API methods are the way to obtain data from <em>REST API</em> and models are way this data is represented.</p>
+<div class="section" id="models">
+<h3>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h3>
+<p>The Models are representation of some resource as its properties and values assigned to it. The <em>Coach API</em> uses two kind of <em>Models</em>:</p>
+<div class="section" id="domain-models">
+<h4>Domain Models<a class="headerlink" href="#domain-models" title="Permalink to this headline">¶</a></h4>
+<p>Used to for create and update domain model, but also for constructing and getting persisted <strong>Domain Model</strong>.</p>
+</div>
+<div class="section" id="list-model">
+<h4>List Model<a class="headerlink" href="#list-model" title="Permalink to this headline">¶</a></h4>
+<p>The light and normalized version of <strong>Domain Model</strong> used for lists of resource (usually represented as grid or tabular data) and with fewer properties than <strong>Domain Models</strong> and instead of reference <code class="docutils literal"><span class="pre">ids</span></code> uses human readable <code class="docutils literal"><span class="pre">name</span></code> to show in list item.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Note that <strong>Domain Models</strong> and <strong>List Models</strong> are described in lot more details about its properties and behaviors on each <em>API</em> resource page.</p>
+</div>
+</div>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<p>The <em>REST API</em> methods are analogous to <em>HTTP Verbs</em>. For most of resources in <em>REST API</em> you will have this five methods to get most common CRUD (Create Read Update Delete) data from and to server.</p>
+<div class="section" id="get">
+<h4>GET<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h4>
+<p>Returns a list of all items for requested resource. It is sent as <strong>List Model</strong> and it is fully read-only data.
+If there is error on server, it will send error response instead.</p>
+</div>
+<div class="section" id="get-id">
+<h4>GET /:id<a class="headerlink" href="#get-id" title="Permalink to this headline">¶</a></h4>
+<p>Returns a <strong>Domain Model</strong> representation of resource for particular <code class="docutils literal"><span class="pre">id</span></code>. Embedded with resources are <em>lookups</em>, and if is used <code class="docutils literal"><span class="pre">empty</span> <span class="pre">guid</span></code> it will already set all default values.
+If there is error on server, it will send error response instead.</p>
+</div>
+<div class="section" id="post">
+<h4>POST<a class="headerlink" href="#post" title="Permalink to this headline">¶</a></h4>
+<p>Sends the newly created resource <strong>Domain Model</strong> and after saving it to database returns all the created values (now persisted) as it was called by <code class="docutils literal"><span class="pre">GET</span> <span class="pre">:id</span></code>.
+If there is error on server, it will send error response instead.</p>
+</div>
+<div class="section" id="put">
+<h4>PUT<a class="headerlink" href="#put" title="Permalink to this headline">¶</a></h4>
+<p>Sends the updated resource <strong>Domain Model</strong> and after saving it to database returns all the updated values (now persisted) as it was called by <code class="docutils literal"><span class="pre">GET</span> <span class="pre">:id</span></code>.
+If there is error on server, it will send error response instead.</p>
+</div>
+<div class="section" id="delete">
+<h4>DELETE<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h4>
+<p>Sends the resources <code class="docutils literal"><span class="pre">id</span></code> to server to delete resource. After deletion if everything went well it will not send anything, but if there is error on server, error will be sent as response.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Note that all resources don&#8217;t have support for all methods described before.</p>
+<ul class="last simple">
+<li>The <em>Tenant</em> is currently supports only <code class="docutils literal"><span class="pre">PUT</span></code> or update (this will change with implementation of multi-tenancy).</li>
+<li>The <em>Tenant Tree</em> is supports only <code class="docutils literal"><span class="pre">GET</span></code> method that or will bring only a Tenant Tree Items.</li>
+<li>The <em>License</em> is now supports only <code class="docutils literal"><span class="pre">GET</span></code> method or will only obtain license from Licensing Server.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="http-put-and-delete-issue">
+<h2>HTTP PUT and DELETE Issue<a class="headerlink" href="#http-put-and-delete-issue" title="Permalink to this headline">¶</a></h2>
+<p>There are known issues with <em>HTTP</em> verbs <code class="docutils literal"><span class="pre">PUT</span></code> and <code class="docutils literal"><span class="pre">DELETE</span></code>. The <code class="docutils literal"><span class="pre">PUT</span></code> and <code class="docutils literal"><span class="pre">DELETE</span></code> were not supported on older browsers and <code class="docutils literal"><span class="pre">PUT</span></code> and <code class="docutils literal"><span class="pre">DELETE</span></code> can be disabled or not disabled by default in <em>IIS Web Server</em>.</p>
+<div class="section" id="activate-put-and-delete-on-iis-web-server">
+<h3>Activate PUT and DELETE on IIS Web Server<a class="headerlink" href="#activate-put-and-delete-on-iis-web-server" title="Permalink to this headline">¶</a></h3>
+<p>To activate <em>HTTP</em> <code class="docutils literal"><span class="pre">PUT</span></code> and <code class="docutils literal"><span class="pre">DELETE</span></code> on <em>IIS Web Server</em> you need to add this part of configuration to the <code class="docutils literal"><span class="pre">web.config</span></code> of web application where <em>Coach REST API</em> is hosted.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><em>Coach REST API</em> is hosted in same location as <em>Coach</em> Silverlight application is hosted.</p>
+</div>
+<p>For <em>IIS 7</em> and above you can use this configuration to enable <code class="docutils literal"><span class="pre">PUT</span></code> and <code class="docutils literal"><span class="pre">DELETE</span></code>:</p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre>    <span class="nt">&lt;system.webServer&gt;</span>
+     <span class="nt">&lt;validation</span> <span class="na">validateIntegratedModeConfiguration=</span><span class="s">&quot;false&quot;</span> <span class="nt">/&gt;</span>
+     <span class="nt">&lt;modules</span> <span class="na">runAllManagedModulesForAllRequests=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+     <span class="nt">&lt;handlers&gt;</span>
+       <span class="nt">&lt;remove</span> <span class="na">name=</span><span class="s">&quot;ExtensionlessUrlHandler-Integrated-4.0&quot;</span> <span class="nt">/&gt;</span>
+       <span class="nt">&lt;add</span> <span class="na">name=</span><span class="s">&quot;ExtensionlessUrlHandler-Integrated-4.0&quot;</span>
+       <span class="na">path=</span><span class="s">&quot;*.&quot;</span>
+       <span class="na">verb=</span><span class="s">&quot;GET,HEAD,POST,DEBUG,PUT,DELETE&quot;</span>
+       <span class="na">modules=</span><span class="s">&quot;IsapiModule&quot;</span>
+       <span class="na">scriptProcessor=</span><span class="s">&quot;C:\Windows\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll&quot;</span>
+       <span class="na">resourceType=</span><span class="s">&quot;Unspecified&quot;</span>
+       <span class="na">requireAccess=</span><span class="s">&quot;Script&quot;</span>
+       <span class="na">preCondition=</span><span class="s">&quot;classicMode,runtimeVersionv4.0,bitness64&quot;</span>
+       <span class="na">responseBufferLimit=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+     <span class="nt">&lt;/handlers&gt;</span>
+   <span class="nt">&lt;/system.webServer&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Please be aware that this piece of configuration is as-is, it is just example of enabling PUT and DELETE.
+For more information on enabling the PUT and DELETE in <em>IIS</em> please use <em>IIS</em> documentation or in house System Administrator if you have.</p>
+</div>
+</div>
+<div class="section" id="using-api-with-disabled-put-and-delete">
+<h3>Using API with disabled PUT and DELETE<a class="headerlink" href="#using-api-with-disabled-put-and-delete" title="Permalink to this headline">¶</a></h3>
+<p>Activating the <em>HTTP</em> <code class="docutils literal"><span class="pre">PUT</span></code> and <code class="docutils literal"><span class="pre">DELETE</span></code> is optional step, it is recommended, but optional. If from some case it is problem or it is in house rule to not allow <code class="docutils literal"><span class="pre">PUT</span></code> and <code class="docutils literal"><span class="pre">DELETE</span></code> or you still supporting browser that are not supporting this verbs then there is a way to sent <em>HTTP</em> <code class="docutils literal"><span class="pre">PUT</span></code> and <code class="docutils literal"><span class="pre">DELETE</span></code> as <code class="docutils literal"><span class="pre">POST</span></code> but with a <em>HTTP Header</em> directive <code class="docutils literal"><span class="pre">X-HTTP-Method-Override</span></code>.</p>
+</div>
+<div class="section" id="update-via-post">
+<h3>UPDATE via POST<a class="headerlink" href="#update-via-post" title="Permalink to this headline">¶</a></h3>
+<p>To use <code class="docutils literal"><span class="pre">UPDATE</span></code> via <code class="docutils literal"><span class="pre">POST</span></code> you need to send <code class="docutils literal"><span class="pre">POST</span></code> request and in <em>HTTP Header</em> set:</p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>X-HTTP-Method-Override: UPDATE
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="delete-via-post">
+<h3>DELETE via POST<a class="headerlink" href="#delete-via-post" title="Permalink to this headline">¶</a></h3>
+<p>To use <code class="docutils literal"><span class="pre">DELETE</span></code> via <code class="docutils literal"><span class="pre">POST</span></code> you need to send <code class="docutils literal"><span class="pre">POST</span></code> request and in <em>HTTP Header</em> set:</p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>X-HTTP-Method-Override: DELETE
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="todo-list">
+<h2>TODO List<a class="headerlink" href="#todo-list" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Finish Multi-Tenancy for Tenant via Create/Update/Delete + update documentation.</li>
+<li>Create Tenant Tree of only Unit/Team/Agent items for Schedule Level.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to coach-admin-api’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Qualtrak Solutions Ltd.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

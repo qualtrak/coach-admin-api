@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>C# Wrapper &mdash; coach-admin-api 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+        <link rel="prev" title="Getting Started" href="getting-started.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> coach-admin-api
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#conventions-used">Conventions used</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#coach">Coach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#formats">Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#authentication">Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#a-restful-example">A RESTful example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#create-update-and-lookups">Create, Update and Lookups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#rest-api-methods-and-models">REST API Methods and Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#models">Models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#domain-models">Domain Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#list-model">List Model</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#methods">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#get">GET</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#get-id">GET /:id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#post">POST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#put">PUT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#delete">DELETE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#http-put-and-delete-issue">HTTP PUT and DELETE Issue</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#activate-put-and-delete-on-iis-web-server">Activate PUT and DELETE on IIS Web Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#using-api-with-disabled-put-and-delete">Using API with disabled PUT and DELETE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#update-via-post">UPDATE via POST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#delete-via-post">DELETE via POST</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#todo-list">TODO List</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">C# Wrapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup-and-dependencies">Setup and Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#authentication">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#response-content-and-api-wrapper">Response Content and API Wrapper</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#response-content">Response Content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#non-generic-version">Non-Generic Version</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#error">Error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#httpstatuscode">HttpStatusCode</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#the-generic-version">The Generic Version</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#result-t">Result&lt;T&gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#api-wrapper">API Wrapper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#responsecontent-icollection-tlist-getall">ResponseContent&lt;ICollection&lt;TList&gt;&gt; GetAll()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#responsecontent-tmodel-getbyid-guid-id">ResponseContent&lt;TModel&gt; GetById(Guid id)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#responsecontent-tmodel-create-tmodel-entity">ResponseContent&lt;TModel&gt; Create(TModel entity)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#responsecontent-tmodel-update-tmodel-entity-bool-updateviapost-false">ResponseContent&lt;TModel&gt; Update(TModel entity, bool updateViaPost = false)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#responsecontent-delete-guid-id-bool-deleteviapost-false">ResponseContent Delete(Guid id, bool deleteViaPost = false)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">coach-admin-api</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>C# Wrapper</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/csharp-wrapper.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="c-wrapper">
+<h1>C# Wrapper<a class="headerlink" href="#c-wrapper" title="Permalink to this headline">¶</a></h1>
+<p>Please see NEW in <strong>release 5.1</strong> below for changes made in Release 5.1</p>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Please make sure that you have read [Getting Started](/v1) because even the implementation is very different then default default <em>REST</em> approach, there are some concepts and issues described in much more details than it is here and some are assumed so there are no details at all.</p>
+</div>
+<p>The <em>C# Wrapper Library</em> that hides and abstracts the REST details under cover of wrapper and allows developers to use <em>REST API</em> in native way or in this case C# way. The <em>C# Wrapper Library</em> behind scene uses <em>JSON</em> as content media type.</p>
+<p>The <em>C# Wrapper Library</em> also abstracts the authentication, <em>HTTP</em> <code class="docutils literal"><span class="pre">PUT</span></code> and <code class="docutils literal"><span class="pre">DELETE</span></code> verb issue in more easier way.</p>
+<div class="section" id="setup-and-dependencies">
+<h2>Setup and Dependencies<a class="headerlink" href="#setup-and-dependencies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<p>To setup <em>C# Wrapper Library</em> there is a need to add the reference to <code class="docutils literal"><span class="pre">Qualtrak.Coach.API.Wrappers.CSharp.dll</span></code> provided with installation of <em>Coach</em>. Note that project framework is needed to be <em>.NET 4.5</em>, but note that <em>.NET 4.5 Client Profile</em> is not supported.</p>
+</div>
+<div class="section" id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<p>The dependencis to run the <em>C# Wrapper Library</em> are:</p>
+<ul class="simple">
+<li>[JSON.NET](<a class="reference external" href="https://json.codeplex.com/releases">https://json.codeplex.com/releases</a>) (actually the compiled name is <code class="docutils literal"><span class="pre">Newtonsoft.Json.dll</span></code>).</li>
+<li><strong>CHECK OTHER DEPENDENCIES</strong></li>
+<li>An appSetting in the web.config file with key of <code class="docutils literal"><span class="pre">coach:license-manager-endpoints</span></code>. The value must contain a single or a comma separated list of ip:port combinations from which the License Manager is being served. - <strong>NEW in release 5.1</strong></li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The <em>C# Wrapper Library</em> uses Json.NET 4.5 Release 7 but any newer version should work properly.</p>
+</div>
+</div>
+</div>
+<div class="section" id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h2>
+<p>Unlike send it in <em>HTTP Header</em> like in normal <em>REST</em> way this is abstract, but information is needed so it is a part of each C# Wrapper method. There is a need for providing the <code class="docutils literal"><span class="pre">key</span></code> and <code class="docutils literal"><span class="pre">secret</span></code> for each call to the <em>REST API</em>.</p>
+</div>
+<div class="section" id="response-content-and-api-wrapper">
+<h2>Response Content and API Wrapper<a class="headerlink" href="#response-content-and-api-wrapper" title="Permalink to this headline">¶</a></h2>
+<p>Response Content is the data that is result of some request, and API wrapper is the way to send requests to <em>REST API</em>.</p>
+<div class="section" id="response-content">
+<h3>Response Content<a class="headerlink" href="#response-content" title="Permalink to this headline">¶</a></h3>
+<p>It is class <code class="docutils literal"><span class="pre">ResponseContent</span></code> that holds the <em>REST API</em> response message as its content.</p>
+</div>
+<div class="section" id="non-generic-version">
+<h3>Non-Generic Version<a class="headerlink" href="#non-generic-version" title="Permalink to this headline">¶</a></h3>
+<p>The non-generic version of <code class="docutils literal"><span class="pre">ResponseContet</span></code> has two properties:</p>
+<div class="section" id="error">
+<h4>Error<a class="headerlink" href="#error" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal"><span class="pre">Error</span></code> property and it is an error response when some known error occurred due validation or some unknown exception occurred on server. The <code class="docutils literal"><span class="pre">Error</span></code> property  is actual Domain Model, read more in Client Errors</p>
+</div>
+<div class="section" id="httpstatuscode">
+<h4>HttpStatusCode<a class="headerlink" href="#httpstatuscode" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal"><span class="pre">integer</span></code> representation of <em>HTTP Staus Code</em> (eg. 200).</p>
+</div>
+</div>
+<div class="section" id="the-generic-version">
+<h3>The Generic Version<a class="headerlink" href="#the-generic-version" title="Permalink to this headline">¶</a></h3>
+<p>The generic version <code class="docutils literal"><span class="pre">ResponseContent&lt;T&gt;</span></code> inherits from <code class="docutils literal"><span class="pre">ResponseContent</span></code> so it has its properties and also:</p>
+<div class="section" id="result-t">
+<h4>Result&lt;T&gt;<a class="headerlink" href="#result-t" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal"><span class="pre">Result&lt;T&gt;</span></code> is a actual result data sent as response content, and the generic <code class="docutils literal"><span class="pre">T</span></code> can be List or Domain Model.</p>
+</div>
+</div>
+<div class="section" id="api-wrapper">
+<h3>API Wrapper<a class="headerlink" href="#api-wrapper" title="Permalink to this headline">¶</a></h3>
+<p>The <em>API Wrapper</em> is actually interface <code class="docutils literal"><span class="pre">IApiWrapper&lt;TModel,</span> <span class="pre">TList&gt;</span></code> used is mostly all CRUD resources for <em>Coach Console API</em>.</p>
+<p>The <code class="docutils literal"><span class="pre">IApiWrapper&lt;TModel,</span> <span class="pre">TList&gt;</span></code> has this methods:</p>
+<div class="section" id="responsecontent-icollection-tlist-getall">
+<h4>ResponseContent&lt;ICollection&lt;TList&gt;&gt; GetAll()<a class="headerlink" href="#responsecontent-icollection-tlist-getall" title="Permalink to this headline">¶</a></h4>
+<p>Method used for getting list of all request items that are collection of entity List Model.
+The <code class="docutils literal"><span class="pre">Result&lt;T&gt;</span></code> will be sent if get all was successful if there is an error then the <code class="docutils literal"><span class="pre">Error</span></code> property will hold the error message.</p>
+</div>
+<div class="section" id="responsecontent-tmodel-getbyid-guid-id">
+<h4>ResponseContent&lt;TModel&gt; GetById(Guid id)<a class="headerlink" href="#responsecontent-tmodel-getbyid-guid-id" title="Permalink to this headline">¶</a></h4>
+<p>Method used for getting a new or persisted instance of entity Domain Model. Use this method for getting default values on add and lookup data for both add and edit of entity.
+The <code class="docutils literal"><span class="pre">Result&lt;T&gt;</span></code> will be sent if get by id was successful if there is an error then the <code class="docutils literal"><span class="pre">Error</span></code> property will hold the error message.</p>
+</div>
+<div class="section" id="responsecontent-tmodel-create-tmodel-entity">
+<h4>ResponseContent&lt;TModel&gt; Create(TModel entity)<a class="headerlink" href="#responsecontent-tmodel-create-tmodel-entity" title="Permalink to this headline">¶</a></h4>
+<p>Method used for creating the resource. It expects created Domain Model to be sent and it returns this persisted Domain Model as it is called by <code class="docutils literal"><span class="pre">GetById</span></code>.
+The <code class="docutils literal"><span class="pre">Result&lt;T&gt;</span></code> will be sent if create was successful if there is an error then the <code class="docutils literal"><span class="pre">Error</span></code> property will hold the error message.</p>
+</div>
+<div class="section" id="responsecontent-tmodel-update-tmodel-entity-bool-updateviapost-false">
+<h4>ResponseContent&lt;TModel&gt; Update(TModel entity, bool updateViaPost = false)<a class="headerlink" href="#responsecontent-tmodel-update-tmodel-entity-bool-updateviapost-false" title="Permalink to this headline">¶</a></h4>
+<p>Method used for updating already persisted the resource. It expects updated Domain Model to be sent and it returns this updated Domain Model as it is called by <code class="docutils literal"><span class="pre">GetById</span></code>.
+The <code class="docutils literal"><span class="pre">Result&lt;T&gt;</span></code> will be sent if update was successful if there is an error then the <code class="docutils literal"><span class="pre">Error</span></code> property will hold the error message.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The parameter <code class="docutils literal"><span class="pre">updateViaPost</span></code> is set by default to false and it will be using <code class="docutils literal"><span class="pre">PUT</span></code> on request, if this is issue, you can set it to <code class="docutils literal"><span class="pre">true</span></code> and will be using <code class="docutils literal"><span class="pre">PUT</span></code> via <code class="docutils literal"><span class="pre">POST</span></code>.</p>
+</div>
+</div>
+<div class="section" id="responsecontent-delete-guid-id-bool-deleteviapost-false">
+<h4>ResponseContent Delete(Guid id, bool deleteViaPost = false)<a class="headerlink" href="#responsecontent-delete-guid-id-bool-deleteviapost-false" title="Permalink to this headline">¶</a></h4>
+<p>Method used to delete resource by sending <code class="docutils literal"><span class="pre">id</span></code>. It returns non-generic <code class="docutils literal"><span class="pre">ResponseContent</span></code> so there is no result just <code class="docutils literal"><span class="pre">Error</span></code>. So if <code class="docutils literal"><span class="pre">Error</span></code> is not <code class="docutils literal"><span class="pre">null</span></code> then something went wrong on server.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The parameter <code class="docutils literal"><span class="pre">deleteViaPost</span></code> is set by default to false and it will be using <code class="docutils literal"><span class="pre">DELETE</span></code> on request, if this is issue, you can set it to <code class="docutils literal"><span class="pre">true</span></code> and will be using <code class="docutils literal"><span class="pre">DELETE</span></code> via <code class="docutils literal"><span class="pre">POST</span></code>.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Note that all resources doesn&#8217;t implement <code class="docutils literal"><span class="pre">IApiWrapper&lt;TModel,</span> <span class="pre">TList&gt;</span></code> like <em>Tenant</em>, <em>Tenant Tree</em> and <em>License</em>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="getting-started.html" class="btn btn-neutral" title="Getting Started" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Qualtrak Solutions Ltd.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -31,6 +31,7 @@
 
   
     <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="C# Wrapper" href="csharp-wrapper.html"/>
         <link rel="prev" title="Welcome to coach-admin-api’s documentation!" href="index.html"/> 
 
   
@@ -106,6 +107,36 @@
 <li class="toctree-l2"><a class="reference internal" href="#todo-list">TODO List</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="csharp-wrapper.html#setup-and-dependencies">Setup and Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="csharp-wrapper.html#authentication">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csharp-wrapper.html#response-content-and-api-wrapper">Response Content and API Wrapper</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#response-content">Response Content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#non-generic-version">Non-Generic Version</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#error">Error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#httpstatuscode">HttpStatusCode</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#the-generic-version">The Generic Version</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#result-t">Result&lt;T&gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#api-wrapper">API Wrapper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-icollection-tlist-getall">ResponseContent&lt;ICollection&lt;TList&gt;&gt; GetAll()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-tmodel-getbyid-guid-id">ResponseContent&lt;TModel&gt; GetById(Guid id)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-tmodel-create-tmodel-entity">ResponseContent&lt;TModel&gt; Create(TModel entity)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-tmodel-update-tmodel-entity-bool-updateviapost-false">ResponseContent&lt;TModel&gt; Update(TModel entity, bool updateViaPost = false)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-delete-guid-id-bool-deleteviapost-false">ResponseContent Delete(Guid id, bool deleteViaPost = false)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
           
@@ -144,7 +175,7 @@
           <div role="main" class="document">
             
   <div class="section" id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<span id="getting-started-label"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="conventions-used">
 <h2>Conventions used<a class="headerlink" href="#conventions-used" title="Permalink to this headline">¶</a></h2>
 <p><strong>Bold</strong> - Mostly hyperlinks or just plain text for highlighting the current API page. Eg. in Tenant page there is no need to make link to itself it is just bold text.</p>
@@ -353,6 +384,8 @@ For more information on enabling the PUT and DELETE in <em>IIS</em> please use <
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="csharp-wrapper.html" class="btn btn-neutral float-right" title="C# Wrapper" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Welcome to coach-admin-api’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

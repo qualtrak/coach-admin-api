@@ -6,7 +6,7 @@ Please see NEW in **release 5.1** below for changes made in Release 5.1
 
 .. danger::
 
-    Please make sure that you have read [Getting Started](/v1) because even the implementation is very different then default default *REST* approach, there are some concepts and issues described in much more details than it is here and some are assumed so there are no details at all.
+    Please make sure that you have read :ref:`Getting Started <getting-started-label>` because even the implementation is very different then default default *REST* approach, there are some concepts and issues described in much more details than it is here and some are assumed so there are no details at all.
 
 The *C# Wrapper Library* that hides and abstracts the REST details under cover of wrapper and allows developers to use *REST API* in native way or in this case C# way. The *C# Wrapper Library* behind scene uses *JSON* as content media type.
 

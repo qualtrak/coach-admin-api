@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Client Errors &mdash; coach-admin-api 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+        <link rel="prev" title="C# Wrapper" href="csharp-wrapper.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> coach-admin-api
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#conventions-used">Conventions used</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#coach">Coach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#formats">Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#authentication">Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#a-restful-example">A RESTful example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#create-update-and-lookups">Create, Update and Lookups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#rest-api-methods-and-models">REST API Methods and Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#models">Models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#domain-models">Domain Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#list-model">List Model</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#methods">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#get">GET</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#get-id">GET /:id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#post">POST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#put">PUT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html#delete">DELETE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#http-put-and-delete-issue">HTTP PUT and DELETE Issue</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#activate-put-and-delete-on-iis-web-server">Activate PUT and DELETE on IIS Web Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#using-api-with-disabled-put-and-delete">Using API with disabled PUT and DELETE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#update-via-post">UPDATE via POST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html#delete-via-post">DELETE via POST</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#todo-list">TODO List</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="csharp-wrapper.html#setup-and-dependencies">Setup and Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="csharp-wrapper.html#authentication">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csharp-wrapper.html#response-content-and-api-wrapper">Response Content and API Wrapper</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#response-content">Response Content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#non-generic-version">Non-Generic Version</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#error">Error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#httpstatuscode">HttpStatusCode</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#the-generic-version">The Generic Version</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#result-t">Result&lt;T&gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#api-wrapper">API Wrapper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-icollection-tlist-getall">ResponseContent&lt;ICollection&lt;TList&gt;&gt; GetAll()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-tmodel-getbyid-guid-id">ResponseContent&lt;TModel&gt; GetById(Guid id)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-tmodel-create-tmodel-entity">ResponseContent&lt;TModel&gt; Create(TModel entity)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-tmodel-update-tmodel-entity-bool-updateviapost-false">ResponseContent&lt;TModel&gt; Update(TModel entity, bool updateViaPost = false)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-delete-guid-id-bool-deleteviapost-false">ResponseContent Delete(Guid id, bool deleteViaPost = false)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Client Errors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#error-model">Error Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#request-argument-model">Request Argument Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#known-errors">Known Errors</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">coach-admin-api</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Client Errors</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/client-errors.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="client-errors">
+<h1>Client Errors<a class="headerlink" href="#client-errors" title="Permalink to this headline">¶</a></h1>
+<p>The description of client side errors that can get from <em>REST API</em> server on known logic errors and unknown exceptions.</p>
+<div class="section" id="error-model">
+<h2>Error Model<a class="headerlink" href="#error-model" title="Permalink to this headline">¶</a></h2>
+<p>Represents the <strong>Error</strong> model as value object with available properties.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="69%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">id</span></code></td>
+<td>Representing <strong>Error</strong> identifier from API Logs.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">message</span></code></td>
+<td>The <strong>Error</strong> message it can be descriptive for known error and generic for unknown exceptions.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">description</span></code></td>
+<td>The <strong>Error</strong> description mainly a generic text for unknown exception.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">httpStatusCode</span></code></td>
+<td>The HTTP Status Code, eg. 200.</td>
+<td><code class="docutils literal"><span class="pre">integer</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">requestArguments</span></code></td>
+<td>The collection of sent Request Arguments.</td>
+<td><code class="docutils literal"><span class="pre">array(RequestArgument)</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>The <strong>Error</strong> properties names (<em>Name</em> column) is for default usage by <code class="docutils literal"><span class="pre">JSON</span></code>, for <code class="docutils literal"><span class="pre">C#</span> <span class="pre">Wrapper</span></code> usage the <strong>Error</strong> properties are capitalized (eg. <code class="docutils literal"><span class="pre">Id</span></code>, <code class="docutils literal"><span class="pre">Name</span></code>,..)!</p>
+<p class="last">Note that C# Wrapper has for <strong>Error</strong> Model overridden a <code class="docutils literal"><span class="pre">ToString()</span></code> method and calling instance of error like <code class="docutils literal"><span class="pre">error.ToString()</span></code> will result with displaying the <strong>Error</strong> and all <strong>Requested Arguments</strong></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Note that only simple <strong>Request Arguments</strong> will be sent like <code class="docutils literal"><span class="pre">integer</span></code>, <code class="docutils literal"><span class="pre">string</span></code>, <code class="docutils literal"><span class="pre">boolean</span></code>,... The complex types are currently not supported to be sent as <strong>Error</strong> <strong>Request Arguments</strong>.</p>
+</div>
+</div>
+<div class="section" id="request-argument-model">
+<h2>Request Argument Model<a class="headerlink" href="#request-argument-model" title="Permalink to this headline">¶</a></h2>
+<p>Represents the <strong>Request Argument</strong> model as value object with available properties.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="69%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">name</span></code></td>
+<td>The <strong>Request Argument</strong> name, eg. <code class="docutils literal"><span class="pre">id</span></code>.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">value</span></code></td>
+<td>The <strong>Request Argument</strong> value for <code class="docutils literal"><span class="pre">name</span></code> <strong>Request Argument</strong>.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The <strong>Error</strong> properties names (<em>Name</em> column) is for default usage by <code class="docutils literal"><span class="pre">JSON</span></code>, for <code class="docutils literal"><span class="pre">C#</span> <span class="pre">Wrapper</span></code> usage the <strong>Error</strong> properties are capitalized (eg. <code class="docutils literal"><span class="pre">Id</span></code>, <code class="docutils literal"><span class="pre">Name</span></code>,..)!</p>
+</div>
+</div>
+<div class="section" id="known-errors">
+<h2>Known Errors<a class="headerlink" href="#known-errors" title="Permalink to this headline">¶</a></h2>
+<p>The list of <strong>Known Errors</strong> that can happen while interacting with <em>Coach REST API</em>.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Note that this errors are generic description of server side known errors and errors sent to client will be with proper and very descriptive error messages, due to some logic and according to what arguments are sent when error occurred.
+Many errors are more described in particular entity&#8217;s documentation, mostly around its Domain Model.</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Known Error</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Missing Consumer Key and/or Secret</strong></td>
+<td>Consumer key and/or secret is not sent with HTTP Header.</td>
+</tr>
+<tr class="row-odd"><td><strong>Unauthorized Key and/or Secret</strong></td>
+<td>Consumer key/secret combination is not known and hence unauthorized.</td>
+</tr>
+<tr class="row-even"><td><strong>Invalid Tenant Code</strong></td>
+<td>The tenant code provided through URL is not valid. Must be 1000 and greater!</td>
+</tr>
+<tr class="row-odd"><td><strong>Unknown Tenant Code</strong></td>
+<td>The tenant code is not existing.</td>
+</tr>
+<tr class="row-even"><td><strong>Unknown Content-Type</strong></td>
+<td>The Request Header must include a valid and supported Content-Type media format (JSON or XML).</td>
+</tr>
+<tr class="row-odd"><td><strong>Exceeded License Total For Agents</strong></td>
+<td>The licenses exceeded the total of purchased licenses. Note one active user as agent is one license!</td>
+</tr>
+<tr class="row-even"><td><strong>Unknown Reference Entity Id</strong></td>
+<td>The sent referenced entity GUID Id is unknown or empty GUID. Reference to entity can be established.</td>
+</tr>
+<tr class="row-odd"><td><strong>Unique Username</strong></td>
+<td>Validates the uniqueness of User&#8217;s username. There cannot be two same usernames for tenant.</td>
+</tr>
+<tr class="row-even"><td><strong>Required Field</strong></td>
+<td>Validates that required field or property has proper value assigned to it.</td>
+</tr>
+<tr class="row-odd"><td><strong>Invalid Id</strong></td>
+<td>The Id of entity is empty GUID.</td>
+</tr>
+<tr class="row-even"><td><strong>Invalid Date Range</strong></td>
+<td>The date range of start and end date is invalid when end date is greater than start date.</td>
+</tr>
+<tr class="row-odd"><td><strong>Incorrect Period Type</strong></td>
+<td>The incorrect combination usage of schedule period type and occurrence.</td>
+</tr>
+<tr class="row-even"><td><strong>Incorrect Numeric</strong></td>
+<td>The applied numeric value is not correct whether of crossing some range, negative number, greater than 0,...</td>
+</tr>
+<tr class="row-odd"><td><strong>Incorrect Date</strong></td>
+<td>The applied data is no correct due some date logic.</td>
+</tr>
+<tr class="row-even"><td><strong>Delete While Having Reference</strong></td>
+<td>The entities that are referenced by some other entities are not allowed to be deleted.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="csharp-wrapper.html" class="btn btn-neutral" title="C# Wrapper" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Qualtrak Solutions Ltd.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

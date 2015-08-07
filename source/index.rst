@@ -13,3 +13,4 @@ Contents:
 
    getting-started
    csharp-wrapper
+   client-errors

@@ -6,7 +6,7 @@ Tenant
 
 The **Tenant** is the organization. A **Tenant** must be created before any other step can be taken and this step will be performed during the initial installation process. The structure of the company can be replicated within the make-up of the **Tenant** through :ref:`unit-label` and :ref:`Teams <team-label>`.
 
-Whenever a **Tenant** is created, part of the process involves the creation of a unique administrative [User](/v1/user). For the original host **Tenant**, setup during the **Coach** installation process, this [User](/v1/user) is a *System Administrator*. With all additional **Tenants** this built in [User](/v1/user) will be an *Application Administrator*. See more information in [Roles](/v1/roles).
+Whenever a **Tenant** is created, part of the process involves the creation of a unique administrative :ref:`user-label`. For the original host **Tenant**, setup during the **Coach** installation process, this :ref:`user-label` is a *System Administrator*. With all additional **Tenants** this built in :ref:`user-label` will be an *Application Administrator*. See more information in [Roles](/v1/roles).
 
 .. danger::
 
@@ -67,10 +67,10 @@ Represent the **Tenant** domain model with available properties and its behavior
 +---------------------------+----------------------------------------------------------------+------------------------------+----------+-----------+-------------------------+
 | ``licenseExpiryDate``     | The **Tenant** license expiry date.                            | ``datetime``                 | N/A      | yes       | `null`                  |
 +---------------------------+----------------------------------------------------------------+------------------------------+----------+-----------+-------------------------+
-| ``totalLicenses``         | The number of [User](/v1/user) total licenses for **Tenant**.  | ``integer``                  | N/A      | yes       |                         |
+| ``totalLicenses``         | The number of :ref:`user-label` total licenses for **Tenant**. | ``integer``                  | N/A      | yes       |                         |
 +---------------------------+----------------------------------------------------------------+------------------------------+----------+-----------+-------------------------+
 | ``usedLicenses``          | The number of used licenses for **Tenant**.                    | `integer`                    | N/A      | yes       |                         |
-|                           | One [User](/v1/user) equals  one license.                      |                              |          |           |                         |
+|                           | One :ref:`user-label` equals  one license.                     |                              |          |           |                         |
 +---------------------------+----------------------------------------------------------------+------------------------------+----------+-----------+-------------------------+
 | **API**                                                                                                                                                                    |
 +---------------------------+----------------------------------------------------------------+------------------------------+----------+-----------+-------------------------+

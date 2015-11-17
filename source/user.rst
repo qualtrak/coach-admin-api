@@ -1,4 +1,4 @@
-.. *user-label:
+.. _user-label:
 
 ====
 User

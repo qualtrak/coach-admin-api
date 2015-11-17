@@ -39,7 +39,7 @@ Represent the **Unit** domain model with available properties and its behaviors.
 | ``unitsLookup``    | The dictionary of active and not deleted **Units**,               | ``dictionary(guid, string)``        | N/A      | N/A              | N/A                       |
 |                    | needed for choosing parent **Unit** and setting ``parentUnitId``. |                                     |          |                  |                           |
 +--------------------+-------------------------------------------------------------------+-------------------------------------+----------+------------------+---------------------------+
-| ``usersLookup``    | The dictionary of active and not deleted [Users](/v1/user),       | ``dictionary(guid, string)``        | N/A      | N/A              | N/A                       |
+| ``usersLookup``    | The dictionary of active and not deleted :ref:`Users <user-label>`| ``dictionary(guid, string)``        | N/A      | N/A              | N/A                       |
 |                    | needed for setting the **Unit** ``managers``.                     |                                     |          |                  |                           |
 +--------------------+-------------------------------------------------------------------+-------------------------------------+----------+------------------+---------------------------+
 

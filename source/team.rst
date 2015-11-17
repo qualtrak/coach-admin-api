@@ -49,7 +49,7 @@ Represent the **Team** domain model with available properties and its behaviors.
 | ``unitsLookup``    | The lookup dictionary of active and not deleted :ref:`unit-label`,     | ``dictionary(guid, string)`` | N/A      | N/A         | N/A                     |
 |                    | needed for choosing belonging :ref:`unit-label` and setting ``unitId`` |                              |          |             |                         |
 +--------------------+------------------------------------------------------------------------+------------------------------+----------+-------------+-------------------------+
-| ``usersLookup``    | The dictionary of active and not deleted [Users](/v1/user),            | ``dictionary(guid, string)`` | N/A      | N/A         | N/A                     |
+| ``usersLookup``    | The dictionary of active and not deleted :ref:`Users <user-label>`,    | ``dictionary(guid, string)`` | N/A      | N/A         | N/A                     |
 |                    | needed for setting the **Team** ``managers`` and ``members``.          |                              |          |             |                         |
 +--------------------+------------------------------------------------------------------------+------------------------------+----------+-------------+-------------------------+
 

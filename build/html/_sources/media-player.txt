@@ -95,17 +95,17 @@ Media Player Required Properties By Player Type
 
 The table of required Domain Model properties depending on Media Player Type
 
-|---
-|                      | Required Properties
-| Player Type          | ``publishingPoint`` | ``isAutoPlay`` | ``playerUrl`` | ``rootFolder`` |  ``play``  |  ``stop``  |  ``pause`` |  ``stop``  |  ``seek``  | ``length`` | ``loadType``
-|:-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
-| **Default Internal** | &#10004;          | &#10004;     |             |              |          |          |          |          |          |          |
-|---
-| **Custom Internal**  |                   | &#10004;     | &#10004;    | &#10004;     | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; | &#10004;
-|---
-| **External**         |                   | N/A          |             |              |          |          |          |          |          |          |
-|---
-| **None**             |                   | N/A          |             |              |          |          |          |          |          |          |
++----------------------+---------------------+----------------+---------------+----------------+------------+------------+------------+------------+------------+------------+--------------+
+| Player Type          | ``publishingPoint`` | ``isAutoPlay`` | ``playerUrl`` | ``rootFolder`` |  ``play``  |  ``stop``  |  ``pause`` |  ``stop``  |  ``seek``  | ``length`` | ``loadType`` |
++======================+=====================+================+===============+================+============+============+============+============+============+============+==============+
+| **Default Internal** | ✔                   | ✔              |               |                |            |            |            |            |            |            |              |
++----------------------+---------------------+----------------+---------------+----------------+------------+------------+------------+------------+------------+------------+--------------+
+| **Custom Internal**  |                     | ✔              | ✔             | ✔              | ✔          | ✔          | ✔          | ✔          | ✔          | ✔          | ✔            |
++----------------------+---------------------+----------------+---------------+----------------+------------+------------+------------+------------+------------+------------+--------------+
+| **External**         |                     | N/A            |               |                |            |            |            |            |            |            |              |
++----------------------+---------------------+----------------+---------------+----------------+------------+------------+------------+------------+------------+------------+--------------+
+| **None**             |                     | N/A            |               |                |            |            |            |            |            |            |              |
++----------------------+---------------------+----------------+---------------+----------------+------------+------------+------------+------------+------------+------------+--------------+
 
 Media Player Load Types
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -137,16 +137,17 @@ Represent the **Media Player** list model with available properties.
   | The list model used only to list **Media Players** with *GET* (*GetAll*) method.
   | Note that list model can change by adding/removing properties depending what users of *Coach REST API* will need in future.
 
-|---
-| Name | Description  | Type |
-|:-|:-|:-|
++--------------------+-------------------------------------------------------------------+-------------+
+| Name               | Description                                                       | Type        |
++====================+===================================================================+=============+
 | ``id``             | Representing **Media Player** identifier.                         | ``guid``    |
-|---
++--------------------+-------------------------------------------------------------------+-------------+
 | ``name``           | The name of **Media Player**.                                     | ``string``  |
-|---
++--------------------+-------------------------------------------------------------------+-------------+
 | ``playerTypeName`` | The type of **Media Player**.                                     | ``string``  |
-|---
-| ``lastSaves``     | The date when the **Media Player** was last saved.                 | ``datetime``|
++--------------------+-------------------------------------------------------------------+-------------+
+| ``lastSaves``      | The date when the **Media Player** was last saved.                | ``datetime``|
++--------------------+-------------------------------------------------------------------+-------------+
 
 .. note::
 
@@ -156,7 +157,7 @@ Represent the **Media Player** list model with available properties.
 List of Media Players
 =====================
 
-The list of **Media Players** for current [Tenant](/v1/tenant).
+The list of **Media Players** for current :ref:`tenant-label`.
 
 Default REST approach
 ^^^^^^^^^^^^^^^^^^^^^
@@ -166,18 +167,18 @@ Default REST approach
 Parameters
 ----------
 
-* ``tenantCode`` Current [Tenant](/v1/tenant) code, a valid ``integer`` greater or equal to 1000.
+* ``tenantCode`` Current :ref:`tenant-label` code, a valid ``integer`` greater or equal to 1000.
 
 .. danger::
 
-  Remember to add *API Key* as *customer*key* and *API Secret* as *customer*secret* into your *Request HTTP Header*. See more in [Getting Started](/v1).
+  Remember to add *API Key* as *customer*key* and *API Secret* as *customer*secret* into your *Request HTTP Header*. See more in :ref:`getting-started-label`.
 
 
 Return value
 ------------
 
 * If there is no error: ``JSON`` array of [Media Player List Model](/v1/player#media-player-list-model).
-* If there is an error: ``JSON`` [error](/v1/client-errors#error-model) object.
+* If there is an error: ``JSON`` :ref:`client-error-label` object.
 
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
@@ -191,15 +192,15 @@ C# Wrapper approach
 Parameters
 ----------
 
-* ``tenantCode`` Current [Tenant](/v1/tenant) code, a valid ``integer`` greater or equal to 1000.
-* ``apiKey`` Current [Tenant](/v1/tenant) API Key provided by **Qualtrak**.
-* ``apiSecret`` Current [Tenant](/v1/tenant) API Secret provided by **Qualtrak**.
+* ``tenantCode`` Current :ref:`tenant-label` code, a valid ``integer`` greater or equal to 1000.
+* ``apiKey`` Current :ref:`tenant-label` API Key provided by **Qualtrak**.
+* ``apiSecret`` Current :ref:`tenant-label` API Secret provided by **Qualtrak**.
 
 Return value
 ------------
 
 * If there is no error: ``ResaultContent<ICollection<MediaPlayer>>.Result`` object collection of the [Media Player List Model](/v1/player#media-player-list-model).
-* If there is an error: ``ResaultContent<ICollection<MediaPlayer>>.Error`` object. See more in [Client Errors](/v1/client-errors).
+* If there is an error: ``ResaultContent<ICollection<MediaPlayer>>.Error`` object. See more in :ref:`client-error-label`.
 
 Example usage
 -------------
@@ -229,7 +230,7 @@ Example usage
 Get Media Player by Id
 ======================
 
-The **Media Player** by requested Id for current [Tenant](/v1/tenant).
+The **Media Player** by requested Id for current :ref:`tenant-label`.
 
 Default REST approach
 ^^^^^^^^^^^^^^^^^^^^^
@@ -239,19 +240,19 @@ Default REST approach
 Parameters
 ----------
 
-* ``tenantCode`` Current [Tenant](/v1/tenant) code, a valid ``integer`` greater or equal to 1000.
+* ``tenantCode`` Current :ref:`tenant-label` code, a valid ``integer`` greater or equal to 1000.
 * ``id`` The **Media Player** id, a valid and non-empty ``guid``.
 
 .. danger::
 
-  Remember to add *API Key* as *customer*key* and *API Secret* as *customer*secret* into your *Request HTTP Header*. See more in [Getting Started](/v1).
+  Remember to add *API Key* as *customer*key* and *API Secret* as *customer*secret* into your *Request HTTP Header*. See more in :ref:`getting-started-label`.
 
 
 Return value
 ------------
 
 * If there is no error: ``JSON`` as the [Media Player Domain Model](/v1/player#media-player-model) object.
-* If there is an error: ``JSON`` as the [error](/v1/client-errors#error-model) object.
+* If there is an error: ``JSON`` as the :ref:`client-error-label` object.
 
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
@@ -265,16 +266,16 @@ C# Wrapper approach
 Parameters
 ----------
 
-* ``tenantCode`` Current [Tenant](/v1/tenant) code, a valid ``integer`` greater or equal to 1000.
-* ``apiKey`` Current [Tenant](/v1/tenant) API Key provided by **Qualtrak**.
-* ``apiSecret`` Current [Tenant](/v1/tenant) API Secret provided by **Qualtrak**.
+* ``tenantCode`` Current :ref:`tenant-label` code, a valid ``integer`` greater or equal to 1000.
+* ``apiKey`` Current :ref:`tenant-label` API Key provided by **Qualtrak**.
+* ``apiSecret`` Current :ref:`tenant-label` API Secret provided by **Qualtrak**.
 * ``id`` The **Media Player** id, a valid and non-empty ``guid``.
 
 Return value
 ------------
 
 * If there is no error: ``ResaultContent<MediaPlayer>.Result`` object as the [Media Player Domain Model](/v1/player#media-player-model).
-* If there is an error: ``ResaultContent<MediaPlayer>.Error`` object. See more in [Client Errors](/v1/client-errors).
+* If there is an error: ``ResaultContent<MediaPlayer>.Error`` object. See more in :ref:`client-error-label`.
 
 Example usage
 -------------
@@ -305,7 +306,7 @@ Example usage
 Create Media Player
 ===================
 
-The creation of new **Media Player** for current [Tenant](/v1/tenant).
+The creation of new **Media Player** for current :ref:`tenant-label`.
 
 Default REST approach
 ^^^^^^^^^^^^^^^^^^^^^
@@ -315,19 +316,19 @@ Default REST approach
 Parameters
 ----------
 
-* ``tenantCode`` Current [Tenant](/v1/tenant) code, a valid ``integer`` greater or equal to 1000.
+* ``tenantCode`` Current :ref:`tenant-label` code, a valid ``integer`` greater or equal to 1000.
 * ``mediaPlayer`` ``JSON`` representation of **Media Player properties** sent via *Request HTTP Header*.
 
 .. danger::
 
-  Remember to add *API Key* as *customer key* and *API Secret* as *customer secret* into your *Request HTTP Header*. See more in [Getting Started](/v1).
+  Remember to add *API Key* as *customer key* and *API Secret* as *customer secret* into your *Request HTTP Header*. See more in :ref:`getting-started-label`.
 
 
 Return value
 ------------
 
 * If there is no error: ``JSON`` representation of newly created **Media Player** as the [Media Player Domain Model](/v1/player#media-player-model).
-* If there is an error: ``JSON`` [error](/v1/client-errors#error-model) object.
+* If there is an error: ``JSON`` :ref:`client-error-label` object.
 
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
@@ -341,16 +342,16 @@ C# Wrapper approach
 Parameters
 ----------
 
-* ``tenantCode`` Current [Tenant](/v1/tenant) code, a valid ``integer`` greater or equal to 1000.
-* ``apiKey`` Current [Tenant](/v1/tenant) API Key provided by **Qualtrak**.
-* ``apiSecret`` Current [Tenant](/v1/tenant) API Secret provided by **Qualtrak**.
+* ``tenantCode`` Current :ref:`tenant-label` code, a valid ``integer`` greater or equal to 1000.
+* ``apiKey`` Current :ref:`tenant-label` API Key provided by **Qualtrak**.
+* ``apiSecret`` Current :ref:`tenant-label` API Secret provided by **Qualtrak**.
 * ``mediaPlayer`` The **Media Player** model constructed from **Media Player properties**.
 
 Return value
 ------------
 
 * If there is no error: ``ResaultContent<MediaPlayer>.Result`` object as the [Media Player Domain Model](/v1/player#media-player-model).
-* If there is an error: ``ResaultContent<MediaPlayer>.Error`` object. See more in [Client Errors](/v1/client-errors).
+* If there is an error: ``ResaultContent<MediaPlayer>.Error`` object. See more in :ref:`client-error-label`.
 
 Example usage
 -------------
@@ -386,7 +387,7 @@ Example usage
 Update Media Player
 ===================
 
-Updates already existent **Media Player** for current [Tenant](/v1/tenant).
+Updates already existent **Media Player** for current :ref:`tenant-label`.
 
 Default REST approach
 ^^^^^^^^^^^^^^^^^^^^^
@@ -396,21 +397,21 @@ Default REST approach
 Parameters
 ----------
 
-* ``tenantCode`` Current [Tenant](/v1/tenant) code, a valid ``integer`` greater or equal to 1000.
+* ``tenantCode`` Current :ref:`tenant-label` code, a valid ``integer`` greater or equal to 1000.
 * ``id`` The **Media Player** id, a valid and non-empty ``guid``.
 * ``mediaPlayer`` ``JSON`` representation of **Media Player properties** sent via *Request HTTP Header*.
 
 .. danger::
 
-  | Remember to add *API Key* as *customer key* and *API Secret* as *customer secret* into your *Request HTTP Header*. See more in [Getting Started](/v1).
-  | If you don't want to have in Web Server turned on the ``PUT`` verb method read more in [Getting Started](/v1).
+  | Remember to add *API Key* as *customer key* and *API Secret* as *customer secret* into your *Request HTTP Header*. See more in :ref:`getting-started-label`.
+  | If you don't want to have in Web Server turned on the ``PUT`` verb method read more in :ref:`getting-started-label`.
 
 
 Return value
 ------------
 
 * If there is no error: ``JSON`` representation of uodated **Media Player** as the [Media Player Domain Model](/v1/player#media-player-model) object.
-* If there is an error: ``JSON`` [error](/v1/client-errors#error-model) object.
+* If there is an error: ``JSON`` :ref:`client-error-label` object.
 
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
@@ -423,9 +424,9 @@ C# Wrapper approach
 Parameters
 ----------
 
-* ``tenantCode`` Current [Tenant](/v1/tenant) code, a valid ``integer`` greater or equal to 1000.
-* ``apiKey`` Current [Tenant](/v1/tenant) API Key provided by **Qualtrak**.
-* ``apiSecret`` Current [Tenant](/v1/tenant) API Secret provided by **Qualtrak**.
+* ``tenantCode`` Current :ref:`tenant-label` code, a valid ``integer`` greater or equal to 1000.
+* ``apiKey`` Current :ref:`tenant-label` API Key provided by **Qualtrak**.
+* ``apiSecret`` Current :ref:`tenant-label` API Secret provided by **Qualtrak**.
 * ``mediaPlayer`` The **Media Player** model constructed from **Media Player properties** and ``Id`` must be provided in it. If not ``ArgumentException`` will be thrown!
 * ``updateViaPost`` Set to ``true`` if in your Web Server you don't want to enable ``PUT`` method. Default is ``false`` or use ``PUT`` method!
 
@@ -433,7 +434,7 @@ Return value
 ------------
 
 * If there is no error: ``ResaultContent<MediaPlayer>.Result`` object as the [Media Player Domain Model](/v1/player#media-player-model).
-* If there is an error: ``ResaultContent<MediaPlayer>.Error`` object. See more in [Client Errors](/v1/client-errors).
+* If there is an error: ``ResaultContent<MediaPlayer>.Error`` object. See more in :ref:`client-error-label`.
 
 Example usage
 -------------
@@ -472,7 +473,7 @@ Example usage
 Delete Media Player
 ===================
 
-Deletes existent **Media Player** for current [Tenant](/v1/tenant).
+Deletes existent **Media Player** for current :ref:`tenant-label`.
 
 .. warning::
 
@@ -487,18 +488,18 @@ Default REST approach
 Parameters
 ----------
 
-* ``tenantCode`` Current [Tenant](/v1/tenant) code, a valid ``integer`` greater or equal to 1000.
+* ``tenantCode`` Current :ref:`tenant-label` code, a valid ``integer`` greater or equal to 1000.
 * ``id`` The **Media Player** id, a valid and non-empty ``guid``.
 
 .. danger::
 
-  | Remember to add *API Key* as *customer*key* and *API Secret* as *customer*secret* into your *Request HTTP Header*. See more in [Getting Started](/v1).
-  | If you don't want to have in Web Server turned on the ``DELETE`` verb method read more in [Getting Started](/v1).
+  | Remember to add *API Key* as *customer*key* and *API Secret* as *customer*secret* into your *Request HTTP Header*. See more in :ref:`getting-started-label`.
+  | If you don't want to have in Web Server turned on the ``DELETE`` verb method read more in :ref:`getting-started-label`.
 
 Return value
 ------------
 
-* There is no return value except if there is an error, the ``JSON`` [error](/v1/client-errors#error-model) object.
+* There is no return value except if there is an error, the ``JSON`` :ref:`client-error-label` object.
 
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
@@ -512,9 +513,9 @@ C# Wrapper approach
 Parameters
 ----------
 
-* ``tenantCode`` Current [Tenant](/v1/tenant) code, a valid ``integer`` greater or equal to 1000.
-* ``apiKey`` Current [Tenant](/v1/tenant) API Key provided by **Qualtrak**.
-* ``apiSecret`` Current [Tenant](/v1/tenant) API Secret provided by **Qualtrak**.
+* ``tenantCode`` Current :ref:`tenant-label` code, a valid ``integer`` greater or equal to 1000.
+* ``apiKey`` Current :ref:`tenant-label` API Key provided by **Qualtrak**.
+* ``apiSecret`` Current :ref:`tenant-label` API Secret provided by **Qualtrak**.
 * ``id`` The **Media Player** id, a valid and non-empty ``guid``.
 * ``updateViaPost`` Set to ``true`` if in your Web Server you don't want to enable ``DELETE`` method. Default is ``false`` or use ``DELETE`` method!
 
@@ -522,7 +523,7 @@ Return value
 ------------
 
 * If there is no error: no return value or ``void``.
-* If there is an error: ``ResaultContent<MediaPlayer>.Error`` object. See more in [Client Errors](/v1/client-errors).
+* If there is an error: ``ResaultContent<MediaPlayer>.Error`` object. See more in :ref:`client-error-label`.
 
 Example usage
 -------------

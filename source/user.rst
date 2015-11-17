@@ -101,7 +101,7 @@ Represent the **User** domain model with available properties and its behaviors.
 
  | **Active and Deleted Logic**
  |
- | When **User** is deleted by [Delete](/v1/user#user-delete) command and it is flagged as ``isDeleted`` as ``true`` and also by default it is flagged ``isActive`` as ``false``. Note that  status ``isActive`` will remain "*locked*" until the **User's** ``isDeleted`` state is updated to ``false`` or *not deleted* anymore. Then ``isActive`` is "*unlocked*" and can be changed. If the **User** is *deleted* and on update is tried to change ``isActive`` property, server will silently ignore sent ``isActive`` property. \\
+ | When **User** is deleted by [Delete](/v1/user#user-delete) command and it is flagged as ``isDeleted`` as ``true`` and also by default it is flagged ``isActive`` as ``false``. Note that  status ``isActive`` will remain "*locked*" until the **User's** ``isDeleted`` state is updated to ``false`` or *not deleted* anymore. Then ``isActive`` is "*unlocked*" and can be changed. If the **User** is *deleted* and on update is tried to change ``isActive`` property, server will silently ignore sent ``isActive`` property.
  |
  | Managed [Unit(s)](/v1/unit), Managed [Team(s)](/v1/team) and [Administrative Role(s)](/v1/roles) can be set to only *active* and *not deleted* **Users**. If is sent otherwise to *inactive* and/or *deleted* **User**, server will silently ignore those assignments.
 
@@ -477,7 +477,7 @@ Deletes existent **User** for current :ref:`tenant-label`.
 
 .. warning::
 
-  | Note that if **User** is a *Unit Manager*, *Team Manager*, *Agent* or has some [Role](/v1/roles) assigned to it then **User** will not be deleted but flagged as ``isDeleted``. When **User** is deleted it can be undeleted by setting ``isDeleted`` to ``false`` while updating **Unit**. \\
+  | Note that if **User** is a *Unit Manager*, *Team Manager*, *Agent* or has some [Role](/v1/roles) assigned to it then **User** will not be deleted but flagged as ``isDeleted``. When **User** is deleted it can be undeleted by setting ``isDeleted`` to ``false`` while updating **Unit**.
   | If **User** is not a *Unit Manager*, *Team Manager*, *Agent* or has no [Role](/v1/roles) assigned to it, it will be deleted permanently.
 
 Default REST approach
@@ -493,7 +493,7 @@ Parameters
 
 .. danger::
 
-  | Remember to add *API Key* as *customer*key* and *API Secret* as *customer*secret* into your *Request HTTP Header*. See more in :ref:`getting-started-label`. \\
+  | Remember to add *API Key* as *customer*key* and *API Secret* as *customer*secret* into your *Request HTTP Header*. See more in :ref:`getting-started-label`. 
   | If you don't want to have in Web Server turned on the ``DELETE`` verb method read more in :ref:`getting-started-label`.
 
 

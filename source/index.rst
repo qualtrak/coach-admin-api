@@ -22,3 +22,4 @@ Contents:
    unit
    team
    user
+   media-player

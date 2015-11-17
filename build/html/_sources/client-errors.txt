@@ -1,3 +1,5 @@
+.. _client-error-label:
+
 ====================
 Client Errors
 ====================
@@ -49,7 +51,7 @@ Represents the **Request Argument** model as value object with available propert
 
 .. hint::
 
-    The **Error** properties names (*Name* column) is for default usage by ``JSON``, for ``C# Wrapper`` usage the **Error** properties are capitalized (eg. ``Id``, ``Name``,..)! 
+    The **Error** properties names (*Name* column) is for default usage by ``JSON``, for ``C# Wrapper`` usage the **Error** properties are capitalized (eg. ``Id``, ``Name``,..)!
 
 Known Errors
 ============

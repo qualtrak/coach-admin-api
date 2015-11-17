@@ -1,3 +1,5 @@
+.. wrapper-label:
+
 ==========
 C# Wrapper
 ==========

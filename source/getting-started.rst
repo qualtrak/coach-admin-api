@@ -5,7 +5,7 @@ Getting Started
 ===============
 
 Conventions used
-=====
+================
 
 **Bold** - Mostly hyperlinks or just plain text for highlighting the current API page. Eg. in Tenant page there is no need to make link to itself it is just bold text.
 

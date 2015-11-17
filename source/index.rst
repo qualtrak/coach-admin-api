@@ -17,3 +17,8 @@ Contents:
    csharp-wrapper
    client-errors
    releasehistory
+   roles
+   tenant
+   unit
+   team
+   user

@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Roles &mdash; coach-admin-api 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Tenant" href="tenant.html"/>
+        <link rel="prev" title="Release History" href="releasehistory.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> coach-admin-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-errors.html">Client Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Roles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-administrator">System Administrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#application-administrator">Application Administrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manager">Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#agent">Agent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tenant.html">Tenant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit.html">Unit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">coach-admin-api</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Roles</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/roles.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="roles">
+<span id="roles-label"></span><h1>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h1>
+<p>There are four built-in <strong>Roles</strong> contained in <strong>Coach</strong>. These are:</p>
+<ul class="simple">
+<li>System Administrator</li>
+<li>Application Administrator</li>
+<li>Manager</li>
+<li>Agent</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<div class="last line-block">
+<div class="line">Currently <strong>Roles</strong> can only be assigned through [User](/v1/user), but only <em>administrative</em> <strong>Roles</strong> (<em>System Administrator</em>, <em>Application Administrator</em>).</div>
+<div class="line">The <strong>Roles</strong> <em>Manager</em> and <em>Agent</em> are not assigned as <strong>Role</strong> but rather as <a class="reference internal" href="unit.html#unit-label"><span>Unit</span></a>/<a class="reference internal" href="team.html#team-label"><span>Team</span></a> <em>managership</em> for <em>Manager</em> and/or <a class="reference internal" href="team.html#team-label"><span>Team</span></a> <em>membership</em> for <em>Agent</em>.</div>
+<div class="line">The [User](/v1/user) is <em>Manager</em> as long as he or she is assigned as manager of at least one or more <a class="reference internal" href="unit.html#unit-label"><span>Unit</span></a> or <a class="reference internal" href="team.html#team-label"><span>Team</span></a>.</div>
+<div class="line">The [User](/v1/user) is <em>Agent</em> as long as he or she is assigned as member of at least one or more <a class="reference internal" href="team.html#team-label"><span>Team</span></a>.</div>
+</div>
+</div>
+<p>Each Role has a different purpose with correspondingly different levels of access to <strong>Coach</strong> Console and <strong>Coach</strong> QM. These levels of access are called <em>Permissions</em>.
+Multiple <strong>Roles</strong> can be assigned to the same User, the differing Permissions for differing <strong>Role</strong> being combined with one another</p>
+<div class="section" id="system-administrator">
+<h2>System Administrator<a class="headerlink" href="#system-administrator" title="Permalink to this headline">¶</a></h2>
+<p>During the <strong>Coach</strong> installation process a [User](/v1/user) with the <strong>Role</strong> of <em>System Administrator</em> is created. This <em>System Administrator</em> can only enter <strong>Coach</strong> <em>Console</em> for <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> 1000, the original host <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a>. Here they have full permissions within <strong>Coach</strong> <em>Console</em> for every extant <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> and can add new <a class="reference internal" href="tenant.html#tenant-label"><span>Tenants</span></a> as well as view, edit and delete any that have been created.</p>
+<p>Apart from the <em>System Administrator</em> created during <strong>Coach</strong>’s installation [User](/v1/user)s can only be added manually to the <em>System Administrator</em> <strong>Role</strong>. The <strong>Role</strong> can be assigned to any [User](/v1/user) but it can only be assigned by, and is only visible to, [User](/v1/user)s who already have the <strong>Role</strong>. Due to the importance of this <strong>Role</strong> for the <strong>Coach</strong> application, a <em>System Administrator</em> cannot un-assign themself from the <strong>Role</strong> of <em>System Administrator</em> (or any other <strong>Role</strong> they may have been given) – only a fellow <em>System Administrator</em> can perform this action, thereby ensuring that at least one [User](/v1/user) always has the <em>System Administrator</em> <strong>Role</strong> in each installation. For the same reason a <em>System Administrator</em> can only be deactivated by another <em>System Administrator</em>.</p>
+</div>
+<div class="section" id="application-administrator">
+<h2>Application Administrator<a class="headerlink" href="#application-administrator" title="Permalink to this headline">¶</a></h2>
+<p>When a new <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> is created an <em>Application Administrator</em> must be created. An <em>Application Administrator</em> can access both <strong>Coach</strong> Console and <strong>Coach</strong> <em>QM</em> for the <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> they were created for. In <strong>Coach</strong> Console they have full permissions excepting the ability to add new <a class="reference internal" href="tenant.html#tenant-label"><span>Tenants</span></a> or delete their own. In <strong>Coach</strong> <em>QM</em> they have full permissions except that they cannot create Evaluations or <strong>Coaching Sessions</strong>.</p>
+<p>Apart from the <em>Application Administrator</em> created with a new <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> further [User](/v1/user)s can only be added manually to the <em>Application Administrator</em> <strong>Role</strong>. Due to the importance of this <strong>Role</strong> for a <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a>, an <em>Application Administrator</em> cannot un-assign themselves from the <strong>Role</strong> of <em>Application Administrator</em> (or any other <strong>Role</strong> they may have been given) – only a fellow <em>Application Administrator</em> (or a <em>System Administrator</em>) can perform this action, thereby ensuring that at least one [User](/v1/user) always has the <em>Application Administrator</em> (or <em>System Administrator</em>) <strong>Role</strong> within each <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a>. For the same reason an <em>Application Administrator</em> can only be deactivated by another <em>Application Administrator</em> (or a <em>System Administrator</em>).</p>
+</div>
+<div class="section" id="manager">
+<h2>Manager<a class="headerlink" href="#manager" title="Permalink to this headline">¶</a></h2>
+<p>A <em>Manager</em> can only enter <strong>Coach</strong> <em>QM</em>. Here they can view everything but can only create, edit and delete <em>Evaluations</em>, <em>Coaching Sessions</em> and <em>Reports</em> for the [User](/v1/user)s they manage. [User](/v1/user)s are automatically assigned to the <em>Manager</em> <strong>Role</strong> when they are made <em>Manager</em> of a <a class="reference internal" href="team.html#team-label"><span>Team</span></a> or Unit.</p>
+</div>
+<div class="section" id="agent">
+<h2>Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h2>
+<p>An <em>Agent</em> can only enter <strong>Coach</strong> <em>QM</em> and can only access <em>Evaluations</em> and <em>Coaching Sessions</em> created for them. [User](/v1/user)s are automatically assigned to the <em>Agent</em> <strong>Role</strong> when they are joined to a <a class="reference internal" href="team.html#team-label"><span>Team</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tenant.html" class="btn btn-neutral float-right" title="Tenant" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="releasehistory.html" class="btn btn-neutral" title="Release History" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Qualtrak Solutions Ltd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

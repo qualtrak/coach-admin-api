@@ -1,0 +1,619 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tenant &mdash; coach-admin-api 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Unit" href="unit.html"/>
+        <link rel="prev" title="Roles" href="roles.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> coach-admin-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-errors.html">Client Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Tenant</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tenant-domain-model">Tenant Domain Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-tenant-by-id">Get Tenant by Id</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#default-rest-approach">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#return-value">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#c-wrapper-approach">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-usage">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#update-tenant">Update Tenant</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unit.html">Unit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">coach-admin-api</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Tenant</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/tenant.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tenant">
+<span id="tenant-label"></span><h1>Tenant<a class="headerlink" href="#tenant" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Tenant</strong> is the organization. A <strong>Tenant</strong> must be created before any other step can be taken and this step will be performed during the initial installation process. The structure of the company can be replicated within the make-up of the <strong>Tenant</strong> through <a class="reference internal" href="unit.html#unit-label"><span>Unit</span></a> and <a class="reference internal" href="team.html#team-label"><span>Teams</span></a>.</p>
+<p>Whenever a <strong>Tenant</strong> is created, part of the process involves the creation of a unique administrative [User](/v1/user). For the original host <strong>Tenant</strong>, setup during the <strong>Coach</strong> installation process, this [User](/v1/user) is a <em>System Administrator</em>. With all additional <strong>Tenants</strong> this built in [User](/v1/user) will be an <em>Application Administrator</em>. See more information in [Roles](/v1/roles).</p>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Only a System Administrator has the permission to create, edit and delete <strong>Tenants</strong>, though an <em>Application Administrator</em> can edit all of their own <strong>Tenant’s</strong> properties.</p>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<div class="last line-block">
+<div class="line">Note that multi-tenancy or create and delete of <strong>Tenant</strong> is currently not supported through <em>API</em>, but it will be soon!</div>
+<div class="line">With multi-tenancy implementation except <em>API</em> breaking changes for <em>REST</em> and <em>C# Wrapper</em> approach!!!</div>
+</div>
+</div>
+<div class="section" id="tenant-domain-model">
+<h2>Tenant Domain Model<a class="headerlink" href="#tenant-domain-model" title="Permalink to this headline">¶</a></h2>
+<p>Represent the <strong>Tenant</strong> domain model with available properties and its behaviors.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that domain model is used for write methods <em>POST</em> (<em>Create</em>) and <em>PUT</em> (<em>Update</em>) and as result of read-only method <em>GET/:id</em> (<em>GetById</em>).</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="38%" />
+<col width="18%" />
+<col width="6%" />
+<col width="7%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Required</th>
+<th class="head">Read-only</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">id</span></code></td>
+<td>Representing <strong>Tenant</strong> identifier.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+<td>yes</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td colspan="6"><strong>Tenant Details</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">name</span></code></td>
+<td>The name of <strong>Tenant</strong>.</td>
+<td><code class="docutils literal"><span class="pre">string(50)</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">description</span></code></td>
+<td>The <strong>Tenant</strong> description.</td>
+<td><code class="docutils literal"><span class="pre">string(50)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">email</span></code></td>
+<td>The <strong>Tenant</strong> email.</td>
+<td><code class="docutils literal"><span class="pre">string(50)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">phone</span></code></td>
+<td>The <strong>Tenant</strong> phone number.</td>
+<td><code class="docutils literal"><span class="pre">string(50)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">address</span></code></td>
+<td>The <strong>Tenant</strong> residing address.</td>
+<td><code class="docutils literal"><span class="pre">string(50)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">mainContact</span></code></td>
+<td>The <strong>Tenant</strong> main contact person.</td>
+<td><code class="docutils literal"><span class="pre">string(50)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">isActive</span></code></td>
+<td>Denotes whether the <strong>Tenant</strong> state is active or inactive.</td>
+<td><code class="docutils literal"><span class="pre">boolean</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td>active (<code class="docutils literal"><span class="pre">true</span></code>)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">isDeleted</span></code></td>
+<td>Denotes whether the <strong>Tenant</strong> state is deleted or not.</td>
+<td><code class="docutils literal"><span class="pre">boolean</span></code></td>
+<td>yes</td>
+<td>yes</td>
+<td>not deleted (<code class="docutils literal"><span class="pre">false</span></code>)</td>
+</tr>
+<tr class="row-even"><td colspan="6"><strong>Branding</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">customNameForTenant</span></code></td>
+<td>Branded replacement name for word &#8220;Tenant&#8221;, affects <em>QM</em> UI.</td>
+<td><code class="docutils literal"><span class="pre">string(30)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td><code class="docutils literal"><span class="pre">Tenant</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">customNameForUnit</span></code></td>
+<td>Branded replacement name for word &#8220;Unit&#8221;, affects <em>QM</em> UI.</td>
+<td><code class="docutils literal"><span class="pre">string(30)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td><code class="docutils literal"><span class="pre">Unit</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">customNameForTemplate</span></code></td>
+<td>Branded replacement name for &#8220;Template&#8221;, affects <em>QM</em> UI.</td>
+<td><code class="docutils literal"><span class="pre">string(30)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td><code class="docutils literal"><span class="pre">Template</span></code></td>
+</tr>
+<tr class="row-even"><td colspan="6"><strong>Licensing</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">customerId</span></code></td>
+<td>&nbsp;</td>
+<td><code class="docutils literal"><span class="pre">string(50)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">customerCode</span></code></td>
+<td>&nbsp;</td>
+<td><code class="docutils literal"><span class="pre">string(50)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">licenseExpiryDate</span></code></td>
+<td>The <strong>Tenant</strong> license expiry date.</td>
+<td><code class="docutils literal"><span class="pre">datetime</span></code></td>
+<td>N/A</td>
+<td>yes</td>
+<td><cite>null</cite></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">totalLicenses</span></code></td>
+<td>The number of [User](/v1/user) total licenses for <strong>Tenant</strong>.</td>
+<td><code class="docutils literal"><span class="pre">integer</span></code></td>
+<td>N/A</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">usedLicenses</span></code></td>
+<td>The number of used licenses for <strong>Tenant</strong>.
+One [User](/v1/user) equals  one license.</td>
+<td><cite>integer</cite></td>
+<td>N/A</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td colspan="6"><strong>API</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">apiKey</span></code></td>
+<td>The API key for <strong>Tenant</strong>.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">apiSecret</span></code></td>
+<td>The API secret for <strong>Tenant</strong>.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>Tenant</strong> properties names (<em>Name</em> column) is for default usage by <code class="docutils literal"><span class="pre">JSON</span></code>, for <code class="docutils literal"><span class="pre">C#</span> <span class="pre">Wrapper</span></code> usage the <strong>User</strong> properties are capitalized (eg. <code class="docutils literal"><span class="pre">Id</span></code>, <code class="docutils literal"><span class="pre">Name</span></code>,..)!</p>
+</div>
+</div>
+<div class="section" id="get-tenant-by-id">
+<h2>Get Tenant by Id<a class="headerlink" href="#get-tenant-by-id" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Tenant</strong> by requested Id.</p>
+<div class="section" id="default-rest-approach">
+<h3>Default REST approach<a class="headerlink" href="#default-rest-approach" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>GET /api/v1/:tenantCode/tenants/:tenantCode</div></blockquote>
+<div class="section" id="parameters">
+<h4>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> Current <a class="reference internal" href="#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in [Authentication](/v1/authentication).</p>
+</div>
+</div>
+<div class="section" id="return-value">
+<h4>Return value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">JSON</span></code> as the [Tenant Domain Model](/v1/tenant#tenant-model) object.</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">JSON</span></code> as the [error](/v1/client-errors#error-model) object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="c-wrapper-approach">
+<h3>C# Wrapper approach<a class="headerlink" href="#c-wrapper-approach" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">TenantWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetByCode</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id1">
+<h4>Parameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> The <strong>Tenant</strong> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> Current <a class="reference internal" href="#tenant-label"><span>Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> Current <a class="reference internal" href="#tenant-label"><span>Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h4>Return value<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Tenant&gt;.Result</span></code> object as the [Tenant Domain Model](/v1/tenant#tenant-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Tenant&gt;.Error</span></code> object. See more in [Client Errors](/v1/client-errors).</li>
+</ul>
+</div>
+<div class="section" id="example-usage">
+<h4>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+
+<span class="n">TenantWrapper</span> <span class="n">tenantWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TenantWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Tenant</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">tenantWrapper</span><span class="p">.</span><span class="n">GetByCode</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="c1">// Use Result as requested Tenant for displaying.</span>
+     <span class="n">Tenant</span> <span class="n">tenant</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="section" id="update-tenant">
+<h2>Update Tenant<a class="headerlink" href="#update-tenant" title="Permalink to this headline">¶</a></h2>
+<p>Updates already existent <strong>Tenant</strong>.</p>
+<div class="section" id="id3">
+<h3>Default REST approach<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>PUT /api/v1/:tenantCode/tenants/:tenantCode</div></blockquote>
+<div class="section" id="id4">
+<h4>Parameters<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> The <strong>Tenant</strong> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">tenant</span></code> <code class="docutils literal"><span class="pre">JSON</span></code> representation of [Tenant Domain Model](/v1/tenant#tenant-model) sent via <em>Request HTTP Header</em>.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<div class="last line-block">
+<div class="line">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in [Authentication](/v1/authentication).</div>
+<div class="line">If you don&#8217;t want to have in Web Server turned on the <cite>PUT</cite> verb method read more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Return value<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">JSON</span></code> representation of uodated <strong>Tenant</strong> as the [Tenant Domain Model](/v1/tenant#tenant-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">JSON</span></code> [error](/v1/client-errors#error-model) object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>C# Wrapper approach<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">TenantWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Update</span><span class="p">(</span><span class="n">Tenant</span> <span class="n">tenant</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="id7">
+<h4>Parameters<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> Current <a class="reference internal" href="#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> Current <a class="reference internal" href="#tenant-label"><span>Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> Current <a class="reference internal" href="#tenant-label"><span>Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">tenant</span></code> The <strong>Tenant</strong> model constructed from <strong>Tenant properties</strong> and <code class="docutils literal"><span class="pre">Id</span></code> must be provided in it. If not <code class="docutils literal"><span class="pre">ArgumentException</span></code> will be thrown!</li>
+<li><code class="docutils literal"><span class="pre">updateViaPost</span></code> Set to <code class="docutils literal"><span class="pre">true</span></code> if in your Web Server you don&#8217;t want to enable <code class="docutils literal"><span class="pre">PUT</span></code> method. Default is <code class="docutils literal"><span class="pre">false</span></code> or use <code class="docutils literal"><span class="pre">PUT</span></code> method!</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h4>Return value<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Tenant&gt;.Result</span></code> object as the [Tenant Domain Model](/v1/tenant#tenant-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Tenant&gt;.Error</span></code> object. See more in [Client Errors](/v1/client-errors).</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h4>Example usage<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+
+<span class="n">TenantWrapper</span> <span class="n">tenantWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TenantWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">Tenant</span> <span class="n">tenant</span> <span class="p">=</span> <span class="n">tenantWrapper</span><span class="p">.</span><span class="n">GetByCode</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">).</span><span class="n">Result</span><span class="p">;</span>
+<span class="n">tenant</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Tenant Updated&quot;</span><span class="p">;</span>
+
+<span class="c1">// Update via PUT method (default).</span>
+<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Tenant</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">tenantWrapper</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">tenant</span><span class="p">);</span>
+
+<span class="c1">// Update via POST method (use true argument).</span>
+<span class="c1">// ResponseContent&amp;lt;Tenant&amp;gt; response = tenantWrapper.Update(tenant, true);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="c1">// Use Result of updated Tenant for display.</span>
+     <span class="n">Tenant</span> <span class="n">updatedTenant</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="unit.html" class="btn btn-neutral float-right" title="Unit" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="roles.html" class="btn btn-neutral" title="Roles" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Qualtrak Solutions Ltd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

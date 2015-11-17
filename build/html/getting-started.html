@@ -45,17 +45,27 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
-        
-          <a href="index.html" class="icon icon-home"> coach-admin-api
-        
+          
+            <a href="index.html" class="icon icon-home"> coach-admin-api
+          
 
-        
-        </a>
+          
+          </a>
 
-        
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -64,14 +74,14 @@
   </form>
 </div>
 
-        
-      </div>
+          
+        </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
-          
-              <ul class="current">
+            
+            
+                <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#conventions-used">Conventions used</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#coach">Coach</a></li>
@@ -107,42 +117,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#todo-list">TODO List</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="csharp-wrapper.html#setup-and-dependencies">Setup and Dependencies</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#setup">Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#dependencies">Dependencies</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="csharp-wrapper.html#authentication">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="csharp-wrapper.html#response-content-and-api-wrapper">Response Content and API Wrapper</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#response-content">Response Content</a></li>
-<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#non-generic-version">Non-Generic Version</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#error">Error</a></li>
-<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#httpstatuscode">HttpStatusCode</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#the-generic-version">The Generic Version</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#result-t">Result&lt;T&gt;</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="csharp-wrapper.html#api-wrapper">API Wrapper</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-icollection-tlist-getall">ResponseContent&lt;ICollection&lt;TList&gt;&gt; GetAll()</a></li>
-<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-tmodel-getbyid-guid-id">ResponseContent&lt;TModel&gt; GetById(Guid id)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-tmodel-create-tmodel-entity">ResponseContent&lt;TModel&gt; Create(TModel entity)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-tmodel-update-tmodel-entity-bool-updateviapost-false">ResponseContent&lt;TModel&gt; Update(TModel entity, bool updateViaPost = false)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="csharp-wrapper.html#responsecontent-delete-guid-id-bool-deleteviapost-false">ResponseContent Delete(Guid id, bool deleteViaPost = false)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-errors.html">Client Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
 </ul>
 
+            
           
-        
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -157,7 +141,13 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
@@ -172,7 +162,8 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="getting-started">
 <span id="getting-started-label"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
@@ -380,6 +371,7 @@ For more information on enabling the PUT and DELETE in <em>IIS</em> please use <
 </div>
 
 
+           </div>
           </div>
           <footer>
   
@@ -398,9 +390,10 @@ For more information on enabling the PUT and DELETE in <em>IIS</em> please use <
   <div role="contentinfo">
     <p>
         &copy; Copyright 2015, Qualtrak Solutions Ltd.
+
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 

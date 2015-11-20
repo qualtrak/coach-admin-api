@@ -37,3 +37,4 @@ Contents:
    period-types
    license
    tenant-tree
+   recording-evaluations

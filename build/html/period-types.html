@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Period Types and Occurrences &mdash; coach-admin-api 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+        <link rel="prev" title="Schedule" href="schedule.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> coach-admin-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-errors.html">Client Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tenant.html">Tenant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit.html">Unit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-player.html">Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search-criteria.html">Search Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-metadata.html">Media File Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder-media-player.html">Recorder Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Period Types and Occurrences</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#period-types">Period Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#daily">Daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#weekly">Weekly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#monthly">Monthly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quarterly">Quarterly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom">Custom</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#occurrences">Occurrences</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#none">None</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#infinite">Infinite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#number-of-times">Number Of Times</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#until-end-date">Until End Date</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#period-types-and-occurrences-combinations">Period Types and Occurrences Combinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#period-types-and-occurrences-with-required-schedule-v1-schedule-model-properties">Period Types and Occurrences with Required [Schedule](/v1/schedule) Model Properties</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">coach-admin-api</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Period Types and Occurrences</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/period-types.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="period-types-and-occurrences">
+<span id="period-types-label"></span><h1>Period Types and Occurrences<a class="headerlink" href="#period-types-and-occurrences" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="period-types">
+<h2>Period Types<a class="headerlink" href="#period-types" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Period Types</strong> are essential part of <a class="reference internal" href="schedule.html#schedule-label"><span>Schedule</span></a> and currently these <strong>Period Types</strong> are supported:</p>
+<div class="section" id="daily">
+<h3>Daily<a class="headerlink" href="#daily" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="schedule.html#schedule-label"><span>Schedule</span></a> will run every day.</p>
+</div>
+<div class="section" id="weekly">
+<h3>Weekly<a class="headerlink" href="#weekly" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="schedule.html#schedule-label"><span>Schedule</span></a> will run every week.</p>
+</div>
+<div class="section" id="monthly">
+<h3>Monthly<a class="headerlink" href="#monthly" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="schedule.html#schedule-label"><span>Schedule</span></a> will run every month.</p>
+</div>
+<div class="section" id="quarterly">
+<h3>Quarterly<a class="headerlink" href="#quarterly" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="schedule.html#schedule-label"><span>Schedule</span></a> will run quarterly or every three months.</p>
+</div>
+<div class="section" id="custom">
+<h3>Custom<a class="headerlink" href="#custom" title="Permalink to this headline">¶</a></h3>
+<p>A custom form and to date for a one-off search. The <code class="docutils literal"><span class="pre">customDateFrom</span></code> and <code class="docutils literal"><span class="pre">customDateTo</span></code> dates must be set to cover a period prior to the <a class="reference internal" href="schedule.html#schedule-label"><span>Schedule&#8217;s</span></a> <code class="docutils literal"><span class="pre">startDate</span></code>.</p>
+</div>
+</div>
+<div class="section" id="occurrences">
+<h2>Occurrences<a class="headerlink" href="#occurrences" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Occurrences</strong> are part of <strong>Period Types</strong> describing the type of occurrence on specific <strong>Period Type</strong>. <strong>Occurrences</strong> are triggered by the  <a class="reference internal" href="schedule.html#schedule-label"><span>Schedule&#8217;s</span></a> <code class="docutils literal"><span class="pre">startDate</span></code>.</p>
+<p>Currently supported <strong>Occurrences</strong> are:</p>
+<div class="section" id="none">
+<h3>None<a class="headerlink" href="#none" title="Permalink to this headline">¶</a></h3>
+<p>Used only for <em>Custom</em> <strong>Period Type</strong> since it will always have only one occurrence.</p>
+</div>
+<div class="section" id="infinite">
+<h3>Infinite<a class="headerlink" href="#infinite" title="Permalink to this headline">¶</a></h3>
+<p>Will occur infinitely.</p>
+</div>
+<div class="section" id="number-of-times">
+<h3>Number Of Times<a class="headerlink" href="#number-of-times" title="Permalink to this headline">¶</a></h3>
+<p>Will occur for the specified number of times described through number declared <a class="reference internal" href="schedule.html#schedule-label"><span>Schedule&#8217;s</span></a> <code class="docutils literal"><span class="pre">occurrenceTimesNumber</span></code> property.</p>
+</div>
+<div class="section" id="until-end-date">
+<h3>Until End Date<a class="headerlink" href="#until-end-date" title="Permalink to this headline">¶</a></h3>
+<p>Will occur until some specified <a class="reference internal" href="schedule.html#schedule-label"><span>Schedule&#8217;s</span></a> <code class="docutils literal"><span class="pre">endDate</span></code> that is higher or equal of <code class="docutils literal"><span class="pre">startDate</span></code>.</p>
+</div>
+</div>
+<div class="section" id="period-types-and-occurrences-combinations">
+<h2>Period Types and Occurrences Combinations<a class="headerlink" href="#period-types-and-occurrences-combinations" title="Permalink to this headline">¶</a></h2>
+<p>The combination of <strong>Period Types</strong> and the supported <strong>Occurrences</strong> for <strong>Period Type</strong>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="13%" />
+<col width="13%" />
+<col width="23%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Period Occurrence</th>
+<th class="head">None</th>
+<th class="head">Infinite</th>
+<th class="head">Number Of Times</th>
+<th class="head">Until End Date</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Daily</strong></td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr class="row-odd"><td><strong>Weekly</strong></td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr class="row-even"><td><strong>Monthly</strong></td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr class="row-odd"><td><strong>Quarterly</strong></td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr class="row-even"><td><strong>Custom</strong></td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="period-types-and-occurrences-with-required-schedule-v1-schedule-model-properties">
+<h2>Period Types and Occurrences with Required [Schedule](/v1/schedule) Model Properties<a class="headerlink" href="#period-types-and-occurrences-with-required-schedule-v1-schedule-model-properties" title="Permalink to this headline">¶</a></h2>
+<p>The table of <strong>Occurrences</strong> with valid <strong>Period Types</strong> and required <a class="reference internal" href="schedule.html#schedule-label"><span>Schedule</span></a> model properties. Check mark denotes required <a class="reference internal" href="schedule.html#schedule-label"><span>Schedule</span></a>  model property for <strong>Period Type</strong> <strong>Occurrence</strong>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="34%" />
+<col width="17%" />
+<col width="9%" />
+<col width="14%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Occurrences</th>
+<th class="head">Period Type(s)</th>
+<th class="head"><code class="docutils literal"><span class="pre">occurrenceTimesNumber</span></code></th>
+<th class="head"><code class="docutils literal"><span class="pre">endDate</span></code></th>
+<th class="head"><code class="docutils literal"><span class="pre">customDateFrom</span></code></th>
+<th class="head"><code class="docutils literal"><span class="pre">customDateTo</span></code></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td colspan="4"><a class="reference internal" href="schedule.html#schedule-label"><span>Schedule</span></a> Model Properties</td>
+</tr>
+<tr class="row-odd"><td><strong>None</strong></td>
+<td><strong>Custom</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr class="row-even"><td><strong>Infinite</strong></td>
+<td><strong>Daily</strong>, <strong>Weekly</strong>, <strong>Monthly</strong> and <strong>Quarterly</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>Number Of Times</strong></td>
+<td><strong>Daily</strong>, <strong>Weekly</strong>, <strong>Monthly</strong> and <strong>Quarterly</strong></td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><strong>Until End Date</strong></td>
+<td><strong>Daily</strong>, <strong>Weekly</strong>, <strong>Monthly</strong> and <strong>Quarterly</strong></td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Beware that the <em>API</em> will raise an exception when not needed property is sent for some combination of <strong>Period Type</strong> and <strong>Occurrence</strong>. Eg. if for <em>Daily</em> <strong>Period Type</strong> as <em>Infinite</em> <strong>Occurrence</strong> is sent not needed <code class="docutils literal"><span class="pre">endDate</span></code> property, this will raise an exception with message: <em>&#8220;Daily period type of Infinite occurrence type cannot have an end date assigned to it!&#8221;</em>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="schedule.html" class="btn btn-neutral" title="Schedule" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Qualtrak Solutions Ltd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -34,3 +34,4 @@ Contents:
    media-metadata
    recorder-media-player
    schedule
+   period-types

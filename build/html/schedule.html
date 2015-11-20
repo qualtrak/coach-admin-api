@@ -1,0 +1,1131 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Schedule &mdash; coach-admin-api 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+        <link rel="prev" title="Recorder Media Player" href="recorder-media-player.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> coach-admin-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-errors.html">Client Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tenant.html">Tenant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit.html">Unit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-player.html">Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search-criteria.html">Search Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-metadata.html">Media File Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder-media-player.html">Recorder Media Player</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Schedule</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#schedule-domain-model">Schedule Domain Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schedule-list-model">Schedule List Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schedule-level-list-model">Schedule Level List Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-of-schedules">List of Schedules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#default-rest-approach">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#return-value">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#c-wrapper-approach">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-usage">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#get-schedule-by-id">Get Schedule by Id</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#create-schedule">Create Schedule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id11">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#update-schedule">Update Schedule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id18">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id21">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-schedule">Delete Schedule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id24">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id25">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id28">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id29">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id30">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">coach-admin-api</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Schedule</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/schedule.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="schedule">
+<span id="schedule-label"></span><h1>Schedule<a class="headerlink" href="#schedule" title="Permalink to this headline">¶</a></h1>
+<p><strong>Schedule</strong> is automatically collects media for <em>Managers</em> to evaluate in the <strong>Schedule</strong> section of <em>Coach QM</em>.
+<strong>Schedule</strong> essential parts are [Period Types and Occurrences](/v1/period-types) that describe the interval and type of occurrence.</p>
+<div class="section" id="schedule-domain-model">
+<h2>Schedule Domain Model<a class="headerlink" href="#schedule-domain-model" title="Permalink to this headline">¶</a></h2>
+<p>Represent the <strong>Schedule</strong> domain model with available properties and its behaviors.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that domain model is used for write methods <em>POST</em> (<em>Create</em>) and <em>PUT</em> (<em>Update</em>) and as result of read-only method <em>GET/:id</em> (<em>GetById</em>).</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="47%" />
+<col width="18%" />
+<col width="4%" />
+<col width="5%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Required</th>
+<th class="head">Read-only</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">id</span></code></td>
+<td>Representing <strong>Schedule</strong> identifier.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+<td>yes</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td colspan="6"><strong>Main Details</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">name</span></code></td>
+<td>The name of <strong>Schedule</strong>.</td>
+<td><code class="docutils literal"><span class="pre">string(500)</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">description</span></code></td>
+<td>The description of <strong>Schedule</strong>.</td>
+<td><code class="docutils literal"><span class="pre">string(1024)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">startDate</span></code></td>
+<td>The start date that triggers <strong>Schedule</strong>. It can be today or some date in future.</td>
+<td><code class="docutils literal"><span class="pre">datetime</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">maxCallPerAgent</span></code></td>
+<td>The max number of media calls per <em>Agent</em>. Valid range is from 1 to 99</td>
+<td><code class="docutils literal"><span class="pre">short</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td><code class="docutils literal"><span class="pre">5</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">isActive</span></code></td>
+<td>Denotes whether the <strong>Schedule</strong> state is active or inactive.</td>
+<td><code class="docutils literal"><span class="pre">boolean</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td>active (<code class="docutils literal"><span class="pre">false</span></code>)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">isArchived</span></code></td>
+<td>Denotes whether the <strong>Schedule</strong> state is archived or not.</td>
+<td><code class="docutils literal"><span class="pre">boolean</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td>not archived (<code class="docutils literal"><span class="pre">false</span></code>)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">createdAt</span></code></td>
+<td>The <strong>Schedule</strong> creation date.</td>
+<td><code class="docutils literal"><span class="pre">datetime</span></code></td>
+<td>yes</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">updatedAt</span></code></td>
+<td>The date when <strong>Schedule</strong> was last time updated.</td>
+<td><code class="docutils literal"><span class="pre">datetime</span></code></td>
+<td>yes</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">lastRunAt</span></code></td>
+<td>The date when <strong>Schedule</strong> was last time run by <em>Scheduler</em> engine.</td>
+<td><code class="docutils literal"><span class="pre">datetime</span></code></td>
+<td>no</td>
+<td>yes</td>
+<td><code class="docutils literal"><span class="pre">null</span></code></td>
+</tr>
+<tr class="row-odd"><td colspan="6"><strong>Period &amp; Occurrence</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">periodType</span></code></td>
+<td>The <strong>Schedule</strong> [Period Types](/v1/period-types).</td>
+<td><code class="docutils literal"><span class="pre">byte</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td>Daily (<code class="docutils literal"><span class="pre">0</span></code>)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">occurrenceType</span></code></td>
+<td>The <strong>Schedule</strong> [Occurrences Types](/v1/period-types).</td>
+<td><code class="docutils literal"><span class="pre">byte</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td>Infinite (<code class="docutils literal"><span class="pre">0</span></code>)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">occurrenceTimesNumber</span></code></td>
+<td>The number of times that <strong>Schedule</strong> will [occur](/v1/period-types).</td>
+<td><code class="docutils literal"><span class="pre">short</span></code></td>
+<td>no</td>
+<td>no</td>
+<td><code class="docutils literal"><span class="pre">0</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">endDate</span></code></td>
+<td>The <strong>Schedule</strong> end date for [End Date Occurrence](/v1/period-types#until-end-date).</td>
+<td><code class="docutils literal"><span class="pre">datetime</span></code></td>
+<td>no</td>
+<td>no</td>
+<td><code class="docutils literal"><span class="pre">null</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">customDateFrom</span></code></td>
+<td>The <strong>Schedule</strong> [Custom Period date from](/v1/period-types#custom).</td>
+<td><code class="docutils literal"><span class="pre">datetime</span></code></td>
+<td>no</td>
+<td>no</td>
+<td><code class="docutils literal"><span class="pre">null</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">customDateTo</span></code></td>
+<td>The <strong>Schedule</strong> [Custom Period date to](/v1/period-types#custom).</td>
+<td><code class="docutils literal"><span class="pre">datetime</span></code></td>
+<td>no</td>
+<td>no</td>
+<td><code class="docutils literal"><span class="pre">null</span></code></td>
+</tr>
+<tr class="row-even"><td colspan="6"><strong>Levels &amp; Search Criteria</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">levels</span></code></td>
+<td>The <strong>Schedule</strong> levels, see more in [Tree Item Types](/v1/tree-item-type#levels-and-item-types).</td>
+<td><code class="docutils literal"><span class="pre">array(guid)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">searchCriteriaCollection</span></code></td>
+<td>The <strong>Schedule</strong> collection of [Search Criteria](/v1/search-criteria).</td>
+<td><code class="docutils literal"><span class="pre">array(SearchCriteria)</span></code></td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td colspan="6"><strong>Lookups</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">periodTypes</span></code></td>
+<td>The dictionary of supported [Period Types](/v1/period-types#period-types).| <code class="docutils literal"><span class="pre">dictionary(byte,</span> <span class="pre">string)</span></code></td>
+<td>N/A</td>
+<td>N/A</td>
+<td colspan="2">N/A      |</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">occurrenceTypes</span></code></td>
+<td>The dictionary of supported [Occurrences](/v1/period-types#occurrences).| <code class="docutils literal"><span class="pre">dictionary(byte,</span> <span class="pre">string)</span></code></td>
+<td>N/A</td>
+<td>N/A</td>
+<td colspan="2">N/A      |</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">searchDataTypesWithConditions</span></code></td>
+<td>The collection of [Data Types and its supported Conditions](/v1/search-criteria#data-condition-model)</td>
+<td><code class="docutils literal"><span class="pre">array(SearchDataTypeWithCondition)</span></code></td>
+<td>N/A</td>
+<td colspan="2">N/A      | N/A</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>Schedule</strong> properties names (<em>Name</em> column) is for default usage by <code class="docutils literal"><span class="pre">JSON</span></code>, for <code class="docutils literal"><span class="pre">C#</span> <span class="pre">Wrapper</span></code> usage the <strong>Schedule</strong> properties are capitalized (eg. <code class="docutils literal"><span class="pre">Id</span></code>, <code class="docutils literal"><span class="pre">Name</span></code>,..)! \</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that <em>Required</em> properties are changed depending on wanted Period Type and Occurrence. See more in whole list of [required properties for Period Types and Occurrences](/v1/period-types#period-occurrence-required).</p>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<div class="last line-block">
+<div class="line">Beware that lookup for <code class="docutils literal"><span class="pre">levels</span></code> is not part of <strong>Schedule</strong> domain model. [Unit, Team or Agent tree item types](/v1/tree#levels-and-item-types) are valid items of [Tenant Tree](/v1/tree) to be assigned as <strong>Schedule</strong> <code class="docutils literal"><span class="pre">levels</span></code>.</div>
+<div class="line">To assign values to <code class="docutils literal"><span class="pre">levels</span></code> you need to call [GetTree method](/v1/tree#tenant-tree-item) and use [Tenant Tree Item Model](/v1/tree#tenant-tree-item-model) <code class="docutils literal"><span class="pre">id</span></code> as a individual <code class="docutils literal"><span class="pre">guid</span></code> for <code class="docutils literal"><span class="pre">levels</span></code>.</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Note that if no <code class="docutils literal"><span class="pre">levels</span></code> are assigned then the <strong>Schedule</strong> can not be active. So even the <code class="docutils literal"><span class="pre">isActive</span></code> is set to <code class="docutils literal"><span class="pre">true</span></code> and there are no <code class="docutils literal"><span class="pre">levels</span></code> assigned the <code class="docutils literal"><span class="pre">isActive</span></code> will be set to <code class="docutils literal"><span class="pre">false</span></code>.</p>
+</div>
+</div>
+<div class="section" id="schedule-list-model">
+<h2>Schedule List Model<a class="headerlink" href="#schedule-list-model" title="Permalink to this headline">¶</a></h2>
+<p>Represent the <strong>Schedule</strong> list  model with available properties.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<div class="last line-block">
+<div class="line">The list model used only to list <strong>Schedules</strong> with <em>GET</em> (<em>GetAll</em>) method.</div>
+<div class="line">Note that list model can change by adding/removing properties depending what schedules of <em>Coach REST API</em> will need in future.</div>
+</div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="65%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">id</span></code></td>
+<td>Representing <strong>Schedule</strong> identifier.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">name</span></code></td>
+<td>The name of <strong>Schedule</strong>.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">description</span></code></td>
+<td>The <strong>Schedule</strong> description.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">startDate</span></code></td>
+<td>The <strong>Schedule</strong> start date.</td>
+<td><code class="docutils literal"><span class="pre">datetime</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">isActive</span></code></td>
+<td>Denotes whether the <strong>Schedule</strong> state is active or inactive.</td>
+<td><code class="docutils literal"><span class="pre">boolean</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">isArchived</span></code></td>
+<td>Denotes whether the <strong>Schedule</strong> state is archived or not.</td>
+<td><code class="docutils literal"><span class="pre">boolean</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">periodType</span></code></td>
+<td>The <strong>Schedule</strong> [Period Type](/v1/period-types#period-types).</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">occurrenceType</span></code></td>
+<td>The <strong>Schedule</strong> [Occurrence Type](/v1/period-types#occurrences).</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">maxCallsPerAgent</span></code></td>
+<td>The max number of media calls per <em>Agent</em>.</td>
+<td><code class="docutils literal"><span class="pre">short</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">nextRunAt</span></code></td>
+<td>The <strong>Schedule</strong> next run at data as relative time eg. &#8220;in 2 days&#8221;.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">lastRunAt</span></code></td>
+<td>The <strong>Schedule</strong> last run at data as relative time eg. &#8220;2 days ago&#8221;.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">createdSince</span></code></td>
+<td>The <strong>Schedule</strong> creation data as relative time eg. &#8220;2 days ago&#8221;.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">updatedSince</span></code></td>
+<td>The <strong>Schedule</strong> data of last update as relative time eg. &#8220;2 days ago&#8221;.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">levels</span></code></td>
+<td>The collection of [Schedule Levels List model](/v1/schedule#schedule-level-list-model).</td>
+<td><code class="docutils literal"><span class="pre">array(ScheduleLevelList)</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>Schedule</strong> properties names (<em>Name</em> column) is for default usage by <code class="docutils literal"><span class="pre">JSON</span></code>, for <code class="docutils literal"><span class="pre">C#</span> <span class="pre">Wrapper</span></code> usage the <strong>Schedule</strong> properties are capitalized (eg. <code class="docutils literal"><span class="pre">Id</span></code>, <code class="docutils literal"><span class="pre">Name</span></code>,..)!</p>
+</div>
+</div>
+<div class="section" id="schedule-level-list-model">
+<h2>Schedule Level List Model<a class="headerlink" href="#schedule-level-list-model" title="Permalink to this headline">¶</a></h2>
+<p>Represent the <strong>Schedule</strong> Level List model with available properties. Used as collection in  [Schedule List model](/v1/schedule#schedule-list-model).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="67%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">name</span></code></td>
+<td>The <em>Unit</em>, <em>Team</em> or <em>Agent</em> name.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">tenantTreeLevelType</span></code></td>
+<td>The [Unit, Team or Agent tree item type](/v1/tree#levels-and-item-types).</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="list-of-schedules">
+<h2>List of Schedules<a class="headerlink" href="#list-of-schedules" title="Permalink to this headline">¶</a></h2>
+<p>The list of <strong>Schedules</strong> for <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a>.</p>
+<div class="section" id="default-rest-approach">
+<h3>Default REST approach<a class="headerlink" href="#default-rest-approach" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>GET /api/v1/:tenantCode/schedules</div></blockquote>
+<div class="section" id="parameters">
+<h4>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</p>
+</div>
+</div>
+<div class="section" id="return-value">
+<h4>Return value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">JSON</span></code> array of [Schedule List Model](/v1/schedule#schedule-list-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">JSON</span></code> <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="c-wrapper-approach">
+<h3>C# Wrapper approach<a class="headerlink" href="#c-wrapper-approach" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ScheduleWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetAll</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id1">
+<h4>Parameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h4>Return value<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">ResaultContent&lt;ICollection&lt;Schedule&gt;&gt;.Result</span></code> object as collection of the [Schedule List Model](/v1/schedule#schedule-list-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;ICollection&lt;Schedule&gt;&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="example-usage">
+<h4>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">Schedule</span><span class="p">,</span> <span class="n">ScheduleList</span><span class="p">&gt;</span> <span class="n">scheduleWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ScheduleWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">ICollection</span><span class="p">&lt;</span><span class="n">ScheduleList</span><span class="p">&gt;&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">scheduleWrapper</span><span class="p">.</span><span class="n">GetAll</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="c1">// Use Result as List of Schedules for displaying.</span>
+     <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">ScheduleList</span><span class="p">&gt;</span> <span class="n">schedules</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="section" id="get-schedule-by-id">
+<h2>Get Schedule by Id<a class="headerlink" href="#get-schedule-by-id" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Schedule</strong> by requested Id for <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a>.</p>
+<div class="section" id="id3">
+<h3>Default REST approach<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>GET /api/v1/:tenantCode/schedules/:id</div></blockquote>
+<div class="section" id="id4">
+<h4>Parameters<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">id</span></code> The <strong>Schedule</strong> id, a valid and non-empty <code class="docutils literal"><span class="pre">guid</span></code>.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Return value<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">JSON</span></code> as the [Schedule Domain Model](/v1/schedule#schedule-model) object.</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">JSON</span></code> as the <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>C# Wrapper approach<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ScheduleWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetById</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id7">
+<h4>Parameters<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">id</span></code> The <strong>Schedule</strong> id, a valid and non-empty <code class="docutils literal"><span class="pre">guid</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h4>Return value<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Schedule&gt;.Result</span></code> object as the [Schedule Domain Model](/v1/schedule#schedule-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Schedule&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h4>Example usage<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+<span class="n">Guid</span> <span class="n">scheduleId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
+
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">Schedule</span><span class="p">,</span> <span class="n">ScheduleList</span><span class="p">&gt;</span> <span class="n">scheduleWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ScheduleWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">Schedule</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">scheduleWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">scheduleId</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="c1">// Use Result as requested Schedule for displaying.</span>
+     <span class="n">Schedule</span> <span class="n">schedule</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="section" id="create-schedule">
+<h2>Create Schedule<a class="headerlink" href="#create-schedule" title="Permalink to this headline">¶</a></h2>
+<p>The creation of new <strong>Schedule</strong> for <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">To assign <code class="docutils literal"><span class="pre">levels</span></code> you&#8217;ll need to get [Tenant Tree](/v1/tree) and use [Unit, Team or Agent](/v1/tree#levels-and-item-types) items as Levels!</p>
+</div>
+<div class="section" id="id10">
+<h3>Default REST approach<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>POST /api/v1/:tenantCode/schedules</div></blockquote>
+<div class="section" id="id11">
+<h4>Parameters<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">schedule</span></code> <code class="docutils literal"><span class="pre">JSON</span></code> representation of [Schedule Domain Model](/v1/schedule#schedule-model) sent via <em>Request HTTP Header</em>.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h4>Return value<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">JSON</span></code> representation of newly created <strong>Schedule</strong> as the [Schedule Domain Model](/v1/schedule#schedule-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">JSON</span></code> <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>C# Wrapper approach<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ScheduleWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Create</span><span class="p">(</span><span class="n">Schedule</span> <span class="n">schedule</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id14">
+<h4>Parameters<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">schedule</span></code> The <strong>Schedule</strong> model constructed from <strong>Schedule properties</strong>.</li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h4>Return value<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Schedule&gt;.Result</span></code> object as the [Schedule Domain Model](/v1/schedule#schedule-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Schedule&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h4>Example usage<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ICollection</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span> <span class="n">levels</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;();</span>
+<span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+
+<span class="n">TreeWrapper</span> <span class="n">treeWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TreeWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">TenantTreeItem</span><span class="p">&gt;</span> <span class="n">responseTree</span> <span class="p">=</span> <span class="n">treeWrapper</span><span class="p">.</span><span class="n">GetTree</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">responseTree</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">levels</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">responseTree</span><span class="p">.</span><span class="n">Result</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">TreeItemType</span> <span class="p">==</span> <span class="s">&quot;Unit&quot;</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Id</span><span class="p">).</span><span class="n">SingleOrDefault</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">Schedule</span><span class="p">,</span> <span class="n">ScheduleList</span><span class="p">&gt;</span> <span class="n">scheduleWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ScheduleWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="c1">// Get default data and lookup for schedules</span>
+<span class="n">Schedule</span> <span class="n">newSchedule</span> <span class="p">=</span> <span class="n">scheduleWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="k">new</span> <span class="n">Guid</span><span class="p">()).</span><span class="n">Result</span><span class="p">;</span>
+<span class="n">newSchedule</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;Tester&quot;</span><span class="p">;</span>
+<span class="n">newSchedule</span><span class="p">.</span><span class="n">StartDate</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">;</span>
+<span class="n">newSchedule</span><span class="p">.</span><span class="n">Levels</span> <span class="p">=</span> <span class="n">levels</span><span class="p">;</span>
+
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">Schedule</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">scheduleWrapper</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">newSchedule</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="c1">// Use Result as newly created Schedule for display.</span>
+     <span class="n">Schedule</span> <span class="n">schedule</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="section" id="update-schedule">
+<h2>Update Schedule<a class="headerlink" href="#update-schedule" title="Permalink to this headline">¶</a></h2>
+<p>Updates already existent <strong>Schedule</strong> for <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">To assign <code class="docutils literal"><span class="pre">levels</span></code> you&#8217;ll need to get [Tenant Tree](/v1/tree) and use [Unit, Team or Agent](/v1/tree#levels-and-item-types) items as Levels!</p>
+</div>
+<div class="section" id="id17">
+<h3>Default REST approach<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>PUT /api/v1/:tenantCode/schedules/:id</div></blockquote>
+<div class="section" id="id18">
+<h4>Parameters<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">id</span></code> The <strong>Schedule</strong> id, a valid and non-empty <code class="docutils literal"><span class="pre">guid</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">schedule</span></code> <code class="docutils literal"><span class="pre">JSON</span></code> representation of [Schedule Domain Model](/v1/schedule#schedule-model) sent via <em>Request HTTP Header</em>.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<div class="last line-block">
+<div class="line">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a></div>
+<div class="line">If you don&#8217;t want to have in Web Server turned on the <code class="docutils literal"><span class="pre">PUT</span></code> verb method read more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id19">
+<h4>Return value<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">JSON</span></code> representation of uodated <strong>Schedule</strong> as the [Schedule Domain Model](/v1/schedule#schedule-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">JSON</span></code> <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id20">
+<h3>C# Wrapper approach<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ScheduleWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Update</span><span class="p">(</span><span class="n">Schedule</span> <span class="n">schedule</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id21">
+<h4>Parameters<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">schedule</span></code> The <strong>Schedule</strong> model constructed from <strong>Schedule properties</strong> and <code class="docutils literal"><span class="pre">Id</span></code> must be provided in it. If not <code class="docutils literal"><span class="pre">ArgumentException</span></code> will be thrown!</li>
+<li><code class="docutils literal"><span class="pre">updateViaPost</span></code> Set to <code class="docutils literal"><span class="pre">true</span></code> if in your Web Server you don&#8217;t want to enable <code class="docutils literal"><span class="pre">PUT</span></code> method. Default is <code class="docutils literal"><span class="pre">false</span></code> or use <code class="docutils literal"><span class="pre">PUT</span></code> method!</li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h4>Return value<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Schedule&gt;.Result</span></code> object as the [Schedule Domain Model](/v1/schedule#schedule-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Schedule&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h4>Example usage<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ICollection</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span> <span class="n">levels</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;();</span>
+<span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+<span class="n">Guid</span> <span class="n">scheduleId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
+
+<span class="n">TreeWrapper</span> <span class="n">treeWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TreeWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">TenantTreeItem</span><span class="p">&gt;</span> <span class="n">responseTree</span> <span class="p">=</span> <span class="n">treeWrapper</span><span class="p">.</span><span class="n">GetTree</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">responseTree</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">levels</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">responseTree</span><span class="p">.</span><span class="n">Result</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">TreeItemType</span> <span class="p">==</span> <span class="s">&quot;Unit&quot;</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Id</span><span class="p">).</span><span class="n">LastOrDefault</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">Schedule</span><span class="p">,</span> <span class="n">ScheduleList</span><span class="p">&gt;</span> <span class="n">scheduleWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ScheduleWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">Schedule</span> <span class="n">schedule</span> <span class="p">=</span> <span class="n">scheduleWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">scheduleId</span><span class="p">).</span><span class="n">Result</span><span class="p">;</span>
+<span class="n">schedule</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;Test Schedule Updated&quot;</span><span class="p">;</span>
+<span class="n">schedule</span><span class="p">.</span><span class="n">Levels</span> <span class="p">=</span> <span class="n">levels</span><span class="p">;</span>
+
+<span class="c1">// Update via PUT method (default).</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">Schedule</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">scheduleWrapper</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">schedule</span><span class="p">);</span>
+
+<span class="c1">// Update via POST method (use true argument).</span>
+<span class="c1">// ResponseContent&lt;Schedule&gt; response = scheduleWrapper.Update(schedule, true);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="c1">// Use Result of updated Schedule for display.</span>
+     <span class="n">Schedule</span> <span class="n">updatedSchedule</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="section" id="delete-schedule">
+<h2>Delete Schedule<a class="headerlink" href="#delete-schedule" title="Permalink to this headline">¶</a></h2>
+<p>Deletes existent <strong>Schedule</strong> for <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<div class="last line-block">
+<div class="line">Note that <strong>Schedule</strong> will not be deleted but rather flagged as <code class="docutils literal"><span class="pre">isArchived</span></code> if it was run at least once by <em>Schedule</em> engine and there are associated recordings (media) with this <strong>Schedule</strong>.</div>
+<div class="line">If <strong>Schedule</strong> has never run and there are no associated recordings (media) to it, it will be deleted permanently with all assigned <strong>Schedule</strong> levels.</div>
+</div>
+</div>
+<div class="section" id="id24">
+<h3>Default REST approach<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>DELETE /api/v1/:tenantCode/schedules/:id</div></blockquote>
+<div class="section" id="id25">
+<h4>Parameters<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">id</span></code> The <strong>Schedule</strong> id, a valid and non-empty <code class="docutils literal"><span class="pre">guid</span></code>.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<div class="last line-block">
+<div class="line">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</div>
+<div class="line">If you don&#8217;t want to have in Web Server turned on the <code class="docutils literal"><span class="pre">DELETE</span></code> verb method read more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a></div>
+</div>
+</div>
+</div>
+<div class="section" id="id26">
+<h4>Return value<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>There is no return value except if there is an error, the <code class="docutils literal"><span class="pre">JSON</span></code> <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id27">
+<h3>C# Wrapper approach<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ScheduleWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Delete</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id28">
+<h4>Parameters<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">id</span></code> The <strong>Schedule</strong> id, a valid and non-empty <code class="docutils literal"><span class="pre">guid</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">updateViaPost</span></code> Set to <code class="docutils literal"><span class="pre">true</span></code> if in your Web Server you don&#8217;t want to enable <code class="docutils literal"><span class="pre">DELETE</span></code> method. Default is <code class="docutils literal"><span class="pre">false</span></code> or use <code class="docutils literal"><span class="pre">DELETE</span></code> method!</li>
+</ul>
+</div>
+<div class="section" id="id29">
+<h4>Return value<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: no return value or <code class="docutils literal"><span class="pre">void</span></code>.</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Schedule&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a></li>
+</ul>
+</div>
+<div class="section" id="id30">
+<h4>Example usage<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+<span class="n">Guid</span> <span class="n">scheduleId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
+
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">Schedule</span><span class="p">,</span> <span class="n">ScheduleList</span><span class="p">&gt;</span> <span class="n">scheduleWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ScheduleWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="c1">// Delete via DELETE method (default).</span>
+<span class="n">ResponseContent</span> <span class="n">response</span> <span class="p">=</span> <span class="n">scheduleWrapper</span><span class="p">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">scheduleId</span><span class="p">);</span>
+
+<span class="c1">// DELETE via POST method (use true argument)..</span>
+<span class="c1">// ResponseContent response = scheduleWrapper.Delete(scheduleId, true);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="recorder-media-player.html" class="btn btn-neutral" title="Recorder Media Player" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Qualtrak Solutions Ltd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

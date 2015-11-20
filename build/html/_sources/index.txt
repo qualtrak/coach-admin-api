@@ -33,3 +33,4 @@ Contents:
    search-criteria
    media-metadata
    recorder-media-player
+   schedule

@@ -123,7 +123,7 @@ Return value
 ------------
 
 * If there is no error: ``JSON`` array of [Team List Model](/v1/team#team-list-model).
-* If there is an error: ``JSON`` [error](/v1/client-errors#error-model) object.
+* If there is an error: ``JSON`` :ref:`client-error-label` object.
 
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
@@ -145,7 +145,7 @@ Return value
 ------------
 
 * If there is no error: ``ResaultContent<ICollection<Team>>.Result`` object collection of the [Team List Model](/v1/team#team-list-model).
-* If there is an error: ``ResaultContent<ICollection<Team>>.Error`` object. See more in [Client Errors](/v1/client-errors).
+* If there is an error: ``ResaultContent<ICollection<Team>>.Error`` object. See more in :ref:`client-error-label`.
 
 Example usage
 -------------
@@ -197,7 +197,7 @@ Return value
 ------------
 
 * If there is no error: ``JSON`` as the [Team Domain Model](/v1/team#team-model) object.
-* If there is an error: ``JSON`` as the [error](/v1/client-errors#error-model) object.
+* If there is an error: ``JSON`` as the :ref:`client-error-label` object.
 
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
@@ -220,7 +220,7 @@ Return value
 ------------
 
 * If there is no error: ``ResaultContent<Team>.Result`` object as the [Team Domain Model](/v1/team#team-model).
-* If there is an error: ``ResaultContent<Team>.Error`` object. See more in [Client Errors](/v1/client-errors).
+* If there is an error: ``ResaultContent<Team>.Error`` object. See more in :ref:`client-error-label`.
 
 Example usage
 -------------
@@ -273,7 +273,7 @@ Return value
 ------------
 
 * If there is no error: ``JSON`` representation of newly created **Team** as the [Team Domain Model](/v1/team#team-model).
-* If there is an error: ``JSON`` [error](/v1/client-errors#error-model) object.
+* If there is an error: ``JSON`` :ref:`client-error-label` object.
 
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
@@ -296,7 +296,7 @@ Return value
 ------------
 
 * If there is no error: ``ResaultContent<Team>.Result`` object as the [Team Domain Model](/v1/team#team-model).
-* If there is an error: ``ResaultContent<Team>.Error`` object. See more in [Client Errors](/v1/client-errors).
+* If there is an error: ``ResaultContent<Team>.Error`` object. See more in :ref:`client-error-label`.
 
 Example usage
 -------------
@@ -356,7 +356,7 @@ Return value
 ------------
 
 * If there is no error: ``JSON`` representation of uodated **Team** as the [Team Domain Model](/v1/team#team-model) object.
-* If there is an error: ``JSON`` [error](/v1/client-errors#error-model) object.
+* If there is an error: ``JSON`` :ref:`client-error-label` object.
 
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
@@ -380,7 +380,7 @@ Return value
 ------------
 
 * If there is no error: ``ResaultContent<Team>.Result`` object as the [Team Domain Model](/v1/team#team-model).
-* If there is an error: ``ResaultContent<Team>.Error`` object. See more in [Client Errors](/v1/client-errors).
+* If there is an error: ``ResaultContent<Team>.Error`` object. See more in :ref:`client-error-label`.
 
 Example usage
 -------------
@@ -449,7 +449,7 @@ Parameters
 Return value
 ------------
 
-* There is no return value except if there is an error, the ``JSON`` [error](/v1/client-errors#error-model) object.
+* There is no return value except if there is an error, the ``JSON`` :ref:`client-error-label` object.
 
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
@@ -473,7 +473,7 @@ Return value
 ------------
 
 * If there is no error: no return value or ``void``.
-* If there is an error: ``ResaultContent<Team>.Error`` object. See more in [Client Errors](/v1/client-errors).
+* If there is an error: ``ResaultContent<Team>.Error`` object. See more in :ref:`client-error-label`.
 
 Example usage
 -------------

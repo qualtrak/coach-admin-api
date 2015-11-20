@@ -12,14 +12,21 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+   :caption: The Basics
 
    getting-started
    csharp-wrapper
    client-errors
    releasehistory
    roles
+
+.. toctree::
+   :maxdepth: 2
+   :caption: API
+
    tenant
    unit
    team
    user
    media-player
+   recorder

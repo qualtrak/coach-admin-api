@@ -35,3 +35,4 @@ Contents:
    recorder-media-player
    schedule
    period-types
+   license

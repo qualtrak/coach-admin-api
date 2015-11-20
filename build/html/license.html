@@ -30,7 +30,8 @@
   
 
   
-    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/> 
+    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+        <link rel="prev" title="Period Types and Occurrences" href="period-types.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -79,11 +80,44 @@
           
             
             
-                <ul>
+                <p class="caption"><span class="caption-text">The Basics</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="client-errors.html">Client Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tenant.html">Tenant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit.html">Unit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-player.html">Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search-criteria.html">Search Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-metadata.html">Media File Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder-media-player.html">Recorder Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="period-types.html">Period Types and Occurrences</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#obtain-license">Obtain License</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#default-rest-approach">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#return-value">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#c-wrapper-approach">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-usage">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -129,30 +163,108 @@
            <div itemprop="articleBody">
             
   <div class="section" id="license">
-<h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
-<p>The MIT License (MIT)</p>
-<p>Copyright (c) [2015] [Qualtrak Solutions Ltd]</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &#8220;Software&#8221;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED &#8220;AS IS&#8221;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</p>
+<span id="license-label"></span><h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
+<p>To use <em>Coach QM</em>, there is a need to obtain valid license from <em>Coach Licensing Server</em>.</p>
+<p>The <strong>License</strong> can be:</p>
+<p><strong>Trial</strong></p>
+<p>The trial <strong>License</strong> has expiry date until is valid, and after its expired, the access to <em>Coach QM</em> is denied for all users, but <em>Coach Console</em> is still accessible and fully functional.</p>
+<p><strong>Forever</strong></p>
+<p>The <strong>License</strong> last forever and it has count of bought <strong>Licenses</strong> that is subtracted for every creation of an active agent. When the count is exceeded, there is no way to make active agents, except of buying more licenses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that the information of Expiry Date of <strong>License</strong>, Available and Used <strong>Licenses</strong> you can get through <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> properties.</p>
+</div>
+<div class="section" id="obtain-license">
+<h2>Obtain License<a class="headerlink" href="#obtain-license" title="Permalink to this headline">¶</a></h2>
+<p>Obtains <strong>License</strong> for <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a>.</p>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Beware that <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> properties <code class="docutils literal"><span class="pre">customerId</span></code> and <code class="docutils literal"><span class="pre">customerCode</span></code> needs to be updated with values given by <em>Qualtrak</em> received upon <strong>License</strong> purchase or on request for trial <strong>License</strong>.</p>
+</div>
+<div class="section" id="default-rest-approach">
+<h3>Default REST approach<a class="headerlink" href="#default-rest-approach" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>GET /api/v1/:tenantCode/license</div></blockquote>
+<div class="section" id="parameters">
+<h4>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in [Getting Started](/v1).</p>
+</div>
+</div>
+<div class="section" id="return-value">
+<h4>Return value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>There is no return value except if there is an error, the <code class="docutils literal"><span class="pre">JSON</span></code> <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="c-wrapper-approach">
+<h3>C# Wrapper approach<a class="headerlink" href="#c-wrapper-approach" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">LicenseWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Obtain</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id1">
+<h4>Parameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h4>Return value<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: no return value or <code class="docutils literal"><span class="pre">void</span></code>.</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;ICollection&lt;MediaPlayer&gt;&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="example-usage">
+<h4>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+
+<span class="n">LicenseWrapper</span> <span class="n">licenseWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">LicenseWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span> <span class="n">response</span> <span class="p">=</span> <span class="n">licenseWrapper</span><span class="p">.</span><span class="n">Obtain</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
 </div>
 
 
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="period-types.html" class="btn btn-neutral" title="Period Types and Occurrences" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

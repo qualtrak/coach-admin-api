@@ -1,0 +1,915 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Recorder Media Player &mdash; coach-admin-api 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+        <link rel="prev" title="Media File Metadata" href="media-metadata.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> coach-admin-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-errors.html">Client Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tenant.html">Tenant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit.html">Unit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-player.html">Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search-criteria.html">Search Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-metadata.html">Media File Metadata</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Recorder Media Player</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#recorder-media-player-domain-model">Recorder Media Player Domain Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recorder-media-player-list-model">Recorder Media Player List Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-of-recorder-media-players">List of Recorder Media Players</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#default-rest-approach">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#return-value">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#c-wrapper-approach">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-usage">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#get-recorder-media-player-by-id">Get Recorder Media Player by Id</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#create-recorder-media-player">Create Recorder Media Player</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id11">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#update-recorder-media-player">Update Recorder Media Player</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id18">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id21">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-recorder-media-player">Delete Recorder Media Player</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id24">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id25">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id28">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id29">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id30">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">coach-admin-api</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Recorder Media Player</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/recorder-media-player.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="recorder-media-player">
+<span id="recorder-media-player-label"></span><h1>Recorder Media Player<a class="headerlink" href="#recorder-media-player" title="Permalink to this headline">¶</a></h1>
+<p><strong>Recorder Media Player</strong> is combination of <a class="reference internal" href="recorder.html#recorder-label"><span>Recorder</span></a> and <a class="reference internal" href="media-player.html#media-player-label"><span>Media Player</span></a> that is used for <a class="reference internal" href="user.html#user-label"><span>User (Agent)</span></a> for getting recorded media file from <a class="reference internal" href="recorder.html#recorder-label"><span>Recorder</span></a> and playing it in way that is described in <a class="reference internal" href="media-player.html#media-player-label"><span>Media Player</span></a>.</p>
+<div class="section" id="recorder-media-player-domain-model">
+<h2>Recorder Media Player Domain Model<a class="headerlink" href="#recorder-media-player-domain-model" title="Permalink to this headline">¶</a></h2>
+<p>Represent the <strong>Recorder Media Player</strong> domain model with available properties and its behaviors.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that domain model is used for write methods <em>POST</em> (<em>Create</em>) and <em>PUT</em> (<em>Update</em>) and as result of read-only method <em>GET/:id</em> (<em>GetById</em>).</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="53%" />
+<col width="15%" />
+<col width="5%" />
+<col width="6%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Required</th>
+<th class="head">Read-only</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">id</span></code></td>
+<td>Representing <strong>Recorder Media Player</strong> identifier.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+<td>yes</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">name</span></code></td>
+<td>The name of <strong>Recorder Media Player</strong>.</td>
+<td><code class="docutils literal"><span class="pre">string(255)</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">recorderId</span></code></td>
+<td>The <a class="reference internal" href="recorder.html#recorder-label"><span>Recorder</span></a> reference.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">mediaPlayerId</span></code></td>
+<td>The <a class="reference internal" href="media-player.html#media-player-label"><span>Media Player</span></a> reference.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">isActive</span></code></td>
+<td>Denotes whether the <strong>Recorder Media Player</strong> is active.</td>
+<td><code class="docutils literal"><span class="pre">bool</span></code></td>
+<td>yes</td>
+<td>no</td>
+<td>active (<code class="docutils literal"><span class="pre">true</span></code>)</td>
+</tr>
+<tr class="row-odd"><td colspan="6"><strong>Lookups</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">recorders</span></code></td>
+<td>The lookup dictionary of <a class="reference internal" href="recorder.html#recorder-label"><span>Recorder</span></a>. Used to set the <code class="docutils literal"><span class="pre">redorderId</span></code>.</td>
+<td><code class="docutils literal"><span class="pre">dictionary(guid,</span> <span class="pre">string)</span></code></td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">mediaPlayers</span></code></td>
+<td>The lookup dictionary of <a class="reference internal" href="media-player.html#media-player-label"><span>Media Players</span></a>. Used to set the <code class="docutils literal"><span class="pre">mediaPlayerId</span></code>.</td>
+<td><code class="docutils literal"><span class="pre">dictionary(guid,</span> <span class="pre">string)</span></code></td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>Recorder Media Player</strong> properties names (<em>Name</em> column) is for default usage by <code class="docutils literal"><span class="pre">JSON</span></code>, for <code class="docutils literal"><span class="pre">C#</span> <span class="pre">Wrapper</span></code> usage the <strong>Recorder Media Player</strong> properties are capitalized (eg. <code class="docutils literal"><span class="pre">Id</span></code>, <code class="docutils literal"><span class="pre">Name</span></code>,..)!</p>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<div class="last line-block">
+<div class="line">Note that only one unique combination of <a class="reference internal" href="recorder.html#recorder-label"><span>Recorder</span></a> and <a class="reference internal" href="media-player.html#media-player-label"><span>Media Player</span></a> can be set while creating/updating <strong>Recorder Media Player</strong>.</div>
+<div class="line">Matching same <a class="reference internal" href="recorder.html#recorder-label"><span>Recorder</span></a> and <a class="reference internal" href="media-player.html#media-player-label"><span>Media Player</span></a> twice will result as exception from server.</div>
+</div>
+</div>
+</div>
+<div class="section" id="recorder-media-player-list-model">
+<h2>Recorder Media Player List Model<a class="headerlink" href="#recorder-media-player-list-model" title="Permalink to this headline">¶</a></h2>
+<p>Represent the <strong>Recorder Media Player</strong> list model with available properties.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<div class="last line-block">
+<div class="line">The list model used only to list <strong>Media Players</strong> with <em>GET</em> (<em>GetAll</em>) method.</div>
+<div class="line">Note that list model can change by adding/removing properties depending what users of <em>Coach REST API</em> will need in future.</div>
+</div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="70%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">id</span></code></td>
+<td>Representing <strong>Recorder Media Player</strong> identifier.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">name</span></code></td>
+<td>The name of <strong>Recorder Media Player</strong>.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">isActive</span></code></td>
+<td>Denotes whether the <strong>Recorder Media Player</strong> is active.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">recorderName</span></code></td>
+<td>The name of <a class="reference internal" href="recorder.html#recorder-label"><span>Recorder</span></a>.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">mediaPlayerName</span></code></td>
+<td>The name of <a class="reference internal" href="media-player.html#media-player-label"><span>Media Player</span></a>.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>Recorder Media Player</strong> properties names (<em>Name</em> column) is for default usage by <code class="docutils literal"><span class="pre">JSON</span></code>, for <code class="docutils literal"><span class="pre">C#</span> <span class="pre">Wrapper</span></code> usage the <strong>Recorder Media Player</strong> properties are capitalized (eg. <code class="docutils literal"><span class="pre">Id</span></code>, <code class="docutils literal"><span class="pre">Name</span></code>,..)!</p>
+</div>
+</div>
+<div class="section" id="list-of-recorder-media-players">
+<h2>List of Recorder Media Players<a class="headerlink" href="#list-of-recorder-media-players" title="Permalink to this headline">¶</a></h2>
+<p>The list of <strong>Recorder Media Players</strong> for <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> .</p>
+<div class="section" id="default-rest-approach">
+<h3>Default REST approach<a class="headerlink" href="#default-rest-approach" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>GET /api/v1/:tenantCode/recorder-players</div></blockquote>
+<div class="section" id="parameters">
+<h4>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</p>
+</div>
+</div>
+<div class="section" id="return-value">
+<h4>Return value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">JSON</span></code> array of [Recorder Media Player List Model](/v1/recorder-player#recorder-player-list-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">JSON</span></code> <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="c-wrapper-approach">
+<h3>C# Wrapper approach<a class="headerlink" href="#c-wrapper-approach" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderMediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetAll</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id1">
+<h4>Parameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h4>Return value<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">ResaultContent&lt;ICollection&lt;RecorderMediaPlayer&gt;&gt;.Result</span></code> object collection of the [Recorder Media Player List Model](/v1/recorder-player#recorder-player-list-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;ICollection&lt;RecorderMediaPlayer&gt;&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="example-usage">
+<h4>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">RecorderMediaPlayer</span><span class="p">,</span> <span class="n">RecorderMediaPlayerList</span><span class="p">&gt;</span> <span class="n">recorderMediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderMediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">ICollection</span><span class="p">&lt;</span><span class="n">RecorderMediaPlayerList</span><span class="p">&gt;&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderMediaPlayerWrapper</span><span class="p">.</span><span class="n">GetAll</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="c1">// Use Result as List of recorder Media Players for displaying.</span>
+     <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">RecorderMediaPlayerList</span><span class="p">&gt;</span> <span class="n">recorderMediaPlayers</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="section" id="get-recorder-media-player-by-id">
+<h2>Get Recorder Media Player by Id<a class="headerlink" href="#get-recorder-media-player-by-id" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Recorder Media Player</strong> by requested Id for <a class="reference internal" href="tenant.html#tenant-label"><span>current Tenant</span></a>.</p>
+<div class="section" id="id3">
+<h3>Default REST approach<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>GET /api/v1/:tenantCode/recorder-players/:id</div></blockquote>
+<div class="section" id="id4">
+<h4>Parameters<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">id</span></code> The <strong>Recorder Media Player</strong> id, a valid and non-empty <code class="docutils literal"><span class="pre">guid</span></code>.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Return value<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">JSON</span></code> as the [Recorder Media Player Domain Model](/v1/recorder-player#recorder-player-model) object.</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">JSON</span></code> as the <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>C# Wrapper approach<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderMediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetById</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id7">
+<h4>Parameters<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">id</span></code> The <strong>Recorder Media Player</strong> id, a valid and non-empty <code class="docutils literal"><span class="pre">guid</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h4>Return value<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">ResaultContent&lt;RecorderMediaPlayer&gt;.Result</span></code> object as the [Recorder Media Player Domain Model](/v1/recorder-player#recorder-player-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;RecorderMediaPlayer&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h4>Example usage<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+<span class="n">Guid</span> <span class="n">recorderMediaPlayerId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
+
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">RecorderMediaPlayer</span><span class="p">,</span> <span class="n">RecorderMediaPlayerList</span><span class="p">&gt;</span> <span class="n">recorderMediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderMediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">RecorderMediaPlayer</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderMediaPlayerWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">recorderMediaPlayerId</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="c1">// Use Result as requested Recorder Media Player for displaying.</span>
+     <span class="n">RecorderMediaPlayer</span> <span class="n">recorderMediaPlayer</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="section" id="create-recorder-media-player">
+<h2>Create Recorder Media Player<a class="headerlink" href="#create-recorder-media-player" title="Permalink to this headline">¶</a></h2>
+<p>The creation of new <strong>Recorder Media Player</strong> for <a class="reference internal" href="tenant.html#tenant-label"><span>current Tenant</span></a>.</p>
+<div class="section" id="id10">
+<h3>Default REST approach<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>POST /api/v1/:tenantCode/recorder-players</div></blockquote>
+<div class="section" id="id11">
+<h4>Parameters<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">recorderMediaPlayer</span></code> <code class="docutils literal"><span class="pre">JSON</span></code> representation of <strong>Recorder Media Player properties</strong> sent via <em>Request HTTP Header</em>.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h4>Return value<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">JSON</span></code> representation of newly created <strong>Recorder Media Player</strong> as the [Recorder Media Player Domain Model](/v1/recorder-player#recorder-player-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">JSON</span></code> <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>C# Wrapper approach<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderMediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Create</span><span class="p">(</span><span class="n">RecorderMediaPlayer</span> <span class="n">recorderMediaPlayer</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id14">
+<h4>Parameters<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">recorderMediaPlayer</span></code> The <strong>Recorder Media Player</strong> model constructed from <strong>Recorder Media Player properties</strong>.</li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h4>Return value<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">ResaultContent&lt;RecorderMediaPlayer&gt;.Result</span></code> object as the [Recorder Media Player Domain Model](/v1/recorder-player#recorder-player-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;recorderMediaPlayer&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h4>Example usage<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">RecorderMediaPlayer</span><span class="p">,</span> <span class="n">RecorderMediaPlayerList</span><span class="p">&gt;</span> <span class="n">recorderMediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderMediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="c1">// Get default data and lookup for recorder media players</span>
+<span class="n">RecorderMediaPlayer</span> <span class="n">newRecorderMediaPlayer</span> <span class="p">=</span> <span class="n">recorderMediaPlayerWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="k">new</span> <span class="n">Guid</span><span class="p">()).</span><span class="n">Result</span><span class="p">;</span>
+<span class="n">newRecorderMediaPlayer</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;Recorder Media Player created from test&quot;</span><span class="p">;</span>
+
+<span class="c1">// Set recorder and mediaPlayer from lookups key.</span>
+<span class="n">newRecorderMediaPlayer</span><span class="p">.</span><span class="n">RecorderId</span> <span class="p">=</span> <span class="n">newRecorderMediaPlayer</span><span class="p">.</span><span class="n">Recorders</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span><span class="p">;</span>
+<span class="n">newRecorderMediaPlayer</span><span class="p">.</span><span class="n">MediaPlayerId</span> <span class="p">=</span> <span class="n">newRecorderMediaPlayer</span><span class="p">.</span><span class="n">MediaPlayers</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span><span class="p">;</span>
+
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">RecorderMediaPlayer</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderMediaPlayerWrapper</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">newRecorderMediaPlayer</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="c1">// Use Result as newly created Recorder Media Player for display.</span>
+     <span class="n">RecorderMediaPlayer</span> <span class="n">recorderMediaPlayer</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="section" id="update-recorder-media-player">
+<h2>Update Recorder Media Player<a class="headerlink" href="#update-recorder-media-player" title="Permalink to this headline">¶</a></h2>
+<p>Updates already existent <strong>Recorder Media Player</strong> for <a class="reference internal" href="tenant.html#tenant-label"><span>current Tenant</span></a> .</p>
+<div class="section" id="id17">
+<h3>Default REST approach<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>PUT /api/v1/:tenantCode/recorder-players/:id</div></blockquote>
+<div class="section" id="id18">
+<h4>Parameters<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">id</span></code> The <strong>Recorder Media Player</strong> id, a valid and non-empty <code class="docutils literal"><span class="pre">guid</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">recorderMediaPlayer</span></code> <code class="docutils literal"><span class="pre">JSON</span></code> representation of <strong>recorder Media Player properties</strong> sent via <em>Request HTTP Header</em>.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<div class="last line-block">
+<div class="line">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</div>
+<div class="line">If you don&#8217;t want to have in Web Server turned on the <code class="docutils literal"><span class="pre">PUT</span></code> verb method read more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id19">
+<h4>Return value<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">JSON</span></code> representation of uodated <strong>Recorder Media Player</strong> as the [Recorder Media Player Domain Model](/v1/recorder-player#recorder-player-model) object.</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">JSON</span></code> <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id20">
+<h3>C# Wrapper approach<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderMediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Update</span><span class="p">(</span><span class="n">RecorderMediaPlayer</span> <span class="n">recorderMediaPlayer</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id21">
+<h4>Parameters<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">recorderMediaPlayer</span></code> The <strong>Recorder Media Player</strong> model constructed from <strong>Recorder Media Player properties</strong> and <code class="docutils literal"><span class="pre">Id</span></code> must be provided in it. If not <code class="docutils literal"><span class="pre">ArgumentException</span></code> will be thrown!</li>
+<li><code class="docutils literal"><span class="pre">updateViaPost</span></code> Set to <code class="docutils literal"><span class="pre">true</span></code> if in your Web Server you don&#8217;t want to enable <code class="docutils literal"><span class="pre">PUT</span></code> method. Default is <code class="docutils literal"><span class="pre">false</span></code> or use <code class="docutils literal"><span class="pre">PUT</span></code> method!</li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h4>Return value<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">ResaultContent&lt;RecorderMediaPlayer&gt;.Result</span></code> object as the [Recorder Media Player Domain Model](/v1/recorder-player#recorder-player-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;RecorderMediaPlayer&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h4>Example usage<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+<span class="n">Guid</span> <span class="n">recorderMediaPlayerId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
+
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">RecorderMediaPlayer</span><span class="p">,</span> <span class="n">RecorderMediaPlayerList</span><span class="p">&gt;</span> <span class="n">recorderMediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderMediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">RecorderMediaPlayer</span> <span class="n">recorderMediaPlayer</span> <span class="p">=</span> <span class="n">recorderMediaPlayerWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">recorderMediaPlayerId</span><span class="p">).</span><span class="n">Result</span><span class="p">;</span>
+<span class="n">recorderMediaPlayer</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;Recorder Media Player updated from test&quot;</span><span class="p">;</span>
+<span class="n">recorderMediaPlayer</span><span class="p">.</span><span class="n">RecorderId</span> <span class="p">=</span> <span class="n">recorderMediaPlayer</span><span class="p">.</span><span class="n">Recorders</span><span class="p">.</span><span class="n">LastOrDefault</span><span class="p">().</span><span class="n">Key</span><span class="p">;</span>
+<span class="n">recorderMediaPlayer</span><span class="p">.</span><span class="n">MediaPlayerId</span> <span class="p">=</span> <span class="n">recorderMediaPlayer</span><span class="p">.</span><span class="n">MediaPlayers</span><span class="p">.</span><span class="n">LastOrDefault</span><span class="p">().</span><span class="n">Key</span><span class="p">;</span>
+
+<span class="c1">// Update via PUT method (default).</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">RecorderMediaPlayer</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderMediaPlayerWrapper</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">recorderMediaPlayer</span><span class="p">);</span>
+
+<span class="c1">// Update via POST method (use true argument).</span>
+<span class="c1">// ResponseContent&lt;RecorderMediaPlayer&gt; response = recorderMediaPlayerWrapper.Update(recorderMediaPlayer, true);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="c1">// Use Result of updated Recorder Media Player for display.</span>
+     <span class="n">RecorderMediaPlayer</span> <span class="n">updatedRecorderMediaPlayer</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="section" id="delete-recorder-media-player">
+<h2>Delete Recorder Media Player<a class="headerlink" href="#delete-recorder-media-player" title="Permalink to this headline">¶</a></h2>
+<p>Deletes existent <strong>Recorder Media Player</strong> for <a class="reference internal" href="tenant.html#tenant-label"><span>current Tenant</span></a> .</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Note that <strong>Recorder Media Player</strong> will not be deleted if there are any references of <strong>Recorder Media Player</strong> in [User](/v1/user).</p>
+</div>
+<div class="section" id="id24">
+<h3>Default REST approach<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>DELETE /api/v1/:tenantCode/recorder-players/:id</div></blockquote>
+<div class="section" id="id25">
+<h4>Parameters<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">id</span></code> The <strong>Recorder Media Player</strong> id, a valid and non-empty <code class="docutils literal"><span class="pre">guid</span></code>.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<div class="last line-block">
+<div class="line">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</div>
+<div class="line">If you don&#8217;t want to have in Web Server turned on the <code class="docutils literal"><span class="pre">DELETE</span></code> verb method read more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id26">
+<h4>Return value<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>There is no return value except if there is an error, the <code class="docutils literal"><span class="pre">JSON</span></code> <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id27">
+<h3>C# Wrapper approach<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderMediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Delete</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id28">
+<h4>Parameters<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Current Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">id</span></code> The <strong>Recorder Media Player</strong> id, a valid and non-empty <code class="docutils literal"><span class="pre">guid</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">updateViaPost</span></code> Set to <code class="docutils literal"><span class="pre">true</span></code> if in your Web Server you don&#8217;t want to enable <code class="docutils literal"><span class="pre">DELETE</span></code> method. Default is <code class="docutils literal"><span class="pre">false</span></code> or use <code class="docutils literal"><span class="pre">DELETE</span></code> method!</li>
+</ul>
+</div>
+<div class="section" id="id29">
+<h4>Return value<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: no return value or <code class="docutils literal"><span class="pre">void</span></code>.</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;RecorderMediaPlayer&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="id30">
+<h4>Example usage<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+<span class="n">Guid</span> <span class="n">recorderMediaPlayerId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
+
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">RecorderMediaPlayer</span><span class="p">,</span> <span class="n">RecorderMediaPlayerList</span><span class="p">&gt;</span> <span class="n">recorderMediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderMediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="c1">// Delete via DELETE method (default).</span>
+<span class="n">ResponseContent</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderMediaPlayerWrapper</span><span class="p">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">recorderMediaPlayerId</span><span class="p">);</span>
+
+<span class="c1">// Delete via POST method (use true argument).</span>
+<span class="c1">// ResponseContent response = recorderMediaPlayerWrapper.Delete(recorderMediaPlayerId, true);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="media-metadata.html" class="btn btn-neutral" title="Media File Metadata" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Qualtrak Solutions Ltd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

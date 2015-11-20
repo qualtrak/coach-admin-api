@@ -30,3 +30,4 @@ Contents:
    user
    media-player
    recorder
+   search-criteria

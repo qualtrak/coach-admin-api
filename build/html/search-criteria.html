@@ -1,0 +1,571 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Search Criteria &mdash; coach-admin-api 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+        <link rel="prev" title="Recorder" href="recorder.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> coach-admin-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-errors.html">Client Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tenant.html">Tenant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit.html">Unit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-player.html">Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder.html">Recorder</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Search Criteria</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#search-criteria-model">Search Criteria Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-type-with-conditions-model">Data Type with Conditions Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-types">Data Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#boolean-or-logical-data-type">Boolean (or logical data type)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datetime">DateTime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list">List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#listnumeric">ListNumeric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#numeric">Numeric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#textual">Textual</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#time">Time</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#condition-types">Condition Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#any">Any</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#greaterthan">GreaterThan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#greaterthanequal">GreaterThanEqual</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lessthan">LessThan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lessthanequal">LessThanEqual</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equal">Equal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notequal">NotEqual</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#contains">Contains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notcontains">NotContains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#range">Range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#startswith">StartsWith</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#endswith">EndsWith</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#data-types-and-conditions-combinations">Data Types and Conditions Combinations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">coach-admin-api</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Search Criteria</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/search-criteria.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="search-criteria">
+<span id="search-criteria-label"></span><h1>Search Criteria<a class="headerlink" href="#search-criteria" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>search criteria</strong> are the parameters that a <em>Manager</em> can use to search for individual recordings for evaluation in <em>Coach QM</em> and it is used for [Schedule](/v1/schedule). These parameters can be configured to reflect any type of search that can be performed within the <a class="reference internal" href="recorder.html#recorder-label"><span>Recorder</span></a> itself, allowing for a seamless user experience between the integrated applications. As few or as many search criteria can be configured as required.</p>
+<div class="section" id="search-criteria-model">
+<h2>Search Criteria Model<a class="headerlink" href="#search-criteria-model" title="Permalink to this headline">¶</a></h2>
+<p>Represents the <strong>Search Criteria</strong> model as value object with available properties and its behaviors used for <a class="reference internal" href="recorder.html#recorder-label"><span>Recorder</span></a> and [Schedule](/v1/schedule).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="51%" />
+<col width="22%" />
+<col width="7%" />
+<col width="7%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Required</th>
+<th class="head">Read-only</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">id</span></code></td>
+<td>Representing <strong>Search Criteria</strong> identifier.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">name</span></code></td>
+<td>The label the criterion will be given in <em>QM</em>.</td>
+<td><code class="docutils literal"><span class="pre">string(30)</span></code></td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">fieldName</span></code></td>
+<td>The search field where is particular piece of information from e.g. date.</td>
+<td><code class="docutils literal"><span class="pre">string(30)</span></code></td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">dataType</span></code></td>
+<td>From the supported [Data Types](/v1/search-criteria#data-types).</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">conditionType</span></code></td>
+<td>From the supported [Condition Types](/v1/search-criteria#data-types).</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">listOptions</span></code></td>
+<td>Options collection of <em>key/values</em> for <em>List Data Type</em>.</td>
+<td><code class="docutils literal"><span class="pre">dictionary(string,</span> <span class="pre">string)</span></code></td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">defaultValue</span></code></td>
+<td>The <code class="docutils literal"><span class="pre">listOptions</span></code> default selected value.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+<td>no</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>Search Criteria</strong> properties names (<em>Name</em> column) is for default usage by <code class="docutils literal"><span class="pre">JSON</span></code>, for <code class="docutils literal"><span class="pre">C#</span> <span class="pre">Wrapper</span></code> usage the <strong>Search Criteria</strong> properties are capitalized (eg. <code class="docutils literal"><span class="pre">Id</span></code>, <code class="docutils literal"><span class="pre">Name</span></code>,..)! \</p>
+</div>
+</div>
+<div class="section" id="data-type-with-conditions-model">
+<h2>Data Type with Conditions Model<a class="headerlink" href="#data-type-with-conditions-model" title="Permalink to this headline">¶</a></h2>
+<p>Represents the <em>Data Type</em> with its supported <em>Conditions</em> as model for lookup with available properties used for setting valid combination of <code class="docutils literal"><span class="pre">dataType</span></code> and <code class="docutils literal"><span class="pre">conditionType</span></code> for <strong>Search Criteria</strong>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="58%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">dateType</span></code></td>
+<td>The <em>Data Type</em> id and name.</td>
+<td><code class="docutils literal"><span class="pre">keyValue(byte,</span> <span class="pre">string)</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">conditions</span></code></td>
+<td>The <em>Data Type</em> supported <em>Conditions</em> as dictionary of id and name</td>
+<td><code class="docutils literal"><span class="pre">dictionary(byte,</span> <span class="pre">string)</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<div class="last line-block">
+<div class="line">The <strong>Data Type with Condition</strong> properties names (<em>Name</em> column) is</div>
+<div class="line">for default usage by <code class="docutils literal"><span class="pre">JSON</span></code>, for <code class="docutils literal"><span class="pre">C#</span> <span class="pre">Wrapper</span></code> usage the <strong>Data Type</strong></div>
+<div class="line">with Condition** properties are capitalized (eg. <code class="docutils literal"><span class="pre">Id</span></code>, <code class="docutils literal"><span class="pre">Name</span></code>,..)!</div>
+<div class="line">There is metrics of available [Condition Types](/v1/search-criteria#data-types) for each [Data Type](/v1/search-criteria#data-types) see more in section [&#8220;Data type and Conditions combinations&#8221;](/v1/search-criteria#combination).</div>
+</div>
+</div>
+<div class="section" id="data-types">
+<h3>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="boolean-or-logical-data-type">
+<h4>Boolean (or logical data type)<a class="headerlink" href="#boolean-or-logical-data-type" title="Permalink to this headline">¶</a></h4>
+<p>A value that is true, false or unknown, so filtered for, against or ignored.</p>
+</div>
+<div class="section" id="datetime">
+<h4>DateTime<a class="headerlink" href="#datetime" title="Permalink to this headline">¶</a></h4>
+<p>The date and time</p>
+</div>
+<div class="section" id="list">
+<h4>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h4>
+<p>A list of options that may either be selected individually or in combination.</p>
+</div>
+<div class="section" id="listnumeric">
+<h4>ListNumeric<a class="headerlink" href="#listnumeric" title="Permalink to this headline">¶</a></h4>
+<p>A list of options that equate to a particular numerical value.</p>
+</div>
+<div class="section" id="numeric">
+<h4>Numeric<a class="headerlink" href="#numeric" title="Permalink to this headline">¶</a></h4>
+<p>Fixed precision and scale numbers, functionally equivalent to decimal.</p>
+</div>
+<div class="section" id="textual">
+<h4>Textual<a class="headerlink" href="#textual" title="Permalink to this headline">¶</a></h4>
+<p>A single character or string.</p>
+</div>
+<div class="section" id="time">
+<h4>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h4>
+<p>The Time and no date.</p>
+</div>
+</div>
+<div class="section" id="condition-types">
+<h3>Condition Types<a class="headerlink" href="#condition-types" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="any">
+<h4>Any<a class="headerlink" href="#any" title="Permalink to this headline">¶</a></h4>
+<p>Enables the selection of a combination of values when used in conjunction with a list.</p>
+</div>
+<div class="section" id="greaterthan">
+<h4>GreaterThan<a class="headerlink" href="#greaterthan" title="Permalink to this headline">¶</a></h4>
+<p>All values greater than the chosen.</p>
+</div>
+<div class="section" id="greaterthanequal">
+<h4>GreaterThanEqual<a class="headerlink" href="#greaterthanequal" title="Permalink to this headline">¶</a></h4>
+<p>All values greater than or equal to the chosen.</p>
+</div>
+<div class="section" id="lessthan">
+<h4>LessThan<a class="headerlink" href="#lessthan" title="Permalink to this headline">¶</a></h4>
+<p>All values less than the chosen.</p>
+</div>
+<div class="section" id="lessthanequal">
+<h4>LessThanEqual<a class="headerlink" href="#lessthanequal" title="Permalink to this headline">¶</a></h4>
+<p>All values less than or equal to the chosen.</p>
+</div>
+<div class="section" id="equal">
+<h4>Equal<a class="headerlink" href="#equal" title="Permalink to this headline">¶</a></h4>
+<p>Only values equal to the chosen, in the case of a list presenting the user with a dropdown rather than a series of selection options.</p>
+</div>
+<div class="section" id="notequal">
+<h4>NotEqual<a class="headerlink" href="#notequal" title="Permalink to this headline">¶</a></h4>
+<p>All values that do not equal the chosen.</p>
+</div>
+<div class="section" id="contains">
+<h4>Contains<a class="headerlink" href="#contains" title="Permalink to this headline">¶</a></h4>
+<p>Includes the specified text.</p>
+</div>
+<div class="section" id="notcontains">
+<h4>NotContains<a class="headerlink" href="#notcontains" title="Permalink to this headline">¶</a></h4>
+<p>Does not include the specified text.</p>
+</div>
+<div class="section" id="range">
+<h4>Range<a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h4>
+<p>All values that exist within the chosen range.</p>
+</div>
+<div class="section" id="startswith">
+<h4>StartsWith<a class="headerlink" href="#startswith" title="Permalink to this headline">¶</a></h4>
+<p>Values begin with specified characters.</p>
+</div>
+<div class="section" id="endswith">
+<h4>EndsWith<a class="headerlink" href="#endswith" title="Permalink to this headline">¶</a></h4>
+<p>Values end with specified characters.</p>
+</div>
+</div>
+<div class="section" id="data-types-and-conditions-combinations">
+<h3>Data Types and Conditions Combinations<a class="headerlink" href="#data-types-and-conditions-combinations" title="Permalink to this headline">¶</a></h3>
+<p>The table of supported <strong>Conditions</strong> for each <strong>Data Type</strong>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="14%" />
+<col width="10%" />
+<col width="10%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Condition / Data Type</th>
+<th class="head">Boolean</th>
+<th class="head">DateTime</th>
+<th class="head">List</th>
+<th class="head">ListNumeric</th>
+<th class="head">Numeric</th>
+<th class="head">Textual</th>
+<th class="head">Time</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Any</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>GreaterThan</strong></td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>✔</td>
+</tr>
+<tr class="row-even"><td><strong>GreaterThanEqual</strong></td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>✔</td>
+</tr>
+<tr class="row-odd"><td><strong>LessThan</strong></td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>✔</td>
+</tr>
+<tr class="row-even"><td><strong>LessThanEqual</strong></td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>✔</td>
+</tr>
+<tr class="row-odd"><td><strong>Equal</strong></td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr class="row-even"><td><strong>NotEqual</strong></td>
+<td>✔</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr class="row-odd"><td><strong>Contains</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><strong>NotContains</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>Range</strong></td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+<td>✔</td>
+</tr>
+<tr class="row-even"><td><strong>StartsWith</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><strong>EndsWith</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>✔</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="recorder.html" class="btn btn-neutral" title="Recorder" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Qualtrak Solutions Ltd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

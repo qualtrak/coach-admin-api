@@ -2,10 +2,10 @@
 Release History
 ===============
 
-1.0.2 (2015-08-??)
+1.0.2 (2015-11-20)
 ==================
 
-* Initial release as an OSS project with **Coach 5.2**
+* Initial release as an OSS project with **Coach 6.0**
 
 1.0.1 (2015-01-01)
 ==================

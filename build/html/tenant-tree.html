@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tenant Tree &mdash; coach-admin-api 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+        <link rel="prev" title="License" href="license.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> coach-admin-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-errors.html">Client Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tenant.html">Tenant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit.html">Unit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-player.html">Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search-criteria.html">Search Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-metadata.html">Media File Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder-media-player.html">Recorder Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="period-types.html">Period Types and Occurrences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Tenant Tree</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#graphical-tenant-tree-representation">Graphical Tenant Tree Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tenant-tree-item-model">Tenant Tree Item Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tenant-tree-item-types">Tenant Tree Item Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#levels-and-tenant-tree-item-types">Levels and Tenant Tree Item Types</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tenant-tree-item">Tenant Tree Item</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#default-rest-approach">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#return-value">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#c-wrapper-approach">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-usage">Example usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">coach-admin-api</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Tenant Tree</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/tenant-tree.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tenant-tree">
+<h1>Tenant Tree<a class="headerlink" href="#tenant-tree" title="Permalink to this headline">¶</a></h1>
+<p>A <strong>Tenant Tree</strong> is a flattened representation of the whole hierachy including <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a>, recursive <a class="reference internal" href="unit.html#unit-label"><span>Units</span></a> and its <em>Managers</em> (<a class="reference internal" href="user.html#user-label"><span>User</span></a>), <a class="reference internal" href="unit.html#unit-label"><span>Unit</span></a> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> and its <em>Managers</em> and <em>Agents</em> which are essentially (<a class="reference internal" href="user.html#user-label"><span>Users</span></a>).</p>
+<div class="section" id="graphical-tenant-tree-representation">
+<h2>Graphical Tenant Tree Representation<a class="headerlink" href="#graphical-tenant-tree-representation" title="Permalink to this headline">¶</a></h2>
+<p>..tree:</p>
+<div class="highlight-python"><div class="highlight"><pre>+ Tenant
+|
+|---+ Unit (recursive)
+    | Unit manager(s)
+    |
+    |---+ Team
+        | Team manager(s)
+        | Agent(s)
+</pre></div>
+</div>
+</div>
+<div class="section" id="tenant-tree-item-model">
+<h2>Tenant Tree Item Model<a class="headerlink" href="#tenant-tree-item-model" title="Permalink to this headline">¶</a></h2>
+<p>Represent the <strong>Tenant Tree</strong> model as flattened hierarchy with read-only properties.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that  model is used as result of read-only method <em>GET</em> (<em>GetTree</em>).</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="73%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">id</span></code></td>
+<td>Representing <strong>Tenan Tree Item</strong> identifier.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><strong>Common properties</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">treeItemId</span></code></td>
+<td>The id of <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a>, <a class="reference internal" href="unit.html#unit-label"><span>Unit</span></a>, <a class="reference internal" href="team.html#team-label"><span>Team</span></a> or <a class="reference internal" href="user.html#user-label"><span>User</span></a>.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">treeItemType</span></code></td>
+<td>The item type. <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a>, <a class="reference internal" href="unit.html#unit-label"><span>Unit</span></a>, <a class="reference internal" href="team.html#team-label"><span>Team</span></a> or <a class="reference internal" href="user.html#user-label"><span>User</span></a>.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">name</span></code></td>
+<td>The name of <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a>, <a class="reference internal" href="unit.html#unit-label"><span>Unit</span></a>, <a class="reference internal" href="team.html#team-label"><span>Team</span></a> or <a class="reference internal" href="user.html#user-label"><span>User</span></a>.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">isActive</span></code></td>
+<td>Denotes whether the <strong>Tenant Tree Item</strong> state is active or inactive.</td>
+<td><code class="docutils literal"><span class="pre">boolean</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">isDeleted</span></code></td>
+<td>Denotes whether the <strong>Tenant Tree Item</strong> state is deleted or not.</td>
+<td><code class="docutils literal"><span class="pre">boolean</span></code></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><strong>User specific</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">recorderUserId</span></code></td>
+<td>The <a class="reference internal" href="user.html#user-label"><span>User</span></a> identification of media files within the Recorder.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">recorderUserId</span></code></td>
+<td>The <a class="reference internal" href="user.html#user-label"><span>User</span></a> identification of media files within the Recorder.</td>
+<td><code class="docutils literal"><span class="pre">string</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">haveRecorder</span></code></td>
+<td>Denotes whether the [Recorder](/v1/recorder) is assigned to <a class="reference internal" href="user.html#user-label"><span>User</span></a>.</td>
+<td><code class="docutils literal"><span class="pre">boolean</span></code></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><strong>Manager / Agent specific</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">managerOrAgentId</span></code></td>
+<td>Representing the true identifier of managership/membership not only the <code class="docutils literal"><span class="pre">userId</span></code>.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><strong>Tenant specific</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">tenantId</span></code></td>
+<td>Sets to each <strong>Tenant Tree Item</strong> <code class="docutils literal"><span class="pre">tenantId</span></code> to denote which <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> it belongs.</td>
+<td><code class="docutils literal"><span class="pre">guid</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>Tenant Tree</strong> properties names (<em>Name</em> column) is for default usage by <code class="docutils literal"><span class="pre">JSON</span></code>, for <code class="docutils literal"><span class="pre">C#</span> <span class="pre">Wrapper</span></code> usage the <strong>Tenant Tree</strong> properties are capitalized (eg. <code class="docutils literal"><span class="pre">Id</span></code>, <code class="docutils literal"><span class="pre">Name</span></code>,..)!</p>
+</div>
+<div class="section" id="tenant-tree-item-types">
+<h3>Tenant Tree Item Types<a class="headerlink" href="#tenant-tree-item-types" title="Permalink to this headline">¶</a></h3>
+<p>Currently supported [Tenant Tree](/v1/tree) item types are:</p>
+<ul class="simple">
+<li>Tenant</li>
+<li>Unit</li>
+<li>Unit Manager</li>
+<li>Team</li>
+<li>Team Manager</li>
+<li>Agent</li>
+</ul>
+<div class="section" id="levels-and-tenant-tree-item-types">
+<h4>Levels and Tenant Tree Item Types<a class="headerlink" href="#levels-and-tenant-tree-item-types" title="Permalink to this headline">¶</a></h4>
+<p>[Schedule](/v1/schedule) levels are essentially a <strong>Tenant Tree</strong> items.
+But only tree items that are of type <em>Unit</em>, <em>Team</em> or <em>Agent</em> are valid as <a class="reference internal" href="schedule.html#schedule-label"><span>Schedule</span></a> <code class="docutils literal"><span class="pre">levels</span></code>, other tree item types are invalid!</p>
+</div>
+</div>
+</div>
+<div class="section" id="tenant-tree-item">
+<h2>Tenant Tree Item<a class="headerlink" href="#tenant-tree-item" title="Permalink to this headline">¶</a></h2>
+<p>The root [Te:ref:<cite>tenant-label</cite> tree item with recursive items.</p>
+<div class="section" id="default-rest-approach">
+<h3>Default REST approach<a class="headerlink" href="#default-rest-approach" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>GET /api/v1/:tenantCode/tree</div></blockquote>
+<div class="section" id="parameters">
+<h4>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+</ul>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Remember to add <em>API Key</em> as <em>customer*key</em> and <em>API Secret</em> as <em>customer*secret</em> into your <em>Request HTTP Header</em>. See more in <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a>.</p>
+</div>
+</div>
+<div class="section" id="return-value">
+<h4>Return value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">JSON</span></code> [Tenant Tree Item Model](/v1/tree#tenant-tree-item-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">JSON</span></code> <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="c-wrapper-approach">
+<h3>C# Wrapper approach<a class="headerlink" href="#c-wrapper-approach" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">TreeWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetTree</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id1">
+<h4>Parameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">tenantCode</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
+<li><code class="docutils literal"><span class="pre">apiKey</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
+<li><code class="docutils literal"><span class="pre">apiSecret</span></code> <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h4>Return value<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>If there is no error: <code class="docutils literal"><span class="pre">ResaultContent&lt;TenantTreeItem&gt;.Result</span></code> object as [Tenant Tree Item Model](/v1/tree#tenant-tree-item-model).</li>
+<li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;TenantTreeItem&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="example-usage">
+<h4>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="n">tenantCode</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
+
+<span class="n">TreeWrapper</span> <span class="n">treeWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TreeWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">TenantTreeItem</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">treeWrapper</span><span class="p">.</span><span class="n">GetTree</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="c1">// Use Result as root Tenant Tree Item.</span>
+     <span class="n">TenantTreeItem</span> <span class="n">rootTenantItem</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+
+     <span class="c1">// Root Units can be invoked</span>
+     <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">TenantTreeItem</span><span class="p">&gt;</span> <span class="n">rootUnits</span> <span class="p">=</span> <span class="n">rootTenantItem</span><span class="p">.</span><span class="n">Items</span><span class="p">;</span>
+
+     <span class="c1">// .... use recursion to get full hierarchy for displaying</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: The error handling...</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="license.html" class="btn btn-neutral" title="License" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Qualtrak Solutions Ltd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

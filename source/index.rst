@@ -36,3 +36,4 @@ Contents:
    schedule
    period-types
    license
+   tenant-tree

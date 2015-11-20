@@ -31,3 +31,4 @@ Contents:
    media-player
    recorder
    search-criteria
+   media-metadata

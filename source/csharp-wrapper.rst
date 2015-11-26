@@ -4,8 +4,6 @@
 C# Wrapper
 ==========
 
-Please see NEW in **release 5.1** below for changes made in Release 5.1
-
 .. danger::
 
     Please make sure that you have read :ref:`Getting Started <getting-started-label>` because even the implementation is very different then default default *REST* approach, there are some concepts and issues described in much more details than it is here and some are assumed so there are no details at all.
@@ -29,7 +27,6 @@ The dependencis to run the *C# Wrapper Library* are:
 
 * [JSON.NET](https://json.codeplex.com/releases) (actually the compiled name is ``Newtonsoft.Json.dll``).
 * **CHECK OTHER DEPENDENCIES**
-* An appSetting in the web.config file with key of ``coach:license-manager-endpoints``. The value must contain a single or a comma separated list of ip:port combinations from which the License Manager is being served. - **NEW in release 5.1**
 
 .. warning::
 
@@ -111,7 +108,7 @@ The ``Result<T>`` will be sent if update was successful if there is an error the
     The parameter ``updateViaPost`` is set by default to false and it will be using ``PUT`` on request, if this is issue, you can set it to ``true`` and will be using ``PUT`` via ``POST``.
 
 ResponseContent Delete(Guid id, bool deleteViaPost = false)
-----------------------------------------------
+-----------------------------------------------------------
 
 Method used to delete resource by sending ``id``. It returns non-generic ``ResponseContent`` so there is no result just ``Error``. So if ``Error`` is not ``null`` then something went wrong on server.
 

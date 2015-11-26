@@ -6,8 +6,6 @@
 Welcome to coach-admin-api's documentation!
 ===========================================
 
-**STILL UNDERGOING MIGRATION** - due to be finished shortly (aug '15)
-
 Contents:
 
 .. toctree::

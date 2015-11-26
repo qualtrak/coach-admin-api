@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>C# Wrapper &mdash; coach-admin-api 0.0.1 documentation</title>
+  <title>C# Wrapper &mdash; coach-admin-api 1.0.2 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="coach-admin-api 0.0.1 documentation" href="index.html"/>
+    <link rel="top" title="coach-admin-api 1.0.2 documentation" href="index.html"/>
         <link rel="next" title="Client Errors" href="client-errors.html"/>
         <link rel="prev" title="Getting Started" href="getting-started.html"/> 
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.0.1
+                1.0.2
               </div>
             
           
@@ -81,7 +81,8 @@
           
             
             
-                <ul class="current">
+                <p class="caption"><span class="caption-text">The Basics</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">C# Wrapper</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#setup-and-dependencies">Setup and Dependencies</a><ul>
@@ -116,9 +117,23 @@
 <li class="toctree-l1"><a class="reference internal" href="client-errors.html">Client Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="tenant.html">Tenant</a></li>
 <li class="toctree-l1"><a class="reference internal" href="unit.html">Unit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-player.html">Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder.html">Recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search-criteria.html">Search Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media-metadata.html">Media File Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorder-media-player.html">Recorder Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="period-types.html">Period Types and Occurrences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tenant-tree.html">Tenant Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recording-evaluations.html">Recording Evaluations</a></li>
 </ul>
 
             
@@ -165,7 +180,6 @@
             
   <div class="section" id="c-wrapper">
 <h1>C# Wrapper<a class="headerlink" href="#c-wrapper" title="Permalink to this headline">¶</a></h1>
-<p>Please see NEW in <strong>release 5.1</strong> below for changes made in Release 5.1</p>
 <div class="admonition danger">
 <p class="first admonition-title">Danger</p>
 <p class="last">Please make sure that you have read <a class="reference internal" href="getting-started.html#getting-started-label"><span>Getting Started</span></a> because even the implementation is very different then default default <em>REST</em> approach, there are some concepts and issues described in much more details than it is here and some are assumed so there are no details at all.</p>
@@ -184,7 +198,6 @@
 <ul class="simple">
 <li>[JSON.NET](<a class="reference external" href="https://json.codeplex.com/releases">https://json.codeplex.com/releases</a>) (actually the compiled name is <code class="docutils literal"><span class="pre">Newtonsoft.Json.dll</span></code>).</li>
 <li><strong>CHECK OTHER DEPENDENCIES</strong></li>
-<li>An appSetting in the web.config file with key of <code class="docutils literal"><span class="pre">coach:license-manager-endpoints</span></code>. The value must contain a single or a comma separated list of ip:port combinations from which the License Manager is being served. - <strong>NEW in release 5.1</strong></li>
 </ul>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -308,7 +321,7 @@ The <code class="docutils literal"><span class="pre">Result&lt;T&gt;</span></cod
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.0.1',
+            VERSION:'1.0.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

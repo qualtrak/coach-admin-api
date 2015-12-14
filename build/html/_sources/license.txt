@@ -71,7 +71,7 @@ Return value
 ------------
 
 * If there is no error: no return value or ``void``.
-* If there is an error: ``ResaultContent<ICollection<MediaPlayer>>.Error`` object. See more in :ref:`client-error-label`.
+* If there is an error: ``ResaultContent<ICollection<Error>>.Error`` object. See more in :ref:`client-error-label`.
 
 Example usage
 -------------

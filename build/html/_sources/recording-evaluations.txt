@@ -72,7 +72,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    RecordingEvaluationWrapper(int tenantCode, string apiKey, string apiSecret).GetEvaluationsByCallId(string callId);
@@ -96,7 +96,7 @@ Safe Call Id Extension Method
 
 Create the C# ``string`` Extension Method to make ``callId`` safe and call it always to make safe ``callId`` to get ``Evauluations``:
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
     public static class StringExtensions
@@ -126,7 +126,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;

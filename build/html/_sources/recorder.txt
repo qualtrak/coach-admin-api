@@ -180,7 +180,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    RecorderWrapper(int tenantCode, string apiKey, string apiSecret).GetAll();
@@ -202,20 +202,20 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper&lt;Recorder, RecorderList&gt; recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
-   ResponseContent&lt;ICollection&lt;RecorderList&gt;&gt; response = recorderWrapper.GetAll();
+   IApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
+   ResponseContent<ICollection<RecorderList>> response = recorderWrapper.GetAll();
 
    if (response.Result != null)
    {
         // Use Result as List of Recorders for displaying.
-        ICollection&lt;RecorderList&gt; recorders = response.Result;
+        ICollection<RecorderList> recorders = response.Result;
    }
    else
    {
@@ -254,7 +254,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    RecorderWrapper(int tenantCode, string apiKey, string apiSecret).GetById(Guid id);
@@ -277,7 +277,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -285,8 +285,8 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid recorderId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;Recorder, RecorderList&gt; recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
-   ResponseContent&lt;Recorder&gt; response = recorderWrapper.GetById(recorderId);
+   IApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
+   ResponseContent<Recorder> response = recorderWrapper.GetById(recorderId);
 
    if (response.Result != null)
    {
@@ -335,7 +335,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    RecorderWrapper(int tenantCode, string apiKey, string apiSecret).Create(Recorder recorder);
@@ -358,14 +358,14 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper&lt;Recorder, RecorderList&gt; recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
+   IApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
    // Get default data and lookup for recorder
    Recorder newRecorder = recorderWrapper.GetById(new Guid()).Result;
    newRecorder.Name = "Test Recorder with Direct Access";
@@ -379,7 +379,7 @@ Example usage
                                                     .Select(x => x.Key)
                                                     .SingleOrDefault();
 
-   ResponseContent&lt;Recorder&gt; response = recorderWrapper.Create(newRecorder);
+   ResponseContent<Recorder> response = recorderWrapper.Create(newRecorder);
 
    if (response.Result != null)
    {
@@ -430,7 +430,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    RecorderWrapper(int tenantCode, string apiKey, string apiSecret).Update(Recorder recorder, bool updateViaPost = false);
@@ -442,7 +442,7 @@ Parameters
 * ``tenantCode`` Current :ref:`tenant-label` code, a valid ``integer`` greater or equal to 1000.
 * ``apiKey`` Current :ref:`tenant-label` API Key provided by **Qualtrak**.
 * ``apiSecret`` Current :ref:`tenant-label` API Secret provided by **Qualtrak**.
-* ``recorder`` The **Recorder** model constructed from **Recorder properties**b and ``Id`` must be provided in it. If not ``ArgumentException`` will be thrown!
+* ``recorder`` The **Recorder** model constructed from **Recorder properties** and ``Id`` must be provided in it. If not ``ArgumentException`` will be thrown!
 * ``updateViaPost`` Set to ``true`` if in your Web Server you don't want to enable ``PUT`` method. Default is ``false`` or use ``PUT`` method!
 
 Return value
@@ -454,7 +454,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -463,7 +463,7 @@ Example usage
    Guid recorderId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
 
-   IApiWrapper&lt;Recorder, RecorderList&gt; recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
+   IApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
    Recorder recorder = recorderWrapper.GetById(recorderId).Result;
 
    recorder.Name = "Test Recorder updated to API";
@@ -474,10 +474,10 @@ Example usage
                                               .SingleOrDefault();
 
    // Update via PUT method (default).
-   ResponseContent&lt;Recorder&gt; response = recorderWrapper.Update(recorder);
+   ResponseContent<Recorder> response = recorderWrapper.Update(recorder);
 
    // Update via POST method (use true argument).
-   // ResponseContent&lt;Recorder&gt; response = recorderWrapper.Update(recorder, true);
+   // ResponseContent<Recorder> response = recorderWrapper.Update(recorder, true);
 
    if (response.Result != null)
    {
@@ -525,7 +525,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    RecorderWrapper(int tenantCode, string apiKey, string apiSecret).Delete(Guid id, bool updateViaPost = false);
@@ -549,7 +549,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -557,7 +557,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid recorderId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;Recorder, RecorderList&gt; recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
+   IApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
    // Delete via DELETE method (default).
    ResponseContent response = recorderWrapper.Delete(recorderId);
 

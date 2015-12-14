@@ -564,7 +564,7 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 </div>
 <div class="section" id="c-wrapper-approach">
 <h3>C# Wrapper approach<a class="headerlink" href="#c-wrapper-approach" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">UserWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetAll</span><span class="p">();</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">UserWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetAll</span><span class="p">();</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id1">
@@ -584,7 +584,7 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 </div>
 <div class="section" id="example-usage">
 <h4>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -604,13 +604,13 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 <span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">User</span><span class="p">,</span> <span class="n">UserList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">userWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UserWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">ICollection</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">UserList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">userWrapper</span><span class="p">.</span><span class="n">GetAll</span><span class="p">();</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">UserList</span><span class="p">&gt;</span> <span class="n">userWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UserWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">ICollection</span><span class="p">&lt;</span><span class="n">UserList</span><span class="p">&gt;&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">userWrapper</span><span class="p">.</span><span class="n">GetAll</span><span class="p">();</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
      <span class="c1">// Use Result as List of Users for displaying.</span>
-     <span class="n">ICollection</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">UserList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">users</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+     <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">UserList</span><span class="p">&gt;</span> <span class="n">users</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">else</span>
 <span class="p">{</span>
@@ -650,7 +650,7 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 </div>
 <div class="section" id="id6">
 <h3>C# Wrapper approach<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">UserWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetById</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">UserWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetById</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id7">
@@ -671,7 +671,7 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 </div>
 <div class="section" id="id9">
 <h4>Example usage<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -693,8 +693,8 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 <span class="n">Guid</span> <span class="n">userId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">User</span><span class="p">,</span> <span class="n">UserList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">userWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UserWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">User</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">userWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">userId</span><span class="p">);</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">UserList</span><span class="p">&gt;</span> <span class="n">userWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UserWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">userWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">userId</span><span class="p">);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
@@ -739,7 +739,7 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 </div>
 <div class="section" id="id13">
 <h3>C# Wrapper approach<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">UserWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Create</span><span class="p">(</span><span class="n">User</span> <span class="n">user</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">UserWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Create</span><span class="p">(</span><span class="n">User</span> <span class="n">user</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id14">
@@ -760,7 +760,7 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 </div>
 <div class="section" id="id16">
 <h4>Example usage<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -789,17 +789,17 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 <span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">User</span><span class="p">,</span> <span class="n">UserList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">userWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UserWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">UserList</span><span class="p">&gt;</span> <span class="n">userWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UserWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
 <span class="c1">// Get default data and lookup for users</span>
 <span class="n">User</span> <span class="n">newUser</span> <span class="p">=</span> <span class="n">userWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="k">new</span> <span class="n">Guid</span><span class="p">()).</span><span class="n">Result</span><span class="p">;</span>
 <span class="n">newUser</span><span class="p">.</span><span class="n">Username</span> <span class="p">=</span> <span class="s">&quot;Tester&quot;</span><span class="p">;</span>
 <span class="n">newUser</span><span class="p">.</span><span class="n">RecorderMediaPlayerId</span> <span class="p">=</span> <span class="n">newUser</span><span class="p">.</span><span class="n">RecorderMediaPlayersLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span><span class="p">;</span>
-<span class="n">newUser</span><span class="p">.</span><span class="n">Roles</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Guid</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">{</span> <span class="n">newUser</span><span class="p">.</span><span class="n">RolesLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
-<span class="n">newUser</span><span class="p">.</span><span class="n">ManagedUnits</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Guid</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">{</span> <span class="n">newUser</span><span class="p">.</span><span class="n">UnitsLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
-<span class="n">newUser</span><span class="p">.</span><span class="n">ManagedTeams</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Guid</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">{</span> <span class="n">newUser</span><span class="p">.</span><span class="n">TeamsLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
-<span class="n">newUser</span><span class="p">.</span><span class="n">TeamMemberships</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Guid</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">{</span> <span class="n">newUser</span><span class="p">.</span><span class="n">TeamsLookup</span><span class="p">.</span><span class="n">LastOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
+<span class="n">newUser</span><span class="p">.</span><span class="n">Roles</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">newUser</span><span class="p">.</span><span class="n">RolesLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
+<span class="n">newUser</span><span class="p">.</span><span class="n">ManagedUnits</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">newUser</span><span class="p">.</span><span class="n">UnitsLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
+<span class="n">newUser</span><span class="p">.</span><span class="n">ManagedTeams</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">newUser</span><span class="p">.</span><span class="n">TeamsLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
+<span class="n">newUser</span><span class="p">.</span><span class="n">TeamMemberships</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">newUser</span><span class="p">.</span><span class="n">TeamsLookup</span><span class="p">.</span><span class="n">LastOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
 
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">User</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">userWrapper</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">newUser</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">userWrapper</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">newUser</span><span class="p">);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
@@ -848,7 +848,7 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 </div>
 <div class="section" id="id20">
 <h3>C# Wrapper approach<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">UserWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Update</span><span class="p">(</span><span class="n">User</span> <span class="n">user</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">UserWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Update</span><span class="p">(</span><span class="n">User</span> <span class="n">user</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id21">
@@ -870,7 +870,7 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 </div>
 <div class="section" id="id23">
 <h4>Example usage<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -904,20 +904,20 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 <span class="n">Guid</span> <span class="n">userId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">User</span><span class="p">,</span> <span class="n">UserList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">userWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UserWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">UserList</span><span class="p">&gt;</span> <span class="n">userWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UserWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
 <span class="n">User</span> <span class="n">user</span> <span class="p">=</span> <span class="n">userWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">userId</span><span class="p">).</span><span class="n">Result</span><span class="p">;</span>
 <span class="n">user</span><span class="p">.</span><span class="n">Username</span> <span class="p">=</span> <span class="s">&quot;Tester&quot;</span><span class="p">;</span>
 <span class="n">user</span><span class="p">.</span><span class="n">RecorderMediaPlayerId</span> <span class="p">=</span> <span class="n">user</span><span class="p">.</span><span class="n">RecorderMediaPlayersLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span><span class="p">;</span>
-<span class="n">user</span><span class="p">.</span><span class="n">Roles</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Guid</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">{</span> <span class="n">user</span><span class="p">.</span><span class="n">RolesLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
-<span class="n">user</span><span class="p">.</span><span class="n">ManagedUnits</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Guid</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">{</span> <span class="n">user</span><span class="p">.</span><span class="n">UnitsLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
-<span class="n">user</span><span class="p">.</span><span class="n">ManagedTeams</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Guid</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">{</span> <span class="n">user</span><span class="p">.</span><span class="n">TeamsLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
-<span class="n">user</span><span class="p">.</span><span class="n">TeamMemberships</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Guid</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">{</span> <span class="n">user</span><span class="p">.</span><span class="n">TeamsLookup</span><span class="p">.</span><span class="n">LastOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
+<span class="n">user</span><span class="p">.</span><span class="n">Roles</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">user</span><span class="p">.</span><span class="n">RolesLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
+<span class="n">user</span><span class="p">.</span><span class="n">ManagedUnits</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">user</span><span class="p">.</span><span class="n">UnitsLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
+<span class="n">user</span><span class="p">.</span><span class="n">ManagedTeams</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">user</span><span class="p">.</span><span class="n">TeamsLookup</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
+<span class="n">user</span><span class="p">.</span><span class="n">TeamMemberships</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">user</span><span class="p">.</span><span class="n">TeamsLookup</span><span class="p">.</span><span class="n">LastOrDefault</span><span class="p">().</span><span class="n">Key</span> <span class="p">};</span>
 
 <span class="c1">// Update via PUT method (default).</span>
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">User</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">userWrapper</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">userWrapper</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
 
 <span class="c1">// Update via POST method (use true argument).</span>
-<span class="c1">// ResponseContent&amp;lt;User&amp;gt; response = userWrapper.Update(user, true);</span>
+<span class="c1">// ResponseContent&lt;User&gt; response = userWrapper.Update(user, true);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
@@ -971,7 +971,7 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 </div>
 <div class="section" id="id27">
 <h3>C# Wrapper approach<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">UserWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Delete</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">UserWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Delete</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id28">
@@ -993,7 +993,7 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 </div>
 <div class="section" id="id30">
 <h4>Example usage<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1014,7 +1014,7 @@ needed for setting the <strong>User&#8217;s</strong> <code class="docutils liter
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 <span class="n">Guid</span> <span class="n">userId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">User</span><span class="p">,</span> <span class="n">UserList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">userWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UserWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">UserList</span><span class="p">&gt;</span> <span class="n">userWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UserWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
 <span class="c1">// Delete via DELETE method (default).</span>
 <span class="n">ResponseContent</span> <span class="n">response</span> <span class="p">=</span> <span class="n">userWrapper</span><span class="p">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">userId</span><span class="p">);</span>
 

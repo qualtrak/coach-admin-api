@@ -84,7 +84,6 @@
                 <p class="caption"><span class="caption-text">The Basics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="client-errors.html">Client Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
@@ -397,7 +396,7 @@ One <a class="reference internal" href="user.html#user-label"><span>User</span><
 </div>
 <div class="section" id="c-wrapper-approach">
 <h3>C# Wrapper approach<a class="headerlink" href="#c-wrapper-approach" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">TenantWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetByCode</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">TenantWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetByCode</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id1">
@@ -417,7 +416,7 @@ One <a class="reference internal" href="user.html#user-label"><span>User</span><
 </div>
 <div class="section" id="example-usage">
 <h4>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -438,7 +437,7 @@ One <a class="reference internal" href="user.html#user-label"><span>User</span><
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 
 <span class="n">TenantWrapper</span> <span class="n">tenantWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TenantWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Tenant</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">tenantWrapper</span><span class="p">.</span><span class="n">GetByCode</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">Tenant</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">tenantWrapper</span><span class="p">.</span><span class="n">GetByCode</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
@@ -486,7 +485,7 @@ One <a class="reference internal" href="user.html#user-label"><span>User</span><
 </div>
 <div class="section" id="id6">
 <h3>C# Wrapper approach<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><div class="highlight"><pre><span class="n">TenantWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Update</span><span class="p">(</span><span class="n">Tenant</span> <span class="n">tenant</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">TenantWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Update</span><span class="p">(</span><span class="n">Tenant</span> <span class="n">tenant</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="section" id="id7">
@@ -508,7 +507,7 @@ One <a class="reference internal" href="user.html#user-label"><span>User</span><
 </div>
 <div class="section" id="id9">
 <h4>Example usage<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -540,7 +539,7 @@ One <a class="reference internal" href="user.html#user-label"><span>User</span><
 <span class="n">tenant</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Tenant Updated&quot;</span><span class="p">;</span>
 
 <span class="c1">// Update via PUT method (default).</span>
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Tenant</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">tenantWrapper</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">tenant</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">Tenant</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">tenantWrapper</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">tenant</span><span class="p">);</span>
 
 <span class="c1">// Update via POST method (use true argument).</span>
 <span class="c1">// ResponseContent&amp;lt;Tenant&amp;gt; response = tenantWrapper.Update(tenant, true);</span>

@@ -54,7 +54,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    LicenseWrapper(int tenantCode, string apiKey, string apiSecret).Obtain();
@@ -76,7 +76,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;

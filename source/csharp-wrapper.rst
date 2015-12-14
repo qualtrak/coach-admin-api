@@ -18,7 +18,7 @@ Setup and Dependencies
 Setup
 ~~~~~
 
-To setup *C# Wrapper Library* there is a need to add the reference to ``Qualtrak.Coach.API.Wrappers.CSharp.dll`` provided with installation of *Coach*. Note that project framework is needed to be *.NET 4.5*, but note that *.NET 4.5 Client Profile* is not supported.
+To setup *C# Wrapper Library* there is a need to add the reference to ``Qualtrak.Coach.API.Wrappers.c#.dll`` provided with installation of *Coach*. Note that project framework is needed to be *.NET 4.5*, but note that *.NET 4.5 Client Profile* is not supported.
 
 Dependencies
 ~~~~~~~~~~~~

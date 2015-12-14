@@ -178,7 +178,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    UserWrapper(int tenantCode, string apiKey, string apiSecret).GetAll();
@@ -199,20 +199,20 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper&lt;User, UserList&gt; userWrapper = new UserWrapper(tenantCode, key, secret);
-   ResponseContent&lt;ICollection&lt;UserList&gt;&gt; response = userWrapper.GetAll();
+   IApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
+   ResponseContent<ICollection<UserList>> response = userWrapper.GetAll();
 
    if (response.Result != null)
    {
         // Use Result as List of Users for displaying.
-        ICollection&lt;UserList&gt; users = response.Result;
+        ICollection<UserList> users = response.Result;
    }
    else
    {
@@ -249,7 +249,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    UserWrapper(int tenantCode, string apiKey, string apiSecret).GetById(Guid id);
@@ -272,7 +272,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -280,8 +280,8 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid userId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;User, UserList&gt; userWrapper = new UserWrapper(tenantCode, key, secret);
-   ResponseContent&lt;User&gt; response = userWrapper.GetById(userId);
+   IApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
+   ResponseContent<User> response = userWrapper.GetById(userId);
 
    if (response.Result != null)
    {
@@ -325,7 +325,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    UserWrapper(int tenantCode, string apiKey, string apiSecret).Create(User user);
@@ -348,24 +348,24 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper&lt;User, UserList&gt; userWrapper = new UserWrapper(tenantCode, key, secret);
+   IApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
    // Get default data and lookup for users
    User newUser = userWrapper.GetById(new Guid()).Result;
    newUser.Username = "Tester";
    newUser.RecorderMediaPlayerId = newUser.RecorderMediaPlayersLookup.FirstOrDefault().Key;
-   newUser.Roles = new List&lt;Guid&gt; { newUser.RolesLookup.FirstOrDefault().Key };
-   newUser.ManagedUnits = new List&lt;Guid&gt; { newUser.UnitsLookup.FirstOrDefault().Key };
-   newUser.ManagedTeams = new List&lt;Guid&gt; { newUser.TeamsLookup.FirstOrDefault().Key };
-   newUser.TeamMemberships = new List&lt;Guid&gt; { newUser.TeamsLookup.LastOrDefault().Key };
+   newUser.Roles = new List<Guid> { newUser.RolesLookup.FirstOrDefault().Key };
+   newUser.ManagedUnits = new List<Guid> { newUser.UnitsLookup.FirstOrDefault().Key };
+   newUser.ManagedTeams = new List<Guid> { newUser.TeamsLookup.FirstOrDefault().Key };
+   newUser.TeamMemberships = new List<Guid> { newUser.TeamsLookup.LastOrDefault().Key };
 
-   ResponseContent&lt;User&gt; response = userWrapper.Create(newUser);
+   ResponseContent<User> response = userWrapper.Create(newUser);
 
    if (response.Result != null)
    {
@@ -411,7 +411,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    UserWrapper(int tenantCode, string apiKey, string apiSecret).Update(User user, bool updateViaPost = false);
@@ -435,7 +435,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -443,20 +443,20 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid userId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;User, UserList&gt; userWrapper = new UserWrapper(tenantCode, key, secret);
+   IApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
    User user = userWrapper.GetById(userId).Result;
    user.Username = "Tester";
    user.RecorderMediaPlayerId = user.RecorderMediaPlayersLookup.FirstOrDefault().Key;
-   user.Roles = new List&lt;Guid&gt; { user.RolesLookup.FirstOrDefault().Key };
-   user.ManagedUnits = new List&lt;Guid&gt; { user.UnitsLookup.FirstOrDefault().Key };
-   user.ManagedTeams = new List&lt;Guid&gt; { user.TeamsLookup.FirstOrDefault().Key };
-   user.TeamMemberships = new List&lt;Guid&gt; { user.TeamsLookup.LastOrDefault().Key };
+   user.Roles = new List<Guid> { user.RolesLookup.FirstOrDefault().Key };
+   user.ManagedUnits = new List<Guid> { user.UnitsLookup.FirstOrDefault().Key };
+   user.ManagedTeams = new List<Guid> { user.TeamsLookup.FirstOrDefault().Key };
+   user.TeamMemberships = new List<Guid> { user.TeamsLookup.LastOrDefault().Key };
 
    // Update via PUT method (default).
-   ResponseContent&lt;User&gt; response = userWrapper.Update(user);
+   ResponseContent<User> response = userWrapper.Update(user);
 
    // Update via POST method (use true argument).
-   // ResponseContent&lt;User&gt; response = userWrapper.Update(user, true);
+   // ResponseContent<User> response = userWrapper.Update(user, true);
 
    if (response.Result != null)
    {
@@ -493,7 +493,7 @@ Parameters
 
 .. danger::
 
-  | Remember to add *API Key* as *customer*key* and *API Secret* as *customer*secret* into your *Request HTTP Header*. See more in :ref:`getting-started-label`. 
+  | Remember to add *API Key* as *customer*key* and *API Secret* as *customer*secret* into your *Request HTTP Header*. See more in :ref:`getting-started-label`.
   | If you don't want to have in Web Server turned on the ``DELETE`` verb method read more in :ref:`getting-started-label`.
 
 
@@ -505,7 +505,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    UserWrapper(int tenantCode, string apiKey, string apiSecret).Delete(Guid id, bool updateViaPost = false);
@@ -529,7 +529,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -537,7 +537,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid userId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;User, UserList&gt; userWrapper = new UserWrapper(tenantCode, key, secret);
+   IApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
    // Delete via DELETE method (default).
    ResponseContent response = userWrapper.Delete(userId);
 

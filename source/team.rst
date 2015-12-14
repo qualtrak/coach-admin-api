@@ -128,7 +128,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    TeamWrapper(int tenantCode, string apiKey, string apiSecret).GetAll();
@@ -150,20 +150,20 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper&lt;Team, TeamList&gt; teamWrapper = new TeamWrapper(tenantCode, key, secret);
-   ResponseContent&lt;ICollection&lt;TeamList&gt;&gt; response = teamWrapper.GetAll();
+   IApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
+   ResponseContent<ICollection<TeamList>> response = teamWrapper.GetAll();
 
    if (response.Result != null)
    {
         // Use Result as List of Teams for displaying.
-        ICollection&lt;TeamList&gt; teams = response.Result;
+        ICollection<TeamList> teams = response.Result;
    }
    else
    {
@@ -202,7 +202,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    TeamWrapper(int tenantCode, string apiKey, string apiSecret).GetById(Guid id);
@@ -225,7 +225,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -233,8 +233,8 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid teamId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;Team, TeamList&gt; teamWrapper = new TeamWrapper(tenantCode, key, secret);
-   ResponseContent&lt;Team&gt; response = teamWrapper.GetById(teamId);
+   IApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
+   ResponseContent<Team> response = teamWrapper.GetById(teamId);
 
    if (response.Result != null)
    {
@@ -278,7 +278,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    TeamWrapper(int tenantCode, string apiKey, string apiSecret).Create(Team team);
@@ -301,21 +301,21 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper&lt;Team, TeamList&gt; teamWrapper = new TeamWrapper(tenantCode, key, secret);
+   IApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
    // Get default data and lookup for teams
    Team newTeam = teamWrapper.GetById(new Guid()).Result;
    newTeam.Name = "Team created from test";
    newTeam.Description = "Team created from test description.";
    // Set belonging Unit key from units lookup key.
    newTeam.UnitId = newTeam.Units.FirstOrDefault().Key;
-   ResponseContent&lt;Team&gt; response = teamWrapper.Create(newTeam);
+   ResponseContent<Team> response = teamWrapper.Create(newTeam);
 
    if (response.Result != null)
    {
@@ -361,7 +361,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    TeamWrapper(int tenantCode, string apiKey, string apiSecret).Update(Team team, bool updateViaPost = false);
@@ -385,7 +385,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -393,7 +393,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid teamId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;Team, TeamList&gt; teamWrapper = new TeamWrapper(tenantCode, key, secret);
+   IApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
    Team team = teamWrapper.GetById(teamId).Result;
    team.Name = "Team updated from test";
    team.Description = "Team updated from test description.";
@@ -401,10 +401,10 @@ Example usage
    team.UnitId = team.Units.FirstOrDefault().Key;
 
    // Update via PUT method (default).
-   ResponseContent&lt;Team&gt; response = teamWrapper.Update(team);
+   ResponseContent<Team> response = teamWrapper.Update(team);
 
    // Update via POST method (use true argument).
-   // ResponseContent&lt;Team&gt; response = teamWrapper.Update(team, true);
+   // ResponseContent<Team> response = teamWrapper.Update(team, true);
 
    if (response.Result != null)
    {
@@ -454,7 +454,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    TeamWrapper(int tenantCode, string apiKey, string apiSecret).Delete(Guid id, bool updateViaPost = false);
@@ -478,7 +478,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -486,7 +486,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid teamId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;Team, TeamList&gt; teamWrapper = new TeamWrapper(tenantCode, key, secret);
+   IApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
    // Delete via DELETE method (default).
    ResponseContent response = teamWrapper.Delete(teamId);
 

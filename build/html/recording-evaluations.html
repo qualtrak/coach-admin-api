@@ -83,7 +83,6 @@
                 <p class="caption"><span class="caption-text">The Basics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="csharp-wrapper.html">C# Wrapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="client-errors.html">Client Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
@@ -259,7 +258,7 @@
 </div>
 <div class="section" id="c-wrapper-approach">
 <h3>C# Wrapper approach<a class="headerlink" href="#c-wrapper-approach" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecordingEvaluationWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetEvaluationsByCallId</span><span class="p">(</span><span class="kt">string</span> <span class="n">callId</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecordingEvaluationWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetEvaluationsByCallId</span><span class="p">(</span><span class="kt">string</span> <span class="n">callId</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id1">
@@ -278,7 +277,7 @@
 <div class="section" id="safe-call-id-extension-method">
 <h4>Safe Call Id Extension Method<a class="headerlink" href="#safe-call-id-extension-method" title="Permalink to this headline">¶</a></h4>
 <p>Create the C# <code class="docutils literal"><span class="pre">string</span></code> Extension Method to make <code class="docutils literal"><span class="pre">callId</span></code> safe and call it always to make safe <code class="docutils literal"><span class="pre">callId</span></code> to get <code class="docutils literal"><span class="pre">Evauluations</span></code>:</p>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -321,7 +320,7 @@
 </div>
 <div class="section" id="example-usage">
 <h4>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4

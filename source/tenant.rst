@@ -114,7 +114,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    TenantWrapper(int tenantCode, string apiKey, string apiSecret).GetByCode(int tenantCode);
@@ -135,7 +135,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -143,7 +143,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
    TenantWrapper tenantWrapper = new TenantWrapper(tenantCode, key, secret);
-   ResponseContent&lt;Tenant&gt; response = tenantWrapper.GetByCode(tenantCode);
+   ResponseContent<Tenant> response = tenantWrapper.GetByCode(tenantCode);
 
    if (response.Result != null)
    {
@@ -186,7 +186,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
 
    TenantWrapper(int tenantCode, string apiKey, string apiSecret).Update(Tenant tenant, bool updateViaPost = false);
 
@@ -209,7 +209,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -221,7 +221,7 @@ Example usage
    tenant.name = "Tenant Updated";
 
    // Update via PUT method (default).
-   ResponseContent&lt;Tenant&gt; response = tenantWrapper.Update(tenant);
+   ResponseContent<Tenant> response = tenantWrapper.Update(tenant);
 
    // Update via POST method (use true argument).
    // ResponseContent&lt;Tenant&gt; response = tenantWrapper.Update(tenant, true);

@@ -104,7 +104,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    RecorderMediaPlayerWrapper(int tenantCode, string apiKey, string apiSecret).GetAll();
@@ -126,7 +126,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -178,7 +178,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    RecorderMediaPlayerWrapper(int tenantCode, string apiKey, string apiSecret).GetById(Guid id);
@@ -201,7 +201,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -254,7 +254,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    RecorderMediaPlayerWrapper(int tenantCode, string apiKey, string apiSecret).Create(RecorderMediaPlayer recorderMediaPlayer);
@@ -277,7 +277,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -339,7 +339,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    RecorderMediaPlayerWrapper(int tenantCode, string apiKey, string apiSecret).Update(RecorderMediaPlayer recorderMediaPlayer, bool updateViaPost = false);
@@ -363,7 +363,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -430,7 +430,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    RecorderMediaPlayerWrapper(int tenantCode, string apiKey, string apiSecret).Delete(Guid id, bool updateViaPost = false);
@@ -454,7 +454,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;

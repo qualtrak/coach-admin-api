@@ -598,7 +598,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 </div>
 <div class="section" id="c-wrapper-approach">
 <h3>C# Wrapper approach<a class="headerlink" href="#c-wrapper-approach" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetAll</span><span class="p">();</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetAll</span><span class="p">();</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id2">
@@ -618,7 +618,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 </div>
 <div class="section" id="example-usage">
 <h4>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -638,13 +638,13 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 <span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">MediaPlayer</span><span class="p">,</span> <span class="n">MediaPlayerList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">mediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">ICollection</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">MediaPlayerList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">mediaPlayerWrapper</span><span class="p">.</span><span class="n">GetAll</span><span class="p">();</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">MediaPlayer</span><span class="p">,</span> <span class="n">MediaPlayerList</span><span class="p">&gt;</span> <span class="n">mediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">ICollection</span><span class="p">&lt;</span><span class="n">MediaPlayerList</span><span class="p">&gt;&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">mediaPlayerWrapper</span><span class="p">.</span><span class="n">GetAll</span><span class="p">();</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
      <span class="c1">// Use Result as List of Media Players for displaying.</span>
-     <span class="n">ICollection</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">MediaPlayerList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">mediaPlayers</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+     <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">MediaPlayerList</span><span class="p">&gt;</span> <span class="n">mediaPlayers</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">else</span>
 <span class="p">{</span>
@@ -684,7 +684,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 </div>
 <div class="section" id="id7">
 <h3>C# Wrapper approach<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetById</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetById</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id8">
@@ -705,7 +705,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 </div>
 <div class="section" id="id10">
 <h4>Example usage<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -727,8 +727,8 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 <span class="n">Guid</span> <span class="n">mediaPlayerId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">MediaPlayer</span><span class="p">,</span> <span class="n">MediaPlayerList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">mediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">MediaPlayer</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">mediaPlayerWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">mediaPlayerId</span><span class="p">);</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">MediaPlayer</span><span class="p">,</span> <span class="n">MediaPlayerList</span><span class="p">&gt;</span> <span class="n">mediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">MediaPlayer</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">mediaPlayerWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">mediaPlayerId</span><span class="p">);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
@@ -773,7 +773,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 </div>
 <div class="section" id="id14">
 <h3>C# Wrapper approach<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Create</span><span class="p">(</span><span class="n">MediaPlayer</span> <span class="n">mediaPlayer</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Create</span><span class="p">(</span><span class="n">MediaPlayer</span> <span class="n">mediaPlayer</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id15">
@@ -794,7 +794,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 </div>
 <div class="section" id="id17">
 <h4>Example usage<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -821,7 +821,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 <span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">MediaPlayer</span><span class="p">,</span> <span class="n">MediaPlayerList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">mediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">MediaPlayer</span><span class="p">,</span> <span class="n">MediaPlayerList</span><span class="p">&gt;</span> <span class="n">mediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
 <span class="c1">// Get default data and lookup for media players</span>
 <span class="n">MediaPlayer</span> <span class="n">newMediaPlayer</span> <span class="p">=</span> <span class="n">mediaPlayerWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="k">new</span> <span class="n">Guid</span><span class="p">()).</span><span class="n">Result</span><span class="p">;</span>
 <span class="n">newMediaPlayer</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;Media Player created from test&quot;</span><span class="p">;</span>
@@ -829,7 +829,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 <span class="c1">// Set type from media types lookup key.</span>
 <span class="n">newMediaPlayer</span><span class="p">.</span><span class="n">Type</span> <span class="p">=</span> <span class="n">newMediaPlayer</span><span class="p">.</span><span class="n">Types</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Key</span><span class="p">;</span>
 <span class="n">newMediaPlayer</span><span class="p">.</span><span class="n">PublishingPoint</span> <span class="p">=</span> <span class="s">&quot;xyz&quot;</span><span class="p">;</span>
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">MediaPlayer</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">mediaPlayerWrapper</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">newMediaPlayer</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">MediaPlayer</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">mediaPlayerWrapper</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">newMediaPlayer</span><span class="p">);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
@@ -878,7 +878,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 </div>
 <div class="section" id="id21">
 <h3>C# Wrapper approach<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Update</span><span class="p">(</span><span class="n">MediaPlayer</span> <span class="n">mediaPlayer</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Update</span><span class="p">(</span><span class="n">MediaPlayer</span> <span class="n">mediaPlayer</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id22">
@@ -900,7 +900,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 </div>
 <div class="section" id="id24">
 <h4>Example usage<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -930,16 +930,16 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 <span class="n">Guid</span> <span class="n">mediaPlayerId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">MediaPlayer</span><span class="p">,</span> <span class="n">MediaPlayerList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">mediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">MediaPlayer</span><span class="p">,</span> <span class="n">MediaPlayerList</span><span class="p">&gt;</span> <span class="n">mediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
 <span class="n">MediaPlayer</span> <span class="n">mediaPlayer</span> <span class="p">=</span> <span class="n">mediaPlayerWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">mediaPlayerId</span><span class="p">).</span><span class="n">Result</span><span class="p">;</span>
 <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;Media Player updated from test&quot;</span><span class="p">;</span>
 <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">PublishingPoint</span> <span class="p">=</span> <span class="s">&quot;xyz updated&quot;</span><span class="p">;</span>
 
 <span class="c1">// Update via PUT method (default).</span>
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">MediaPlayer</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">mediaPlayerWrapper</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">mediaPlayer</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">MediaPlayer</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">mediaPlayerWrapper</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">mediaPlayer</span><span class="p">);</span>
 
 <span class="c1">// Update via POST method (use true argument).</span>
-<span class="c1">// ResponseContent&amp;lt;MediaPlayer&amp;gt; response = mediaPlayerWrapper.Update(mediaPlayer, true);</span>
+<span class="c1">// ResponseContent&lt;MediaPlayer&gt; response = mediaPlayerWrapper.Update(mediaPlayer, true);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
@@ -990,7 +990,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 </div>
 <div class="section" id="id28">
 <h3>C# Wrapper approach<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Delete</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Delete</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id29">
@@ -1012,7 +1012,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 </div>
 <div class="section" id="id31">
 <h4>Example usage<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1033,7 +1033,7 @@ from where the media files are hosted. URL can be relative or absolute.</td>
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 <span class="n">Guid</span> <span class="n">mediaPlayerId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">MediaPlayer</span><span class="p">,</span> <span class="n">MediaPlayerList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">mediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">MediaPlayer</span><span class="p">,</span> <span class="n">MediaPlayerList</span><span class="p">&gt;</span> <span class="n">mediaPlayerWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaPlayerWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
 <span class="c1">// Delete via DELETE method (default).</span>
 <span class="n">ResponseContent</span> <span class="n">response</span> <span class="p">=</span> <span class="n">mediaPlayerWrapper</span><span class="p">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">mediaPlayerId</span><span class="p">);</span>
 

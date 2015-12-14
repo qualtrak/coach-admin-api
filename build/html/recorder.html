@@ -163,22 +163,22 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#id20">C# Wrapper approach</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id21">Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id24">Return value</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id25">Example usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">Example usage</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#delete-recorder">Delete Recorder</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id26">Default REST approach</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id27">Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id28">Return value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">Default REST approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id25">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26">Return value</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id29">C# Wrapper approach</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id30">Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id31">Return value</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id32">Example usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">C# Wrapper approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id28">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id29">Return value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id30">Example usage</a></li>
 </ul>
 </li>
 </ul>
@@ -521,7 +521,7 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 </div>
 <div class="section" id="c-wrapper-approach">
 <h3>C# Wrapper approach<a class="headerlink" href="#c-wrapper-approach" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetAll</span><span class="p">();</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetAll</span><span class="p">();</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id1">
@@ -541,7 +541,7 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 </div>
 <div class="section" id="example-usage">
 <h4>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -561,13 +561,13 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 <span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Recorder</span><span class="p">,</span> <span class="n">RecorderList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">recorderWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">ICollection</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">RecorderList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderWrapper</span><span class="p">.</span><span class="n">GetAll</span><span class="p">();</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">Recorder</span><span class="p">,</span> <span class="n">RecorderList</span><span class="p">&gt;</span> <span class="n">recorderWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">ICollection</span><span class="p">&lt;</span><span class="n">RecorderList</span><span class="p">&gt;&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderWrapper</span><span class="p">.</span><span class="n">GetAll</span><span class="p">();</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
      <span class="c1">// Use Result as List of Recorders for displaying.</span>
-     <span class="n">ICollection</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">RecorderList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">recorders</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+     <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">RecorderList</span><span class="p">&gt;</span> <span class="n">recorders</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">else</span>
 <span class="p">{</span>
@@ -607,7 +607,7 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 </div>
 <div class="section" id="id6">
 <h3>C# Wrapper approach<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetById</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">GetById</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id7">
@@ -628,7 +628,7 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 </div>
 <div class="section" id="id9">
 <h4>Example usage<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -650,8 +650,8 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 <span class="n">Guid</span> <span class="n">recorderId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Recorder</span><span class="p">,</span> <span class="n">RecorderList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">recorderWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Recorder</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">recorderId</span><span class="p">);</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">Recorder</span><span class="p">,</span> <span class="n">RecorderList</span><span class="p">&gt;</span> <span class="n">recorderWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">Recorder</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">recorderId</span><span class="p">);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
@@ -700,7 +700,7 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 </div>
 <div class="section" id="id13">
 <h3>C# Wrapper approach<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Create</span><span class="p">(</span><span class="n">Recorder</span> <span class="n">recorder</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Create</span><span class="p">(</span><span class="n">Recorder</span> <span class="n">recorder</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id14">
@@ -721,7 +721,7 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 </div>
 <div class="section" id="id16">
 <h4>Example usage<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -754,7 +754,7 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 <span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="s">&quot;ddZXdAZvWefFqxAEH62u&quot;</span><span class="p">;</span>
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Recorder</span><span class="p">,</span> <span class="n">RecorderList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">recorderWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">Recorder</span><span class="p">,</span> <span class="n">RecorderList</span><span class="p">&gt;</span> <span class="n">recorderWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
 <span class="c1">// Get default data and lookup for recorder</span>
 <span class="n">Recorder</span> <span class="n">newRecorder</span> <span class="p">=</span> <span class="n">recorderWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="k">new</span> <span class="n">Guid</span><span class="p">()).</span><span class="n">Result</span><span class="p">;</span>
 <span class="n">newRecorder</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;Test Recorder with Direct Access&quot;</span><span class="p">;</span>
@@ -768,7 +768,7 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
                                                  <span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Key</span><span class="p">)</span>
                                                  <span class="p">.</span><span class="n">SingleOrDefault</span><span class="p">();</span>
 
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Recorder</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderWrapper</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">newRecorder</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">Recorder</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderWrapper</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">newRecorder</span><span class="p">);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
@@ -821,7 +821,7 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 </div>
 <div class="section" id="id20">
 <h3>C# Wrapper approach<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Update</span><span class="p">(</span><span class="n">Recorder</span> <span class="n">recorder</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Update</span><span class="p">(</span><span class="n">Recorder</span> <span class="n">recorder</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="id21">
@@ -830,20 +830,20 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 <li><code class="docutils literal"><span class="pre">tenantCode</span></code> Current <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
 <li><code class="docutils literal"><span class="pre">apiKey</span></code> Current <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
 <li><code class="docutils literal"><span class="pre">apiSecret</span></code> Current <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Secret provided by <strong>Qualtrak</strong>.</li>
-<li><code class="docutils literal"><span class="pre">recorder</span></code> The <strong>Recorder</strong> model constructed from <a href="#id22"><span class="problematic" id="id23">**</span></a>Recorder properties**b and <code class="docutils literal"><span class="pre">Id</span></code> must be provided in it. If not <code class="docutils literal"><span class="pre">ArgumentException</span></code> will be thrown!</li>
+<li><code class="docutils literal"><span class="pre">recorder</span></code> The <strong>Recorder</strong> model constructed from <strong>Recorder properties</strong> and <code class="docutils literal"><span class="pre">Id</span></code> must be provided in it. If not <code class="docutils literal"><span class="pre">ArgumentException</span></code> will be thrown!</li>
 <li><code class="docutils literal"><span class="pre">updateViaPost</span></code> Set to <code class="docutils literal"><span class="pre">true</span></code> if in your Web Server you don&#8217;t want to enable <code class="docutils literal"><span class="pre">PUT</span></code> method. Default is <code class="docutils literal"><span class="pre">false</span></code> or use <code class="docutils literal"><span class="pre">PUT</span></code> method!</li>
 </ul>
 </div>
-<div class="section" id="id24">
-<h4>Return value<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id22">
+<h4>Return value<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>If there is no error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Recorder&gt;.Result</span></code> object as the [Recorder Domain Model](/v1/recorder#recorder-model).</li>
 <li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Recorder&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a>.</li>
 </ul>
 </div>
-<div class="section" id="id25">
-<h4>Example usage<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="section" id="id23">
+<h4>Example usage<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -880,7 +880,7 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 <span class="n">Guid</span> <span class="n">recorderId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
 
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Recorder</span><span class="p">,</span> <span class="n">RecorderList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">recorderWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">Recorder</span><span class="p">,</span> <span class="n">RecorderList</span><span class="p">&gt;</span> <span class="n">recorderWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
 <span class="n">Recorder</span> <span class="n">recorder</span> <span class="p">=</span> <span class="n">recorderWrapper</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">recorderId</span><span class="p">).</span><span class="n">Result</span><span class="p">;</span>
 
 <span class="n">recorder</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;Test Recorder updated to API&quot;</span><span class="p">;</span>
@@ -891,10 +891,10 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
                                            <span class="p">.</span><span class="n">SingleOrDefault</span><span class="p">();</span>
 
 <span class="c1">// Update via PUT method (default).</span>
-<span class="n">ResponseContent</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Recorder</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderWrapper</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">recorder</span><span class="p">);</span>
+<span class="n">ResponseContent</span><span class="p">&lt;</span><span class="n">Recorder</span><span class="p">&gt;</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderWrapper</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">recorder</span><span class="p">);</span>
 
 <span class="c1">// Update via POST method (use true argument).</span>
-<span class="c1">// ResponseContent&amp;lt;Recorder&amp;gt; response = recorderWrapper.Update(recorder, true);</span>
+<span class="c1">// ResponseContent&lt;Recorder&gt; response = recorderWrapper.Update(recorder, true);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
@@ -918,12 +918,12 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 <p class="first admonition-title">Warning</p>
 <p class="last">Note that <strong>Recorder</strong> will not be deleted if there are any references of <strong>Recorder</strong> in [Recorder Media Player](/v1/recorder-player).</p>
 </div>
-<div class="section" id="id26">
-<h3>Default REST approach<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id24">
+<h3>Default REST approach<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div>DELETE /api/v1/:tenantCode/recorders/:id</div></blockquote>
-<div class="section" id="id27">
-<h4>Parameters<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id25">
+<h4>Parameters<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">tenantCode</span></code> Current <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
 <li><code class="docutils literal"><span class="pre">id</span></code> The <strong>Recorder</strong> id, a valid and non-empty <code class="docutils literal"><span class="pre">guid</span></code>.</li>
@@ -936,20 +936,20 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 </div>
 </div>
 </div>
-<div class="section" id="id28">
-<h4>Return value<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id26">
+<h4>Return value<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>There is no return value except if there is an error, the <code class="docutils literal"><span class="pre">JSON</span></code> <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a> object.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id29">
-<h3>C# Wrapper approach<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Delete</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
+<div class="section" id="id27">
+<h3>C# Wrapper approach<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">RecorderWrapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">tenantCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiKey</span><span class="p">,</span> <span class="kt">string</span> <span class="n">apiSecret</span><span class="p">).</span><span class="n">Delete</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">updateViaPost</span> <span class="p">=</span> <span class="k">false</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<div class="section" id="id30">
-<h4>Parameters<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id28">
+<h4>Parameters<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">tenantCode</span></code> Current <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> code, a valid <code class="docutils literal"><span class="pre">integer</span></code> greater or equal to 1000.</li>
 <li><code class="docutils literal"><span class="pre">apiKey</span></code> Current <a class="reference internal" href="tenant.html#tenant-label"><span>Tenant</span></a> API Key provided by <strong>Qualtrak</strong>.</li>
@@ -958,16 +958,16 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 <li><code class="docutils literal"><span class="pre">updateViaPost</span></code> Set to <code class="docutils literal"><span class="pre">true</span></code> if in your Web Server you don&#8217;t want to enable <code class="docutils literal"><span class="pre">DELETE</span></code> method. Default is <code class="docutils literal"><span class="pre">false</span></code> or use <code class="docutils literal"><span class="pre">DELETE</span></code> method!</li>
 </ul>
 </div>
-<div class="section" id="id31">
-<h4>Return value<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id29">
+<h4>Return value<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>If there is no error: no return value or <code class="docutils literal"><span class="pre">void</span></code>.</li>
 <li>If there is an error: <code class="docutils literal"><span class="pre">ResaultContent&lt;Recorder&gt;.Error</span></code> object. See more in <a class="reference internal" href="client-errors.html#client-error-label"><span>Client Errors</span></a>.</li>
 </ul>
 </div>
-<div class="section" id="id32">
-<h4>Example usage<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="section" id="id30">
+<h4>Example usage<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -988,7 +988,7 @@ Note that the <code class="docutils literal"><span class="pre">mediaFileMetadata
 <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">&quot;wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws&quot;</span><span class="p">;</span>
 <span class="n">Guid</span> <span class="n">recorderId</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891&quot;</span><span class="p">);</span>
 
-<span class="n">IApiWrapper</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Recorder</span><span class="p">,</span> <span class="n">RecorderList</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">recorderWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
+<span class="n">IApiWrapper</span><span class="p">&lt;</span><span class="n">Recorder</span><span class="p">,</span> <span class="n">RecorderList</span><span class="p">&gt;</span> <span class="n">recorderWrapper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RecorderWrapper</span><span class="p">(</span><span class="n">tenantCode</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="p">);</span>
 <span class="c1">// Delete via DELETE method (default).</span>
 <span class="n">ResponseContent</span> <span class="n">response</span> <span class="p">=</span> <span class="n">recorderWrapper</span><span class="p">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">recorderId</span><span class="p">);</span>
 

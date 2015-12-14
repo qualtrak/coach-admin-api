@@ -183,7 +183,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    MediaPlayerWrapper(int tenantCode, string apiKey, string apiSecret).GetAll();
@@ -205,20 +205,20 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper&lt;MediaPlayer, MediaPlayerList&gt; mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
-   ResponseContent&lt;ICollection&lt;MediaPlayerList&gt;&gt; response = mediaPlayerWrapper.GetAll();
+   IApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
+   ResponseContent<ICollection<MediaPlayerList>> response = mediaPlayerWrapper.GetAll();
 
    if (response.Result != null)
    {
         // Use Result as List of Media Players for displaying.
-        ICollection&lt;MediaPlayerList&gt; mediaPlayers = response.Result;
+        ICollection<MediaPlayerList> mediaPlayers = response.Result;
    }
    else
    {
@@ -257,7 +257,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    MediaPlayerWrapper(int tenantCode, string apiKey, string apiSecret).GetById(Guid id);
@@ -280,7 +280,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -288,8 +288,8 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid mediaPlayerId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;MediaPlayer, MediaPlayerList&gt; mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
-   ResponseContent&lt;MediaPlayer&gt; response = mediaPlayerWrapper.GetById(mediaPlayerId);
+   IApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
+   ResponseContent<MediaPlayer> response = mediaPlayerWrapper.GetById(mediaPlayerId);
 
    if (response.Result != null)
    {
@@ -333,7 +333,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    MediaPlayerWrapper(int tenantCode, string apiKey, string apiSecret).Create(MediaPlayer mediaPlayer);
@@ -356,14 +356,14 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper&lt;MediaPlayer, MediaPlayerList&gt; mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
+   IApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
    // Get default data and lookup for media players
    MediaPlayer newMediaPlayer = mediaPlayerWrapper.GetById(new Guid()).Result;
    newMediaPlayer.Name = "Media Player created from test";
@@ -371,7 +371,7 @@ Example usage
    // Set type from media types lookup key.
    newMediaPlayer.Type = newMediaPlayer.Types.FirstOrDefault().Key;
    newMediaPlayer.PublishingPoint = "xyz";
-   ResponseContent&lt;MediaPlayer&gt; response = mediaPlayerWrapper.Create(newMediaPlayer);
+   ResponseContent<MediaPlayer> response = mediaPlayerWrapper.Create(newMediaPlayer);
 
    if (response.Result != null)
    {
@@ -416,7 +416,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    MediaPlayerWrapper(int tenantCode, string apiKey, string apiSecret).Update(MediaPlayer mediaPlayer, bool updateViaPost = false);
@@ -439,7 +439,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -447,16 +447,16 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid mediaPlayerId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;MediaPlayer, MediaPlayerList&gt; mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
+   IApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
    MediaPlayer mediaPlayer = mediaPlayerWrapper.GetById(mediaPlayerId).Result;
    mediaPlayer.Name = "Media Player updated from test";
    mediaPlayer.PublishingPoint = "xyz updated";
 
    // Update via PUT method (default).
-   ResponseContent&lt;MediaPlayer&gt; response = mediaPlayerWrapper.Update(mediaPlayer);
+   ResponseContent<MediaPlayer> response = mediaPlayerWrapper.Update(mediaPlayer);
 
    // Update via POST method (use true argument).
-   // ResponseContent&lt;MediaPlayer&gt; response = mediaPlayerWrapper.Update(mediaPlayer, true);
+   // ResponseContent<MediaPlayer> response = mediaPlayerWrapper.Update(mediaPlayer, true);
 
    if (response.Result != null)
    {
@@ -504,7 +504,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    MediaPlayerWrapper(int tenantCode, string apiKey, string apiSecret).Delete(Guid id, bool updateViaPost = false);
@@ -528,7 +528,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -536,7 +536,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid mediaPlayerId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;MediaPlayer, MediaPlayerList&gt; mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
+   IApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
    // Delete via DELETE method (default).
    ResponseContent response = mediaPlayerWrapper.Delete(mediaPlayerId);
 

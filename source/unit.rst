@@ -118,7 +118,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    UnitWrapper(int tenantCode, string apiKey, string apiSecret).GetAll();
@@ -139,15 +139,15 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper&lt;Unit, UnitList&gt; unitWrapper = new UnitWrapper(tenantCode, key, secret);
-   ResponseContent&lt;ICollection&lt;UnitList&gt;&gt; response = unitWrapper.GetAll();
+   IApiWrapper<Unit, UnitList>unitWrapper = new UnitWrapper(tenantCode, key, secret);
+   ResponseContent<ICollection<UnitList>> response = unitWrapper.GetAll();
 
    if (response.Result != null)
    {
@@ -191,7 +191,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    UnitWrapper(int tenantCode, string apiKey, string apiSecret).GetById(Guid id);
@@ -214,7 +214,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -222,8 +222,8 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid unitId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;Unit, UnitList&gt; unitWrapper = new UnitWrapper(tenantCode, key, secret);
-   ResponseContent&lt;Unit&gt; response = unitWrapper.GetById(unitId);
+   IApiWrapper<Unit, UnitList> unitWrapper = new UnitWrapper(tenantCode, key, secret);
+   ResponseContent<Unit> response = unitWrapper.GetById(unitId);
 
    if (response.Result != null)
    {
@@ -266,7 +266,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    UnitWrapper(int tenantCode, string apiKey, string apiSecret).Create(Unit unit);
@@ -289,21 +289,21 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper&lt;Unit, UnitList&gt; unitWrapper = new UnitWrapper(tenantCode, key, secret);
+   IApiWrapper<Unit, UnitList> unitWrapper = new UnitWrapper(tenantCode, key, secret);
    // Get default data and lookup for units
    Unit newUnit = unitWrapper.GetById(new Guid()).Result;
    newUnit.Name = "Unit created from test";
    newUnit.Description = "Unit created from test description.";
    // Set parent Unit key from units lookup key.
    newUnit.ParentUnitId = newUnit.UnitsLookup.FirstOrDefault().Key;
-   ResponseContent&lt;Unit&gt; response = unitWrapper.Create(newUnit);
+   ResponseContent<Unit> response = unitWrapper.Create(newUnit);
 
    if (response.Result != null)
    {
@@ -349,7 +349,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    UnitWrapper(int tenantCode, string apiKey, string apiSecret).Update(Unit unit, bool updateViaPost = false);
@@ -373,7 +373,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -381,7 +381,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid unitId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;Unit, UnitList&gt; unitWrapper = new UnitWrapper(tenantCode, key, secret);
+   IApiWrapper<Unit, UnitList> unitWrapper = new UnitWrapper(tenantCode, key, secret);
    Unit unit = unitWrapper.GetById(unitId).Result;
    unit.Name = "Unit updated from test";
    unit.Description = "Unit updated from test description.";
@@ -389,7 +389,7 @@ Example usage
    unit.ParentUnitId = unit.UnitsLookup.FirstOrDefault().Key;
 
    // Update via PUT method (default).
-   ResponseContent&lt;Unit&gt; response = unitWrapper.Update(unit);
+   ResponseContent<Unit> response = unitWrapper.Update(unit);
 
    // Update via POST method (use true argument).
    // ResponseContent&lt;Unit&gt; response = unitWrapper.Update(unit, true);
@@ -442,7 +442,7 @@ Return value
 C# Wrapper approach
 ^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    UnitWrapper(int tenantCode, string apiKey, string apiSecret).Delete(Guid id, bool updateViaPost = false);
@@ -466,7 +466,7 @@ Return value
 Example usage
 -------------
 
-.. code-block:: csharp
+.. code-block:: c#
    :linenos:
 
    int tenantCode = 1000;
@@ -474,7 +474,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid unitId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper&lt;Unit, UnitList&gt; unitWrapper = new UnitWrapper(tenantCode, key, secret);
+   IApiWrapper<Unit, UnitList> unitWrapper = new UnitWrapper(tenantCode, key, secret);
    // Delete via DELETE method (default).
    ResponseContent response = unitWrapper.Delete(unitId);
 

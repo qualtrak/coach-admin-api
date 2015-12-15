@@ -212,7 +212,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
    ResponseContent<ICollection<MediaPlayerList>> response = mediaPlayerWrapper.GetAll();
 
    if (response.Result != null)
@@ -288,7 +288,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid mediaPlayerId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
    ResponseContent<MediaPlayer> response = mediaPlayerWrapper.GetById(mediaPlayerId);
 
    if (response.Result != null)
@@ -363,7 +363,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
    // Get default data and lookup for media players
    MediaPlayer newMediaPlayer = mediaPlayerWrapper.GetById(new Guid()).Result;
    newMediaPlayer.Name = "Media Player created from test";
@@ -447,7 +447,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid mediaPlayerId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
    MediaPlayer mediaPlayer = mediaPlayerWrapper.GetById(mediaPlayerId).Result;
    mediaPlayer.Name = "Media Player updated from test";
    mediaPlayer.PublishingPoint = "xyz updated";
@@ -536,7 +536,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid mediaPlayerId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<MediaPlayer, MediaPlayerList> mediaPlayerWrapper = new MediaPlayerWrapper(tenantCode, key, secret);
    // Delete via DELETE method (default).
    ResponseContent response = mediaPlayerWrapper.Delete(mediaPlayerId);
 

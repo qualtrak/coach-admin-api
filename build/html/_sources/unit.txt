@@ -146,7 +146,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<Unit, UnitList>unitWrapper = new UnitWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Unit, UnitList>unitWrapper = new UnitWrapper(tenantCode, key, secret);
    ResponseContent<ICollection<UnitList>> response = unitWrapper.GetAll();
 
    if (response.Result != null)
@@ -222,7 +222,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid unitId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<Unit, UnitList> unitWrapper = new UnitWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Unit, UnitList> unitWrapper = new UnitWrapper(tenantCode, key, secret);
    ResponseContent<Unit> response = unitWrapper.GetById(unitId);
 
    if (response.Result != null)
@@ -296,7 +296,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<Unit, UnitList> unitWrapper = new UnitWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Unit, UnitList> unitWrapper = new UnitWrapper(tenantCode, key, secret);
    // Get default data and lookup for units
    Unit newUnit = unitWrapper.GetById(new Guid()).Result;
    newUnit.Name = "Unit created from test";
@@ -381,7 +381,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid unitId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<Unit, UnitList> unitWrapper = new UnitWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Unit, UnitList> unitWrapper = new UnitWrapper(tenantCode, key, secret);
    Unit unit = unitWrapper.GetById(unitId).Result;
    unit.Name = "Unit updated from test";
    unit.Description = "Unit updated from test description.";
@@ -474,7 +474,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid unitId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<Unit, UnitList> unitWrapper = new UnitWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Unit, UnitList> unitWrapper = new UnitWrapper(tenantCode, key, secret);
    // Delete via DELETE method (default).
    ResponseContent response = unitWrapper.Delete(unitId);
 

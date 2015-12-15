@@ -133,7 +133,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<RecorderMediaPlayer, RecorderMediaPlayerList> recorderMediaPlayerWrapper = new RecorderMediaPlayerWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<RecorderMediaPlayer, RecorderMediaPlayerList> recorderMediaPlayerWrapper = new RecorderMediaPlayerWrapper(tenantCode, key, secret);
    ResponseContent<ICollection<RecorderMediaPlayerList>> response = recorderMediaPlayerWrapper.GetAll();
 
    if (response.Result != null)
@@ -209,7 +209,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid recorderMediaPlayerId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<RecorderMediaPlayer, RecorderMediaPlayerList> recorderMediaPlayerWrapper = new RecorderMediaPlayerWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<RecorderMediaPlayer, RecorderMediaPlayerList> recorderMediaPlayerWrapper = new RecorderMediaPlayerWrapper(tenantCode, key, secret);
    ResponseContent<RecorderMediaPlayer> response = recorderMediaPlayerWrapper.GetById(recorderMediaPlayerId);
 
    if (response.Result != null)
@@ -284,7 +284,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<RecorderMediaPlayer, RecorderMediaPlayerList> recorderMediaPlayerWrapper = new RecorderMediaPlayerWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<RecorderMediaPlayer, RecorderMediaPlayerList> recorderMediaPlayerWrapper = new RecorderMediaPlayerWrapper(tenantCode, key, secret);
    // Get default data and lookup for recorder media players
    RecorderMediaPlayer newRecorderMediaPlayer = recorderMediaPlayerWrapper.GetById(new Guid()).Result;
    newRecorderMediaPlayer.Name = "Recorder Media Player created from test";
@@ -371,7 +371,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid recorderMediaPlayerId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<RecorderMediaPlayer, RecorderMediaPlayerList> recorderMediaPlayerWrapper = new RecorderMediaPlayerWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<RecorderMediaPlayer, RecorderMediaPlayerList> recorderMediaPlayerWrapper = new RecorderMediaPlayerWrapper(tenantCode, key, secret);
    RecorderMediaPlayer recorderMediaPlayer = recorderMediaPlayerWrapper.GetById(recorderMediaPlayerId).Result;
    recorderMediaPlayer.Name = "Recorder Media Player updated from test";
    recorderMediaPlayer.RecorderId = recorderMediaPlayer.Recorders.LastOrDefault().Key;
@@ -462,7 +462,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid recorderMediaPlayerId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<RecorderMediaPlayer, RecorderMediaPlayerList> recorderMediaPlayerWrapper = new RecorderMediaPlayerWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<RecorderMediaPlayer, RecorderMediaPlayerList> recorderMediaPlayerWrapper = new RecorderMediaPlayerWrapper(tenantCode, key, secret);
    // Delete via DELETE method (default).
    ResponseContent response = recorderMediaPlayerWrapper.Delete(recorderMediaPlayerId);
 

@@ -207,7 +207,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<Schedule, ScheduleList> scheduleWrapper = new ScheduleWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Schedule, ScheduleList> scheduleWrapper = new ScheduleWrapper(tenantCode, key, secret);
    ResponseContent<ICollection<ScheduleList>> response = scheduleWrapper.GetAll();
 
    if (response.Result != null)
@@ -283,7 +283,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid scheduleId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<Schedule, ScheduleList> scheduleWrapper = new ScheduleWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Schedule, ScheduleList> scheduleWrapper = new ScheduleWrapper(tenantCode, key, secret);
    ResponseContent<Schedule> response = scheduleWrapper.GetById(scheduleId);
 
    if (response.Result != null)
@@ -372,7 +372,7 @@ Example usage
        levels.Add(responseTree.Result.Items.Where(x => x.TreeItemType == "Unit").Select(x => x.Id).SingleOrDefault());
    }
 
-   IApiWrapper<Schedule, ScheduleList> scheduleWrapper = new ScheduleWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Schedule, ScheduleList> scheduleWrapper = new ScheduleWrapper(tenantCode, key, secret);
    // Get default data and lookup for schedules
    Schedule newSchedule = scheduleWrapper.GetById(new Guid()).Result;
    newSchedule.Name = "Tester";
@@ -471,7 +471,7 @@ Example usage
        levels.Add(responseTree.Result.Items.Where(x => x.TreeItemType == "Unit").Select(x => x.Id).LastOrDefault());
    }
 
-   IApiWrapper<Schedule, ScheduleList> scheduleWrapper = new ScheduleWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Schedule, ScheduleList> scheduleWrapper = new ScheduleWrapper(tenantCode, key, secret);
    Schedule schedule = scheduleWrapper.GetById(scheduleId).Result;
    schedule.Name = "Test Schedule Updated";
    schedule.Levels = levels;
@@ -562,7 +562,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid scheduleId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<Schedule, ScheduleList> scheduleWrapper = new ScheduleWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Schedule, ScheduleList> scheduleWrapper = new ScheduleWrapper(tenantCode, key, secret);
    // Delete via DELETE method (default).
    ResponseContent response = scheduleWrapper.Delete(scheduleId);
 

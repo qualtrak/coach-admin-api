@@ -209,7 +209,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
    ResponseContent<ICollection<RecorderList>> response = recorderWrapper.GetAll();
 
    if (response.Result != null)
@@ -285,7 +285,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid recorderId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
    ResponseContent<Recorder> response = recorderWrapper.GetById(recorderId);
 
    if (response.Result != null)
@@ -365,7 +365,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
    // Get default data and lookup for recorder
    Recorder newRecorder = recorderWrapper.GetById(new Guid()).Result;
    newRecorder.Name = "Test Recorder with Direct Access";
@@ -463,7 +463,7 @@ Example usage
    Guid recorderId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
 
-   IApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
    Recorder recorder = recorderWrapper.GetById(recorderId).Result;
 
    recorder.Name = "Test Recorder updated to API";
@@ -557,7 +557,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid recorderId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Recorder, RecorderList> recorderWrapper = new RecorderWrapper(tenantCode, key, secret);
    // Delete via DELETE method (default).
    ResponseContent response = recorderWrapper.Delete(recorderId);
 

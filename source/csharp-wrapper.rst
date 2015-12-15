@@ -18,7 +18,7 @@ Setup and Dependencies
 Setup
 ~~~~~
 
-To setup *C# Wrapper Library* there is a need to add the reference to ``Qualtrak.Coach.API.Wrappers.c#.dll`` provided with installation of *Coach*. Note that project framework is needed to be *.NET 4.5*, but note that *.NET 4.5 Client Profile* is not supported.
+To setup *C# Wrapper Library* there is a need to add the reference to ``Qualtrak.Coach.API.Wrappers.CSharp.dll`` provided with installation of *Coach*. Note that project framework is needed to be *.NET 4.5*, but note that *.NET 4.5 Client Profile* is not supported.
 
 Dependencies
 ~~~~~~~~~~~~
@@ -48,7 +48,7 @@ Response Content
 It is class ``ResponseContent`` that holds the *REST API* response message as its content.
 
 Non-Generic Version
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 The non-generic version of ``ResponseContet`` has two properties:
 
@@ -75,9 +75,9 @@ The ``Result<T>`` is a actual result data sent as response content, and the gene
 API Wrapper
 ~~~~~~~~~~~
 
-The *API Wrapper* is actually interface ``IApiWrapper<TModel, TList>`` used is mostly all CRUD resources for *Coach Console API*.
+The *API Wrapper* is actually interface ``ITreeApiWrapper<TModel, TList>`` used is mostly all CRUD resources for *Coach Console API*.
 
-The ``IApiWrapper<TModel, TList>`` has this methods:
+The ``ITreeApiWrapper<TModel, TList>`` has this methods:
 
 ResponseContent<ICollection<TList>> GetAll()
 --------------------------------------------------------
@@ -118,4 +118,4 @@ Method used to delete resource by sending ``id``. It returns non-generic ``Respo
 
 .. warning::
 
-    Note that all resources doesn't implement ``IApiWrapper<TModel, TList>`` like *Tenant*, *Tenant Tree* and *License*.
+    Note that all resources doesn't implement ``ITreeApiWrapper<TModel, TList>`` like *Tenant*, *Tenant Tree* and *License*.

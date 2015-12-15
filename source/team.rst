@@ -157,7 +157,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
    ResponseContent<ICollection<TeamList>> response = teamWrapper.GetAll();
 
    if (response.Result != null)
@@ -233,7 +233,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid teamId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
    ResponseContent<Team> response = teamWrapper.GetById(teamId);
 
    if (response.Result != null)
@@ -308,7 +308,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
    // Get default data and lookup for teams
    Team newTeam = teamWrapper.GetById(new Guid()).Result;
    newTeam.Name = "Team created from test";
@@ -393,7 +393,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid teamId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
    Team team = teamWrapper.GetById(teamId).Result;
    team.Name = "Team updated from test";
    team.Description = "Team updated from test description.";
@@ -486,7 +486,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid teamId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<Team, TeamList> teamWrapper = new TeamWrapper(tenantCode, key, secret);
    // Delete via DELETE method (default).
    ResponseContent response = teamWrapper.Delete(teamId);
 

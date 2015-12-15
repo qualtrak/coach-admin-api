@@ -206,7 +206,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
    ResponseContent<ICollection<UserList>> response = userWrapper.GetAll();
 
    if (response.Result != null)
@@ -280,7 +280,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid userId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
    ResponseContent<User> response = userWrapper.GetById(userId);
 
    if (response.Result != null)
@@ -355,7 +355,7 @@ Example usage
    string key = "ddZXdAZvWefFqxAEH62u";
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
 
-   IApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
    // Get default data and lookup for users
    User newUser = userWrapper.GetById(new Guid()).Result;
    newUser.Username = "Tester";
@@ -443,7 +443,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid userId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
    User user = userWrapper.GetById(userId).Result;
    user.Username = "Tester";
    user.RecorderMediaPlayerId = user.RecorderMediaPlayersLookup.FirstOrDefault().Key;
@@ -537,7 +537,7 @@ Example usage
    string secret = "wx6GiQggg9YRH89XT5aKoY2qZLVquYjxARtgZhuGoFQX5w6Lws";
    Guid userId = new Guid("f4fe3ea7-ed2a-41dd-acd2-91c45c8b4891");
 
-   IApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
+   ITreeApiWrapper<User, UserList> userWrapper = new UserWrapper(tenantCode, key, secret);
    // Delete via DELETE method (default).
    ResponseContent response = userWrapper.Delete(userId);
 
